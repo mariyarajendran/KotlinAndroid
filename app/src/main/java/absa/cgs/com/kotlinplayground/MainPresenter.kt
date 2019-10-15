@@ -7,10 +7,8 @@ class MainPresenter(var mainView: MainView, val mainInteractor: MainInteractor) 
 
 
     fun validateFirstTrigger(username: String, password: String) {
-        val paramObject = JSONObject()
-        paramObject.put("categoryId", 0)
-        paramObject.put("Name", "")
-        mainInteractor.firstTriggerEvent(paramObject, this)
+        val mainRequest = MainRequest(0, "")
+        mainInteractor.firstTriggerEvent(mainRequest, this)
 
     }
 

@@ -16,8 +16,8 @@ class MainInteractor {
     }
 
 
-    fun firstTriggerEvent(username: JSONObject, listener: onFirstEventTriggerListener) {
-        RetrofitClient.instance.createUser(username)
+    fun firstTriggerEvent(mainRequest: MainRequest, listener: onFirstEventTriggerListener) {
+        RetrofitClient.instance.createUser(mainRequest)
                 .enqueue(object : Callback<DefaultResponse> {
                     override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
                         listener.onFailureInteractListener(t.message.toString())
