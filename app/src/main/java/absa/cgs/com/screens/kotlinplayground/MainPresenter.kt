@@ -1,4 +1,4 @@
-package absa.cgs.com.kotlinplayground
+package absa.cgs.com.screens.kotlinplayground
 
 import org.json.JSONObject
 

@@ -1,10 +1,12 @@
-package absa.cgs.com.kotlinplayground
+package absa.cgs.com.screens.kotlinplayground
 
+import absa.cgs.com.kotlinplayground.R
+import absa.cgs.com.screens.base.BaseActivity
 import absa.cgs.com.utils.CommonUtils
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
-class MainActivity : AppCompatActivity(), MainView {
+class MainActivity : BaseActivity(), MainView {
 
     var commonUtils = CommonUtils(this)
     private val presenterMain = MainPresenter(this, MainInteractor())

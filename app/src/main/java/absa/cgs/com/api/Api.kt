@@ -1,6 +1,6 @@
 package absa.cgs.com.api
 
-import absa.cgs.com.kotlinplayground.MainRequest
+import absa.cgs.com.screens.kotlinplayground.MainRequest
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.http.*
