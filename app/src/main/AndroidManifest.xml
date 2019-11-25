@@ -13,13 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name="absa.cgs.com.screens.customerregister.CustomerRegister">
+        <activity android:name="absa.cgs.com.screens.kotlinplayground.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="absa.cgs.com.screens.kotlinplayground.MainActivity"></activity>
+        <activity android:name="absa.cgs.com.screens.customerregister.CustomerRegister"></activity>
     </application>
 
 </manifest>
