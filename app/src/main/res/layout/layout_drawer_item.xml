@@ -4,21 +4,22 @@
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp">
+    android:paddingLeft="@dimen/_14sdp"
+    android:paddingTop="@dimen/_14sdp"
+    android:paddingBottom="@dimen/_14sdp">
 
     <ImageView
         android:id="@+id/im_icon"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginRight="32dp"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_28sdp"
         android:tint="#54000000" />
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text=""
         android:textColor="#80000000"
         android:textSize="14sp" />
 

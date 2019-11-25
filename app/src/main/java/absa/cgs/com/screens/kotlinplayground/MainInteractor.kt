@@ -3,7 +3,6 @@ package absa.cgs.com.screens.kotlinplayground
 import absa.cgs.com.api.DefaultResponse
 import absa.cgs.com.api.RetrofitClient
 import android.util.Log
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
