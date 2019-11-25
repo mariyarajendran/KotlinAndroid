@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="absa.cgs.com.screens.kotlinplayground.MainActivity">
 
-    <TextView
+    <absa.cgs.com.utils.fonts.CustomTextView
         android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <Button
+    <absa.cgs.com.utils.fonts.CustomButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
