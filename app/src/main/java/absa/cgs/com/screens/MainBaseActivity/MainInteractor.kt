@@ -1,4 +1,4 @@
-package absa.cgs.com.screens.kotlinplayground
+package absa.cgs.com.screens.MainBaseActivity
 
 import absa.cgs.com.api.DefaultResponse
 import absa.cgs.com.api.RetrofitClient

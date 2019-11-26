@@ -1,4 +1,4 @@
-package absa.cgs.com.screens.homefragment
+package absa.cgs.com.screens.profilefragment
 
 import absa.cgs.com.kotlinplayground.R
 import android.os.Bundle
@@ -7,8 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class HomeFragment : Fragment() {
+
+class ProfileFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_home_screen, container, false)
+        return inflater.inflate(R.layout.fragment_account_screen, container, false)
     }
 }

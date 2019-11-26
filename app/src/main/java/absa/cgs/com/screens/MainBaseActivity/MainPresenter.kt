@@ -1,6 +1,4 @@
-package absa.cgs.com.screens.kotlinplayground
-
-import org.json.JSONObject
+package absa.cgs.com.screens.MainBaseActivity
 
 
 class MainPresenter(var mainView: MainView, val mainInteractor: MainInteractor) : MainInteractor.onFirstEventTriggerListener {

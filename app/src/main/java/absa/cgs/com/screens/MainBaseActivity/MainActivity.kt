@@ -1,9 +1,10 @@
-package absa.cgs.com.screens.kotlinplayground
+package absa.cgs.com.screens.MainBaseActivity
 
 import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.screens.base.BaseActivity
-import absa.cgs.com.screens.homefragment.AccountFragment
-import absa.cgs.com.screens.homefragment.HomeFragment
+import absa.cgs.com.screens.customerfragment.CustomerFragment
+import absa.cgs.com.screens.profilefragment.ProfileFragment
+import absa.cgs.com.screens.dashboardfragment.DashboardFragment
 import absa.cgs.com.utils.CommonUtils
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
@@ -45,8 +46,8 @@ class MainActivity : BaseActivity(), MainView {
         addDrawerArrayData()
         drawerLayout = findViewById(R.id.dashboard_drawer_layout)
         setDrawerLayout()
-        mToolbar?.title = "Shop"
-        loadFragment(HomeFragment())
+        mToolbar?.title = this.resources.getString(R.string.bottom_nav_dashboard)
+        loadFragment(DashboardFragment())
         val navigation = findViewById<BottomNavigationView>(R.id.content_dashboard_bottomnavigation_view)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
@@ -64,6 +65,7 @@ class MainActivity : BaseActivity(), MainView {
                 this@MainActivity, drawerLayout, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawerLayout?.setDrawerListener(toggle)
         toggle.syncState()
+        toggle.drawerArrowDrawable.setColor(resources.getColor(R.color.colorWhite))
         dashboardDrawerListAdapter = DrawerListAdapter(this@MainActivity, mNavigationItems!!)
         mListView?.adapter = dashboardDrawerListAdapter
         mListView?.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> }
@@ -72,27 +74,27 @@ class MainActivity : BaseActivity(), MainView {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         val fragment: Fragment
         when (item.itemId) {
-            R.id.bottom_navigation_item_home -> {
-                mToolbar?.title = "Shop"
-                fragment = HomeFragment()
+            R.id.bottom_navigation_item_dashboard -> {
+                mToolbar?.title = this.resources.getString(R.string.bottom_nav_dashboard)
+                fragment = DashboardFragment()
                 loadFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.bottom_navigation_item_email -> {
-                mToolbar?.title = ("My Gifts")
-                fragment = AccountFragment()
+            R.id.bottom_navigation_item_customer -> {
+                mToolbar?.title = this.resources.getString(R.string.bottom_nav_customer)
+                fragment = CustomerFragment()
                 loadFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.bottom_navigation_item_search -> {
-                mToolbar?.title = ("Cart")
-                fragment = HomeFragment()
+                mToolbar?.title = this.resources.getString(R.string.bottom_nav_search)
+                fragment = DashboardFragment()
                 loadFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.bottom_navigation_item_account -> {
-                mToolbar?.title = ("Profile")
-                fragment = AccountFragment()
+            R.id.bottom_navigation_item_profile -> {
+                mToolbar?.title = this.resources.getString(R.string.bottom_nav_profile)
+                fragment = ProfileFragment()
                 loadFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }

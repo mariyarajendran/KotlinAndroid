@@ -2,4 +2,9 @@
     <string name="app_name">KotlinPlayGround</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="bottom_nav_dashboard">Dashboard</string>
+    <string name="bottom_nav_customer">Customer</string>
+    <string name="bottom_nav_search">Search</string>
+    <string name="bottom_nav_profile">Profile</string>
+
 </resources>

@@ -22,6 +22,8 @@
         android:background="?android:attr/windowBackground"
         android:foreground="?attr/selectableItemBackground"
         app:itemIconTint="@color/colorPrimary"
+        android:theme="@style/Widget.BottomNavigationView"
+        app:itemTextAppearanceActive="@style/BottomNavigation.ActiveItemTextAppearance"
         app:itemTextColor="@color/colorPrimaryDark"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_navigation_view_menu" />

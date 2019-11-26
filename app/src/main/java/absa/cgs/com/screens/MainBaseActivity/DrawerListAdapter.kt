@@ -1,4 +1,4 @@
-package absa.cgs.com.screens.kotlinplayground
+package absa.cgs.com.screens.MainBaseActivity
 
 import absa.cgs.com.kotlinplayground.R
 import android.app.Activity
