@@ -3,8 +3,9 @@ package absa.cgs.com.utils.fonts
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
+import com.google.android.material.textfield.TextInputEditText
 
-class CustomTextEditText : android.support.design.widget.TextInputEditText {
+class CustomTextEditText : TextInputEditText {
 
     constructor(context: Context) : super(context) {
         setFont()

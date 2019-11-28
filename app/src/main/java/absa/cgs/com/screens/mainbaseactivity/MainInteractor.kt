@@ -1,4 +1,4 @@
-package absa.cgs.com.screens.MainBaseActivity
+package absa.cgs.com.screens.mainbaseactivity
 
 import absa.cgs.com.api.DefaultResponse
 import absa.cgs.com.api.RetrofitClient

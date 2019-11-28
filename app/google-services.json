@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "59818534241",
+    "firebase_url": "https://kotlinplayground-18e85.firebaseio.com",
+    "project_id": "kotlinplayground-18e85",
+    "storage_bucket": "kotlinplayground-18e85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59818534241:android:35cad1beaed1d8c01e5120",
+        "android_client_info": {
+          "package_name": "absa.cgs.com.kotlinplayground"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59818534241-d3regdfumrf7b3p2bsruoa4v1gmlpeec.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzeGw-cp6iIKuw-vN1-nBgJ37No8GxOx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59818534241-d3regdfumrf7b3p2bsruoa4v1gmlpeec.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

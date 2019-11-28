@@ -1,4 +1,4 @@
-package absa.cgs.com.screens.MainBaseActivity
+package absa.cgs.com.screens.mainbaseactivity
 
 import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.screens.base.BaseActivity
@@ -7,13 +7,13 @@ import absa.cgs.com.screens.profilefragment.ProfileFragment
 import absa.cgs.com.screens.dashboardfragment.DashboardFragment
 import absa.cgs.com.utils.CommonUtils
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
-import android.support.v4.widget.DrawerLayout
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.widget.Toolbar
 import android.widget.AdapterView
 import android.widget.ListView
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.ArrayList
 
 

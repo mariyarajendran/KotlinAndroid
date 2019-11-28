@@ -1,6 +1,6 @@
 package absa.cgs.com.api
 
-import absa.cgs.com.screens.MainBaseActivity.MainRequest
+import absa.cgs.com.screens.mainbaseactivity.MainRequest
 import retrofit2.Call
 import retrofit2.http.*
 

@@ -1,4 +1,4 @@
-package absa.cgs.com.screens.MainBaseActivity
+package absa.cgs.com.screens.mainbaseactivity
 
 
 class MainPresenter(var mainView: MainView, val mainInteractor: MainInteractor) : MainInteractor.onFirstEventTriggerListener {
