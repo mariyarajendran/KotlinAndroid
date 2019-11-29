@@ -33,7 +33,7 @@ class MainActivity : BaseActivity(), MainView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_play_ground)
-        presenterMain.validateFirstTrigger("samples", "")
+        //presenterMain.validateFirstTrigger("samples", "")
 
         init()
     }
@@ -43,10 +43,10 @@ class MainActivity : BaseActivity(), MainView {
         mToolbar = findViewById(R.id.dashboard_toolbar)
         mListView = findViewById(R.id.dashboard_lv_drawer)
         setSupportActionBar(mToolbar)
+        supportActionBar?.title = this.resources.getString(R.string.bottom_nav_dashboard)
         addDrawerArrayData()
         drawerLayout = findViewById(R.id.dashboard_drawer_layout)
         setDrawerLayout()
-        mToolbar?.title = this.resources.getString(R.string.bottom_nav_dashboard)
         loadFragment(DashboardFragment())
         val navigation = findViewById<BottomNavigationView>(R.id.content_dashboard_bottomnavigation_view)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
@@ -55,9 +55,15 @@ class MainActivity : BaseActivity(), MainView {
 
     private fun addDrawerArrayData() {
         mNavigationItems = ArrayList()
-        mNavigationItems?.add("Call")
-        mNavigationItems?.add("Favorite")
-        mNavigationItems?.add("Search")
+        mNavigationItems?.add("Reports")
+        mNavigationItems?.add("Onile Transactions")
+        mNavigationItems?.add("Collection Agents")
+        mNavigationItems?.add("Customer Queries")
+        mNavigationItems?.add("Language")
+        mNavigationItems?.add("Forgot Password")
+        mNavigationItems?.add("Privacy Policy")
+        mNavigationItems?.add("Logout")
+
     }
 
     private fun setDrawerLayout() {

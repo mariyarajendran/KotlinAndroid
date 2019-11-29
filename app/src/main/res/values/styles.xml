@@ -24,11 +24,13 @@
 
     <style name="BottomNavigation.ActiveItemTextAppearance" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/latobold</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="BottomNavigation.InActiveItemTextAppearance" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/latobold</item>
         <item name="android:textColor">@color/colorRed</item>
+        <item name="android:textSize">13sp</item>
     </style>
 
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
