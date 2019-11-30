@@ -2,54 +2,66 @@ package absa.cgs.com.screens.mainbaseactivity
 
 import absa.cgs.com.kotlinplayground.R
 import android.app.Activity
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import java.util.ArrayList
+import androidx.recyclerview.widget.RecyclerView
 
-class DrawerListAdapter(internal var activity: Activity, internal var titles: ArrayList<String>) : BaseAdapter() {
 
-    init {
-        inflater = activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-    }// TODO Auto-generated constructor stub
+class DrawerListAdapter(internal var activity: Activity, private val mypojos: ArrayList<String>, val onListItemClickInterface: OnListItemClickInterface) : RecyclerView.Adapter<DrawerListAdapter.DemoAdapter>() {
 
-    override fun getCount(): Int {
-        // TODO Auto-generated method stub
-        return titles.size
+    var mainModel: MainModel? = null
+    var rowIndex = 0
+
+    inner class DemoAdapter(view: View) : RecyclerView.ViewHolder(view) {
+        var title: TextView
+        var linearLayout: LinearLayout
+
+
+        init {
+            title = view.findViewById(R.id.tv_title) as TextView
+            linearLayout = view.findViewById(R.id.lv_drawer_item) as LinearLayout
+            mainModel = MainModel()
+        }
     }
 
-    override fun getItem(position: Int): Any {
-        // TODO Auto-generated method stub
-        return position
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DemoAdapter {
+        val itemView = LayoutInflater.from(parent.context)
+                .inflate(R.layout.layout_drawer_item, parent, false)
+        return DemoAdapter(itemView)
     }
 
-    override fun getItemId(position: Int): Long {
-        // TODO Auto-generated method stub
-        return position.toLong()
+    override fun onBindViewHolder(holder: DemoAdapter, position: Int) {
+        holder.title.setText(mypojos.get(position))
+        bindTextColorOnClick(position, holder)
+
+        holder.linearLayout.setOnClickListener {
+            assignRowIndex(position)
+            onListItemClickInterface.OnSelectedItemClickListener(mypojos.get(position), position)
+            notifyDataSetChanged()
+            notifyItemChanged(position)
+        }
+
     }
 
-    inner class Holder {
-        internal var tv_title: TextView? = null
-        internal var im_icon: ImageView? = null
+    private fun assignRowIndex(position: Int) {
+        rowIndex = position
     }
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        // TODO Auto-generated method stub
-        val holder = Holder()
-        val view: View
-        view = inflater!!.inflate(R.layout.layout_drawer_item, null)
-
-        holder.tv_title = view.findViewById<View>(R.id.tv_title) as TextView
-        holder.tv_title!!.text = titles[position]
-        return view
+    private fun bindTextColorOnClick(position: Int, holder: DemoAdapter) {
+        if (rowIndex == position) {
+            holder.title.setTextColor(activity.resources.getColor(R.color.colorSecondary))
+        } else {
+            holder.title.setTextColor(activity.resources.getColor(R.color.colorWhite))
+        }
     }
 
-    companion object {
-        private var inflater: LayoutInflater? = null
-    }
 
+    override fun getItemCount(): Int {
+        return mypojos.size
+    }
 }

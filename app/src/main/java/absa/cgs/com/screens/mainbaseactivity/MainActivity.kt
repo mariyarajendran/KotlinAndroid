@@ -7,14 +7,15 @@ import absa.cgs.com.screens.profilefragment.ProfileFragment
 import absa.cgs.com.screens.dashboardfragment.DashboardFragment
 import absa.cgs.com.utils.CommonUtils
 import android.os.Bundle
-import android.widget.AdapterView
-import android.widget.ListView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.ArrayList
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 
 
 class MainActivity : BaseActivity(), MainView {
@@ -24,7 +25,7 @@ class MainActivity : BaseActivity(), MainView {
     private val presenterMain = MainPresenter(this, MainInteractor())
 
     private var mToolbar: Toolbar? = null
-    private var mListView: ListView? = null
+    private var mRecyclerView: RecyclerView? = null
     private var drawerLayout: DrawerLayout? = null
     private var mNavigationItems: ArrayList<String>? = null
     private var dashboardDrawerListAdapter: DrawerListAdapter? = null
@@ -34,14 +35,13 @@ class MainActivity : BaseActivity(), MainView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_play_ground)
         //presenterMain.validateFirstTrigger("samples", "")
-
         init()
     }
 
 
     private fun init() {
         mToolbar = findViewById(R.id.dashboard_toolbar)
-        mListView = findViewById(R.id.dashboard_lv_drawer)
+        mRecyclerView = findViewById(R.id.dashboard_rv_drawer)
         setSupportActionBar(mToolbar)
         supportActionBar?.title = this.resources.getString(R.string.bottom_nav_dashboard)
         addDrawerArrayData()
@@ -72,9 +72,16 @@ class MainActivity : BaseActivity(), MainView {
         drawerLayout?.setDrawerListener(toggle)
         toggle.syncState()
         toggle.drawerArrowDrawable.setColor(resources.getColor(R.color.colorWhite))
-        dashboardDrawerListAdapter = DrawerListAdapter(this@MainActivity, mNavigationItems!!)
-        mListView?.adapter = dashboardDrawerListAdapter
-        mListView?.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> }
+        dashboardDrawerListAdapter = DrawerListAdapter(this@MainActivity, mNavigationItems!!, object : OnListItemClickInterface {
+            override fun OnSelectedItemClickListener(title: String, position: Int) {
+            }
+        }
+        )
+        val mLayoutManager = LinearLayoutManager(applicationContext)
+        mRecyclerView?.setLayoutManager(mLayoutManager)
+        mRecyclerView?.setItemAnimator(DefaultItemAnimator())
+        mRecyclerView?.adapter = dashboardDrawerListAdapter
+
     }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->

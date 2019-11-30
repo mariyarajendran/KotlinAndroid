@@ -24,7 +24,7 @@
                 android:id="@+id/dashboard_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/colorRed"
+                android:background="@color/colorPrimary"
                 android:theme="@style/ToolbarTheme"
                 app:navigationIcon="@color/colorWhite"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
@@ -49,16 +49,16 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_140sdp"
             android:layout_alignParentTop="true"
-            android:background="@color/colorRed">
+            android:background="@color/colorPrimary">
             <!--Here you can give your custom layouts if required-->
         </RelativeLayout>
 
-        <ListView
-            android:id="@+id/dashboard_lv_drawer"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dashboard_rv_drawer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/rl_profile"
-            android:background="#ffff"
+            android:background="@color/colorPrimary"
             android:choiceMode="singleChoice"
             android:divider="@android:color/transparent"
             android:dividerHeight="0dp" />

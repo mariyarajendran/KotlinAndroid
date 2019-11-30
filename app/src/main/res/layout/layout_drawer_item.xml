@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
+    android:id="@+id/lv_drawer_item"
     android:orientation="horizontal"
     android:paddingLeft="@dimen/_14sdp"
     android:paddingTop="@dimen/_14sdp"
@@ -19,9 +20,9 @@
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
         android:layout_marginLeft="@dimen/_25sdp"
-        android:textColor="@color/colorGray55"
+        android:text=""
+        android:textColor="@color/colorWhite"
         android:textSize="15sp" />
 
 </LinearLayout>
