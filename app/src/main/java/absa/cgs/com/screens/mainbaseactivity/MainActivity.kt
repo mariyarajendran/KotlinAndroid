@@ -99,7 +99,6 @@ class MainActivity : BaseActivity(), MainView {
                 return@OnNavigationItemSelectedListener true
             }
         }
-
         false
     }
 

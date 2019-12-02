@@ -7,7 +7,6 @@ class MainPresenter(var mainView: MainView, val mainInteractor: MainInteractor) 
     fun validateFirstTrigger(username: String, password: String) {
         val mainRequest = MainRequest(0, "")
         mainInteractor.firstTriggerEvent(mainRequest, this)
-
     }
 
 
