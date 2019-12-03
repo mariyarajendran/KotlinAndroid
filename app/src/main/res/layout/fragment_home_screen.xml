@@ -10,6 +10,6 @@
         android:layout_gravity="center"
         android:text="Dashboard"
         android:textColor="@color/colorGray"
-        android:textSize="20dp"
+        android:textSize="18sp"
         android:textStyle="bold" />
 </FrameLayout>

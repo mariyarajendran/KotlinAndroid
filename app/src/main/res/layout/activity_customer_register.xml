@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="absa.cgs.com.screens.customerregister.CustomerRegister">
+    tools:context="absa.cgs.com.ui.screens.register.CustomerRegister">
 
 
     <android.support.design.widget.TextInputLayout
