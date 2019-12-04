@@ -15,6 +15,7 @@ open class BaseActivity : AppCompatActivity(), BaseMvpView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
 

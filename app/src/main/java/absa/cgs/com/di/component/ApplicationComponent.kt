@@ -25,6 +25,7 @@ import javax.inject.Singleton
 import absa.cgs.com.MyApplication
 import absa.cgs.com.di.annotation.ApplicationContext
 import absa.cgs.com.di.module.ApplicationModule
+import absa.cgs.com.utils.CommonUtils
 import dagger.Component
 
 /**
@@ -39,7 +40,10 @@ interface ApplicationComponent {
     @ApplicationContext
     fun context(): Context
 
+
     fun application(): Application
+
+
 
     // DataManager dataManager();
 

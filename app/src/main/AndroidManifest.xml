@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name="absa.cgs.com.MyApplication"
         android:allowBackup="true"
         android:appComponentFactory="whateverString"
         android:icon="@mipmap/ic_launcher"
@@ -22,7 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="absa.cgs.com.ui.screens.register.CustomerRegister"></activity>
+        <activity
+            android:name="absa.cgs.com.ui.screens.register.CustomerRegister"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

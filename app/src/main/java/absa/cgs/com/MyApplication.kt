@@ -31,4 +31,10 @@ class MyApplication : Application() {
         }
     }
 
+
+    fun getComponents(): ApplicationComponent {
+        return component
+    }
+
+
 }

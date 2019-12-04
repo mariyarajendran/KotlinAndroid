@@ -16,12 +16,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.ArrayList
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
+import javax.inject.Inject
 
 
 class MainActivity : BaseActivity(), MainView {
 
 
-    private var commonUtils = CommonUtils(this)
     private val presenterMain = MainPresenter(this, MainInteractor())
 
     private var mToolbar: Toolbar? = null
@@ -30,16 +30,19 @@ class MainActivity : BaseActivity(), MainView {
     private var mNavigationItems: ArrayList<String>? = null
     private var dashboardDrawerListAdapter: DrawerListAdapter? = null
 
+    @Inject
+    lateinit var commonUtils: CommonUtils
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_play_ground)
-        //presenterMain.validateFirstTrigger("samples", "")
         init()
+        presenterMain.validateFirstTrigger("samples", "")
     }
 
 
     private fun init() {
+        activityComponent().inject(this)
         mToolbar = findViewById(R.id.dashboard_toolbar)
         mRecyclerView = findViewById(R.id.dashboard_rv_drawer)
         setSupportActionBar(mToolbar)
@@ -50,6 +53,7 @@ class MainActivity : BaseActivity(), MainView {
         loadFragment(DashboardFragment())
         val navigation = findViewById<BottomNavigationView>(R.id.content_dashboard_bottomnavigation_view)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
     }
 
 

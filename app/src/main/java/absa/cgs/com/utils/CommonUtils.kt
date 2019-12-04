@@ -1,14 +1,19 @@
 package absa.cgs.com.utils
 
+import absa.cgs.com.di.annotation.PerActivity
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class CommonUtils(val context: Context) {
+@PerActivity
+class CommonUtils @Inject constructor(private val activity: Activity) {
 
 
     fun showToastSmall(message: String) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
     }
 
     fun navigationRoutes(context: Context, routingClass: Class<*>) {
@@ -18,7 +23,7 @@ class CommonUtils(val context: Context) {
     }
 
     fun showToastLong(msg: String) {
-        Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
+        Toast.makeText(activity, msg, Toast.LENGTH_LONG).show()
     }
 
 

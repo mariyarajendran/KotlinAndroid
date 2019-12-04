@@ -20,7 +20,10 @@ package absa.cgs.com.di.component
 import absa.cgs.com.di.annotation.PerActivity
 import absa.cgs.com.di.module.ActivityModule
 import absa.cgs.com.ui.screens.mainbaseactivity.MainActivity
+import absa.cgs.com.ui.screens.register.CustomerRegister
+import absa.cgs.com.utils.CommonUtils
 import dagger.Component
+
 
 /**
  * Created by amitshekhar on 13/01/17.
@@ -30,5 +33,12 @@ import dagger.Component
 interface ActivityComponent {
 
     fun inject(mainActivity: MainActivity)
+    fun inject(customerRegister: CustomerRegister)
+
+
+    fun commonUtils(): CommonUtils
+
+
+    //fun commonUtils(): CommonUtils
 
 }
