@@ -37,7 +37,7 @@ class MainActivity : BaseActivity(), MainView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_play_ground)
         init()
-        presenterMain.validateFirstTrigger("samples", "")
+        //presenterMain.validateFirstTrigger("samples", "")
     }
 
 
@@ -46,12 +46,13 @@ class MainActivity : BaseActivity(), MainView {
         mToolbar = findViewById(R.id.dashboard_toolbar)
         mRecyclerView = findViewById(R.id.dashboard_rv_drawer)
         setSupportActionBar(mToolbar)
-        supportActionBar?.title = this.resources.getString(R.string.bottom_nav_dashboard)
+        supportActionBar?.title = this.resources.getString(R.string.bottom_nav_customer)
         addDrawerArrayData()
         drawerLayout = findViewById(R.id.dashboard_drawer_layout)
         setDrawerLayout()
-        loadFragment(DashboardFragment())
+        loadFragment(CustomerFragment())
         val navigation = findViewById<BottomNavigationView>(R.id.content_dashboard_bottomnavigation_view)
+        navigation.selectedItemId = (R.id.bottom_navigation_item_customer)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
     }

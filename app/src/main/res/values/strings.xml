@@ -6,5 +6,15 @@
     <string name="bottom_nav_customer">Customer</string>
     <string name="bottom_nav_search">Search</string>
     <string name="bottom_nav_profile">Profile</string>
+    <string name="add_customer">Add Customer</string>
+    <string name="customer_name">Name</string>
+    <string name="customer_mobile_number">Mobile Number</string>
+    <string name="register_billing_area">Billing Area</string>
+    <string name="customer_billing_name">Customer Billing Name</string>
+    <string name="customer_email">Email</string>
+    <string name="customer_address">Address</string>
+    <string name="customer_code">Customer code</string>
+    <string name="pan_number">PAN Number</string>
+    <string name="customer_aadhar_number">Aadhar Number</string>
 
 </resources>

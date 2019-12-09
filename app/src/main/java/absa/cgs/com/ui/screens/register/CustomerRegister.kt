@@ -12,9 +12,15 @@ class CustomerRegister : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setActionBarTitle()
         setContentView(R.layout.activity_customer_register)
+
 
     }
 
+
+    private fun setActionBarTitle() {
+        setTitle(R.string.add_customer)
+    }
 
 }
