@@ -14,8 +14,6 @@ class CustomerRegister : BaseActivity() {
         super.onCreate(savedInstanceState)
         setActionBarTitle()
         setContentView(R.layout.activity_customer_register)
-
-
     }
 
 
