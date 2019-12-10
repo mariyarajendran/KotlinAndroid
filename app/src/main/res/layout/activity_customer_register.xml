@@ -4,317 +4,435 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorWhite">
+    android:background="@color/colorBackground">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
         tools:context="absa.cgs.com.ui.screens.register.CustomerRegister">
 
 
-        <absa.cgs.com.utils.fonts.CustomTextView
-            android:id="@+id/textview_basic_details_hint"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_basic_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_15sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:text="@string/customer_basic_details"
-            android:textColor="@color/colorRed"
-            android:textSize="16sp"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:background="@color/colorWhite"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:cardMaxElevation="@dimen/_10sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.06"></absa.cgs.com.utils.fonts.CustomTextView>
+            app:layout_constraintVertical_bias="0.03">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinput_login_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginRight="10dp"
-            android:padding="5dp"
-            android:textColorHint="@color/colorGray55"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview_basic_details_hint">
-
-            <absa.cgs.com.utils.fonts.CustomTextEditText
-                android:id="@+id/textedit_login_name"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/customer_name"
-                android:imeOptions="actionNext"
-                android:inputType="textNoSuggestions|textCapWords"
-                android:textColor="@color/colorBlack"
-                android:textColorHighlight="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content">
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinput_register_cs_billing_name"
+                <absa.cgs.com.utils.fonts.CustomTextView
+                    android:id="@+id/textview_basic_details_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:text="@string/customer_basic_details"
+                    android:textColor="@color/colorRed"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></absa.cgs.com.utils.fonts.CustomTextView>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinput_login_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_basic_details_hint">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/textedit_login_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/customer_name"
+                        android:imeOptions="actionNext"
+                        android:inputType="textNoSuggestions|textCapWords"
+                        android:textColor="@color/colorBlack"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinput_register_cs_billing_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinput_login_name">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/textedit_register_cs_billing_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/customer_billing_name"
+                        android:inputType="text|textCapWords"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinput_register_cs_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinput_register_cs_billing_name">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/textedit_register_cs_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:hint="@string/customer_code"
+                        android:inputType="text|textCapWords"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_contact_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginRight="10dp"
-            android:padding="5dp"
-            android:textColorHint="@color/colorGray55"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:background="@color/colorWhite"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:cardMaxElevation="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textinput_login_name">
+            app:layout_constraintTop_toBottomOf="@+id/cardview_basic_details">
 
-            <absa.cgs.com.utils.fonts.CustomTextEditText
-                android:id="@+id/textedit_register_cs_billing_name"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/customer_billing_name"
-                android:inputType="text|textCapWords"
-                android:textColor="@color/colorPrimaryDark"
-                android:textColorHighlight="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:textColorLink="@color/colorPrimaryDark"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content">
+
+                <absa.cgs.com.utils.fonts.CustomTextView
+                    android:id="@+id/textview_basic_contact_details_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:text="@string/customer_contact_details"
+                    android:textColor="@color/colorRed"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></absa.cgs.com.utils.fonts.CustomTextView>
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinput_register_cs_code"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinput_login_phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_basic_contact_details_hint">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/textedit_login_phone_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/customer_mobile_number"
+                        android:inputType="number|textCapWords"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinput_register_cs_emailid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinput_login_phone_number">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/textedit_register_cs_emailid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:hint="@string/customer_email"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_address_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginRight="10dp"
-            android:padding="5dp"
-            android:textColorHint="@color/colorGray55"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:background="@color/colorWhite"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:cardMaxElevation="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textinput_register_cs_billing_name">
+            app:layout_constraintTop_toBottomOf="@+id/cardview_contact_details">
 
-            <absa.cgs.com.utils.fonts.CustomTextEditText
-                android:id="@+id/textedit_register_cs_code"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/customer_code"
-                android:inputType="text|textCapWords"
-                android:textColor="@color/colorPrimaryDark"
-                android:textColorHighlight="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:textColorLink="@color/colorPrimaryDark"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content">
+
+                <absa.cgs.com.utils.fonts.CustomTextView
+                    android:id="@+id/textview_basic_address_details_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:text="@string/customer_address_details"
+                    android:textColor="@color/colorRed"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
-        <absa.cgs.com.utils.fonts.CustomTextView
-            android:id="@+id/textview_basic_contact_details_hint"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinput_register_billing_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_basic_address_details_hint">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/textedit_register_billing_area"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/register_billing_area"
+                        android:inputType="text|textCapWords"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinput_register_billing_street"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinput_register_billing_area">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/textedit_register_billing_street"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/customer_street"
+                        android:inputType="text|textCapWords"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinput_register_cs_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinput_register_billing_street">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/textedit_register_cs_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:hint="@string/customer_address"
+                        android:inputType="text|textCapWords"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_other_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:text="@string/customer_contact_details"
-            android:textColor="@color/colorRed"
-            android:textSize="16sp"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:background="@color/colorWhite"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:cardMaxElevation="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textinput_register_cs_code"></absa.cgs.com.utils.fonts.CustomTextView>
+            app:layout_constraintTop_toBottomOf="@+id/cardview_address_details">
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinput_login_phone_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginRight="10dp"
-            android:padding="5dp"
-            android:textColorHint="@color/colorGray55"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview_basic_contact_details_hint">
-
-            <absa.cgs.com.utils.fonts.CustomTextEditText
-                android:id="@+id/textedit_login_phone_number"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/customer_mobile_number"
-                android:inputType="number|textCapWords"
-                android:textColor="@color/colorPrimaryDark"
-                android:textColorHighlight="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:textColorLink="@color/colorPrimaryDark"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content">
+
+                <absa.cgs.com.utils.fonts.CustomTextView
+                    android:id="@+id/textview_basic_other_details_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:text="@string/customer_other_details"
+                    android:textColor="@color/colorRed"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinput_register_cs_emailid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginRight="10dp"
-            android:padding="5dp"
-            android:textColorHint="@color/colorGray55"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textinput_login_phone_number">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinput_register_cs_pan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_basic_other_details_hint">
 
-            <absa.cgs.com.utils.fonts.CustomTextEditText
-                android:id="@+id/textedit_register_cs_emailid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/customer_email"
-                android:inputType="textEmailAddress|textCapWords"
-                android:textColor="@color/colorPrimaryDark"
-                android:textColorHighlight="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:textColorLink="@color/colorPrimaryDark"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <absa.cgs.com.utils.fonts.CustomTextView
-            android:id="@+id/textview_basic_address_details_hint"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:text="@string/customer_address_details"
-            android:textColor="@color/colorRed"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textinput_register_cs_emailid" />
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/textedit_register_cs_pan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/pan_number"
+                        android:inputType="text|textCapWords"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinput_register_billing_area"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginRight="10dp"
-            android:padding="5dp"
-            android:textColorHint="@color/colorGray55"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview_basic_address_details_hint">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinput_register_cs_aadhar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinput_register_cs_pan">
 
-            <absa.cgs.com.utils.fonts.CustomTextEditText
-                android:id="@+id/textedit_register_billing_area"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/register_billing_area"
-                android:inputType="text|textCapWords"
-                android:textColor="@color/colorPrimaryDark"
-                android:textColorHighlight="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:textColorLink="@color/colorPrimaryDark"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinput_register_cs_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginRight="10dp"
-            android:padding="5dp"
-            android:textColorHint="@color/colorGray55"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textinput_register_billing_area">
-
-            <absa.cgs.com.utils.fonts.CustomTextEditText
-                android:id="@+id/textedit_register_cs_address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/customer_address"
-                android:inputType="text|textCapWords"
-                android:textColor="@color/colorPrimaryDark"
-                android:textColorHighlight="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:textColorLink="@color/colorPrimaryDark"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <absa.cgs.com.utils.fonts.CustomTextView
-            android:id="@+id/textview_basic_other_details_hint"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:text="@string/customer_other_details"
-            android:textColor="@color/colorRed"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textinput_register_cs_address" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinput_register_cs_pan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginRight="10dp"
-            android:padding="5dp"
-            android:textColorHint="@color/colorGray55"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview_basic_other_details_hint">
-
-            <absa.cgs.com.utils.fonts.CustomTextEditText
-                android:id="@+id/textedit_register_cs_pan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/pan_number"
-                android:inputType="text|textCapWords"
-                android:textColor="@color/colorPrimaryDark"
-                android:textColorHighlight="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:textColorLink="@color/colorPrimaryDark"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinput_register_cs_aadhar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="@dimen/_20sdp"
-            android:padding="5dp"
-            android:textColorHint="@color/colorGray55"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textinput_register_cs_pan">
-
-            <absa.cgs.com.utils.fonts.CustomTextEditText
-                android:id="@+id/textedit_register_cs_aadhar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/customer_aadhar_number"
-                android:inputType="number"
-                android:textColor="@color/colorPrimaryDark"
-                android:textColorHighlight="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:textColorLink="@color/colorPrimaryDark"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/textedit_register_cs_aadhar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:hint="@string/customer_aadhar_number"
+                        android:inputType="number"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

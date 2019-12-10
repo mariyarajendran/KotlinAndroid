@@ -16,9 +16,10 @@
     <string name="customer_code">Customer code</string>
     <string name="pan_number">PAN Number</string>
     <string name="customer_aadhar_number">Aadhar Number</string>
-    <string name="customer_contact_details">Contact Details</string>
-    <string name="customer_basic_details">Basic Details</string>
-    <string name="customer_address_details">Address Details</string>
-    <string name="customer_other_details">Other Details</string>
+    <string name="customer_contact_details">Contact Details *</string>
+    <string name="customer_basic_details">Basic Details *</string>
+    <string name="customer_address_details">Address Details *</string>
+    <string name="customer_other_details">Other Details *</string>
+    <string name="customer_street">Street</string>
 
 </resources>
