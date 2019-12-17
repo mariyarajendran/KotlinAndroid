@@ -31,8 +31,15 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_20sdp">
 
+
+                <ImageView
+                    android:id="@+id/imageview_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plus" />
 
                 <absa.cgs.com.utils.fonts.CustomTextView
                     android:id="@+id/textview_basic_details_hint"
@@ -57,6 +64,7 @@
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/customer_name"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textview_basic_details_hint">
@@ -65,10 +73,9 @@
                         android:id="@+id/textedit_login_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/customer_name"
                         android:imeOptions="actionNext"
                         android:inputType="textNoSuggestions|textCapWords"
-                        android:textColor="@color/colorBlack"
+                        android:textColor="@color/colorBackground"
                         android:textColorHighlight="@color/colorPrimaryDark"
                         android:textColorHint="@color/colorPrimaryDark"
                         android:textSize="16sp" />
@@ -80,10 +87,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/customer_billing_name"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textinput_login_name">
@@ -92,9 +99,8 @@
                         android:id="@+id/textedit_register_cs_billing_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/customer_billing_name"
                         android:inputType="text|textCapWords"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/colorBackground"
                         android:textColorHighlight="@color/colorPrimaryDark"
                         android:textColorHint="@color/colorPrimaryDark"
                         android:textColorLink="@color/colorPrimaryDark"
@@ -107,10 +113,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/customer_code"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textinput_register_cs_billing_name">
@@ -119,10 +125,8 @@
                         android:id="@+id/textedit_register_cs_code"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_20sdp"
-                        android:hint="@string/customer_code"
                         android:inputType="text|textCapWords"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/colorBackground"
                         android:textColorHighlight="@color/colorPrimaryDark"
                         android:textColorHint="@color/colorPrimaryDark"
                         android:textColorLink="@color/colorPrimaryDark"
@@ -150,7 +154,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_20sdp">
 
                 <absa.cgs.com.utils.fonts.CustomTextView
                     android:id="@+id/textview_basic_contact_details_hint"
@@ -172,10 +177,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/customer_mobile_number"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textview_basic_contact_details_hint">
@@ -184,7 +190,6 @@
                         android:id="@+id/textedit_login_phone_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/customer_mobile_number"
                         android:inputType="number|textCapWords"
                         android:textColor="@color/colorPrimaryDark"
                         android:textColorHighlight="@color/colorPrimaryDark"
@@ -199,10 +204,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/customer_email"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textinput_login_phone_number">
@@ -211,8 +216,6 @@
                         android:id="@+id/textedit_register_cs_emailid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_20sdp"
-                        android:hint="@string/customer_email"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/colorPrimaryDark"
                         android:textColorHighlight="@color/colorPrimaryDark"
@@ -241,7 +244,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_20sdp">
 
                 <absa.cgs.com.utils.fonts.CustomTextView
                     android:id="@+id/textview_basic_address_details_hint"
@@ -263,10 +267,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/register_billing_area"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textview_basic_address_details_hint">
@@ -275,7 +280,6 @@
                         android:id="@+id/textedit_register_billing_area"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/register_billing_area"
                         android:inputType="text|textCapWords"
                         android:textColor="@color/colorPrimaryDark"
                         android:textColorHighlight="@color/colorPrimaryDark"
@@ -285,16 +289,15 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textinput_register_billing_street"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/customer_street"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textinput_register_billing_area">
@@ -303,7 +306,6 @@
                         android:id="@+id/textedit_register_billing_street"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/customer_street"
                         android:inputType="text|textCapWords"
                         android:textColor="@color/colorPrimaryDark"
                         android:textColorHighlight="@color/colorPrimaryDark"
@@ -317,10 +319,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/customer_address"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textinput_register_billing_street">
@@ -329,8 +331,6 @@
                         android:id="@+id/textedit_register_cs_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_20sdp"
-                        android:hint="@string/customer_address"
                         android:inputType="text|textCapWords"
                         android:textColor="@color/colorPrimaryDark"
                         android:textColorHighlight="@color/colorPrimaryDark"
@@ -349,8 +349,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_8sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:background="@color/colorWhite"
             app:cardCornerRadius="@dimen/_5sdp"
             app:cardElevation="@dimen/_10sdp"
@@ -361,7 +361,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_20sdp">
 
                 <absa.cgs.com.utils.fonts.CustomTextView
                     android:id="@+id/textview_basic_other_details_hint"
@@ -383,10 +384,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/pan_number"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textview_basic_other_details_hint">
@@ -395,7 +397,6 @@
                         android:id="@+id/textedit_register_cs_pan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/pan_number"
                         android:inputType="text|textCapWords"
                         android:textColor="@color/colorPrimaryDark"
                         android:textColorHighlight="@color/colorPrimaryDark"
@@ -410,10 +411,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/customer_aadhar_number"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -423,8 +424,6 @@
                         android:id="@+id/textedit_register_cs_aadhar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_20sdp"
-                        android:hint="@string/customer_aadhar_number"
                         android:inputType="number"
                         android:textColor="@color/colorPrimaryDark"
                         android:textColorHighlight="@color/colorPrimaryDark"
