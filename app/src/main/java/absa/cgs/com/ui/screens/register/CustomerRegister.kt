@@ -2,29 +2,47 @@ package absa.cgs.com.ui.screens.register
 
 import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.base.BaseActivity
-import absa.cgs.com.ui.screens.mainbaseactivity.MainView
-
 import android.os.Bundle
-import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
+import android.view.View
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_customer_register.*
 
 class CustomerRegister : BaseActivity() {
-    private var imageViewss: ImageView? = null
+
+    var moreDetailsBool: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setActionBarTitle()
         setContentView(R.layout.activity_customer_register)
-
-
-        imageViewss = findViewById(R.id.imageview_text) as ImageView
-        Glide.with(this).load("https://image.shutterstock.com/image-vector/sample-stamp-grunge-texture-vector-260nw-1389188327.jpg")
-                .into(imageViewss!!)
+        init()
 
 
     }
 
+
+    private fun init() {
+        cardview_more_details_badge?.setOnClickListener {
+            moreDetailsVisibility()
+        }
+    }
+
+
+    private fun moreDetailsVisibility() {
+        if (moreDetailsBool) {
+            cardview_more_details.visibility = View.VISIBLE
+            updateMoreDetailBool(false, resources.getString(R.string.hide_more_details))
+        } else {
+            cardview_more_details.visibility = View.GONE
+            updateMoreDetailBool(true, resources.getString(R.string.show_more_details))
+        }
+    }
+
+
+    private fun updateMoreDetailBool(boolean: Boolean, textTitle: String) {
+        moreDetailsBool = boolean
+        textview_show_more_detail_badge.setText(textTitle)
+    }
 
     private fun setActionBarTitle() {
         setTitle(R.string.add_customer)

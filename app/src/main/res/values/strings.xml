@@ -7,19 +7,25 @@
     <string name="bottom_nav_search">Search</string>
     <string name="bottom_nav_profile">Profile</string>
     <string name="add_customer">Add Customer</string>
-    <string name="customer_name">Name</string>
-    <string name="customer_mobile_number">Mobile Number</string>
+    <string name="customer_name">Name *</string>
+    <string name="customer_mobile_number">Mobile Number *</string>
     <string name="register_billing_area">Billing Area</string>
     <string name="customer_billing_name">Customer Billing Name</string>
     <string name="customer_email">Email</string>
     <string name="customer_address">Address</string>
-    <string name="customer_code">Customer code</string>
+    <string name="customer_code">Customer code *</string>
     <string name="pan_number">PAN Number</string>
     <string name="customer_aadhar_number">Aadhar Number</string>
-    <string name="customer_contact_details">Contact Details *</string>
-    <string name="customer_basic_details">Basic Details *</string>
-    <string name="customer_address_details">Address Details *</string>
-    <string name="customer_other_details">Other Details *</string>
+    <string name="customer_contact_details">Contact Details</string>
+    <string name="customer_general_details">General Details</string>
+    <string name="customer_address_details">Address Details</string>
+    <string name="customer_other_details">Other Details</string>
     <string name="customer_street">Street</string>
+    <string name="show_more_details">+ Show More Details</string>
+    <string name="hide_more_details">- Hide More Details</string>
+    <string name="area">Area *</string>
+    <string name="street">Street *</string>
+    <string name="more_details">More Detials</string>
+    <string name="mobile_number_2">Mobile Number 2</string>
 
 </resources>
