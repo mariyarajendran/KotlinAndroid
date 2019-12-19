@@ -27,5 +27,14 @@
     <string name="street">Street *</string>
     <string name="more_details">More Detials</string>
     <string name="mobile_number_2">Mobile Number 2</string>
+    <string name="Show_Box_Details">+ Show Box Details</string>
+    <string name="hide_Box_Details">- Hide Box Details</string>
+    <string name="box_details">Box Details</string>
+    <string name="box_no">Box No</string>
+    <string name="box_type">Box Type</string>
+    <string name="box_amount">Box Amount</string>
+    <string name="mso_name">Mso Name</string>
+    <string name="registered_date">Registered Date</string>
+
 
 </resources>
