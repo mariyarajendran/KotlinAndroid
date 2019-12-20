@@ -8,14 +8,14 @@
     android:background="@color/colorWhite">
 
     <FrameLayout
-        android:id="@+id/content_dashboard_framelayout"
+        android:id="@+id/contentDashboardFramelayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorWhite"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/content_dashboard_bottomnavigation_view"
+        android:id="@+id/contentDashboardBottomnavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"

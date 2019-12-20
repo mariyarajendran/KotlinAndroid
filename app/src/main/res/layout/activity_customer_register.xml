@@ -14,7 +14,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardview_basic_details"
+            android:id="@+id/cardviewBasicDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_8sdp"
@@ -36,7 +36,7 @@
                 android:layout_marginBottom="@dimen/_20sdp">
 
                 <absa.cgs.com.utils.fonts.CustomTextView
-                    android:id="@+id/textview_basic_details_hint"
+                    android:id="@+id/textviewBasicDetailsHint"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_15sdp"
@@ -51,7 +51,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_login_name"
+                    android:id="@+id/textinputLoginName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -61,7 +61,7 @@
                     app:helperText="@string/customer_name"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textview_basic_details_hint">
+                    app:layout_constraintTop_toBottomOf="@+id/textviewBasicDetailsHint">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
                         android:id="@+id/textedit_login_name"
@@ -77,7 +77,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_login_phone_number"
+                    android:id="@+id/textinputLoginPhoneNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -88,10 +88,10 @@
                     app:helperText="@string/customer_mobile_number"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinput_login_name">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputLoginName">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/textedit_login_phone_number"
+                        android:id="@+id/texteditLoginPhoneNumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number|textCapWords"
@@ -104,7 +104,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_register_cs_area"
+                    android:id="@+id/textinputRegisterCsArea"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -114,10 +114,10 @@
                     app:helperText="@string/area"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinput_login_phone_number">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputLoginPhoneNumber">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/textedit_register_cs_area"
+                        android:id="@+id/texteditRegisterCsArea"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text|textCapWords"
@@ -130,7 +130,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_register_cs_street"
+                    android:id="@+id/textinputRegisterCsStreet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -140,10 +140,10 @@
                     app:helperText="@string/street"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinput_register_cs_area">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterCsArea">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/textedit_register_cs_street"
+                        android:id="@+id/texteditRegisterCsStreet"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text|textCapWords"
@@ -156,7 +156,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_register_cs_code"
+                    android:id="@+id/textinputRegisterCsCode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -166,10 +166,10 @@
                     app:helperText="@string/customer_code"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinput_register_cs_street">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterCsStreet">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/textedit_register_cs_code"
+                        android:id="@+id/texteditRegisterCsCode"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text|textCapWords"
@@ -185,7 +185,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardview_more_details_badge"
+            android:id="@+id/cardviewMoreDetailsBadge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_8sdp"
@@ -197,7 +197,7 @@
             app:cardMaxElevation="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardview_basic_details">
+            app:layout_constraintTop_toBottomOf="@+id/cardviewBasicDetails">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -205,7 +205,7 @@
                 android:background="@color/colorSecondartDark">
 
                 <absa.cgs.com.utils.fonts.CustomTextView
-                    android:id="@+id/textview_show_more_detail_badge"
+                    android:id="@+id/textviewShowMoreDetailBadge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_15sdp"
@@ -222,7 +222,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardview_more_details"
+            android:id="@+id/cardviewMoreDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_8sdp"
@@ -235,7 +235,7 @@
             app:cardMaxElevation="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardview_more_details_badge">
+            app:layout_constraintTop_toBottomOf="@+id/cardviewMoreDetailsBadge">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -244,7 +244,7 @@
                 android:visibility="visible">
 
                 <absa.cgs.com.utils.fonts.CustomTextView
-                    android:id="@+id/textview_basic_contact_details_hint"
+                    android:id="@+id/textviewBasicContactDetailsHint"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_15sdp"
@@ -259,7 +259,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_login_phone_number_secondary"
+                    android:id="@+id/textinputLoginPhoneNumberSecondary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -270,10 +270,10 @@
                     app:helperText="@string/mobile_number_2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textview_basic_contact_details_hint">
+                    app:layout_constraintTop_toBottomOf="@+id/textviewBasicContactDetailsHint">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/textedit_login_phone_number_secondary"
+                        android:id="@+id/texteditLoginPhoneNumberSecondary"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number|textCapWords"
@@ -285,7 +285,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_register_cs_emailid"
+                    android:id="@+id/textinputRegisterCsEmailid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -295,7 +295,7 @@
                     app:helperText="@string/customer_email"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinput_login_phone_number_secondary">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputLoginPhoneNumberSecondary">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
                         android:id="@+id/textedit_register_cs_emailid"
@@ -311,7 +311,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_register_billing_area"
+                    android:id="@+id/textinputRegisterBillingArea"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -322,10 +322,10 @@
                     app:helperText="@string/register_billing_area"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinput_register_cs_emailid">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterCsEmailid">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/textedit_register_billing_area"
+                        android:id="@+id/texteditRegisterBillingArea"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text|textCapWords"
@@ -338,7 +338,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_register_billing_street"
+                    android:id="@+id/textinputRegisterBillingStreet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -348,10 +348,10 @@
                     app:helperText="@string/customer_street"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinput_register_billing_area">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterBillingArea">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/textedit_register_billing_street"
+                        android:id="@+id/texteditRegisterBillingStreet"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text|textCapWords"
@@ -363,7 +363,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_register_cs_address"
+                    android:id="@+id/textinputRegisterCsAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -373,10 +373,10 @@
                     app:helperText="@string/customer_address"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinput_register_billing_street">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterBillingStreet">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/textedit_register_cs_address"
+                        android:id="@+id/texteditRegisterCsAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text|textCapWords"
@@ -389,7 +389,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_register_cs_pan"
+                    android:id="@+id/textinputRegisterCsPan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -400,7 +400,7 @@
                     app:helperText="@string/pan_number"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinput_register_cs_address">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterCsAddress">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
                         android:id="@+id/textedit_register_cs_pan"
@@ -416,7 +416,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_register_cs_aadhar"
+                    android:id="@+id/textinputRegisterCsAadhar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -427,10 +427,10 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinput_register_cs_pan">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterCsPan">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/textedit_register_cs_aadhar"
+                        android:id="@+id/texteditRegisterCsAadhar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number"
@@ -445,7 +445,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardview_box_details_badge"
+            android:id="@+id/cardviewBoxDetailsBadge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_8sdp"
@@ -457,7 +457,7 @@
             app:cardMaxElevation="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardview_more_details">
+            app:layout_constraintTop_toBottomOf="@+id/cardviewMoreDetails">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -465,7 +465,7 @@
                 android:background="@color/colorSecondartDark">
 
                 <absa.cgs.com.utils.fonts.CustomTextView
-                    android:id="@+id/textview_show_box_detail_badge"
+                    android:id="@+id/textviewShowBoxDetailBadge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_15sdp"
@@ -482,7 +482,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardview_box_details"
+            android:id="@+id/cardviewBoxDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_8sdp"
@@ -495,7 +495,7 @@
             app:cardMaxElevation="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardview_box_details_badge">
+            app:layout_constraintTop_toBottomOf="@+id/cardviewBoxDetailsBadge">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -503,7 +503,7 @@
                 android:layout_marginBottom="@dimen/_20sdp">
 
                 <absa.cgs.com.utils.fonts.CustomTextView
-                    android:id="@+id/textview_box_details_hint"
+                    android:id="@+id/textviewBoxDetailsHint"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_15sdp"
@@ -528,10 +528,10 @@
                     app:helperText="@string/box_no"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textview_box_details_hint">
+                    app:layout_constraintTop_toBottomOf="@+id/textviewBoxDetailsHint">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/textedit_box_no"
+                        android:id="@+id/texteditBoxNo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:imeOptions="actionNext"
@@ -544,7 +544,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_login_box_type"
+                    android:id="@+id/textinputLoginBoxType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -558,7 +558,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textinput_box_no">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/textedit_login_box_type"
+                        android:id="@+id/texteditLoginBoxType"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text|textCapWords"
@@ -571,7 +571,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_register_box_amount"
+                    android:id="@+id/textinputRegisterBoxAmount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -581,10 +581,10 @@
                     app:helperText="@string/box_amount"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinput_login_box_type">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputLoginBoxType">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/textedit_register_box_amount"
+                        android:id="@+id/texteditRegisterBoxAmount"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text|textCapWords"
@@ -597,7 +597,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_register_mso_name"
+                    android:id="@+id/textinputRegisterMsoName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -607,10 +607,10 @@
                     app:helperText="@string/mso_name"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinput_register_box_amount">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterBoxAmount">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/textedit_register_mso_name"
+                        android:id="@+id/texteditRegisterMsoName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text|textCapWords"
@@ -623,7 +623,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinput_register_registered_date"
+                    android:id="@+id/textinputRegisterRegisteredDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -633,10 +633,10 @@
                     app:helperText="@string/registered_date"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinput_register_mso_name">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterMsoName">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/textedit_register_registered_date"
+                        android:id="@+id/texteditRegisterRegisteredDate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text|textCapWords"

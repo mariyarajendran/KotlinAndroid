@@ -7,16 +7,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.fragment_customer_screen.*
 
 
 class CustomerFragment : Fragment() {
 
-    private var floatingActionButton: FloatingActionButton? = null
-    private var imageViewss: ImageView? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_customer_screen, container, false)
@@ -24,14 +20,11 @@ class CustomerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        floatingActionButton = view.findViewById(R.id.fcCustomerRegisterFActionButton) as FloatingActionButton
-
-
         customerRegistration()
     }
 
     private fun customerRegistration() {
-        floatingActionButton?.setOnClickListener {
+        fcCustomerRegisterFActionButton.setOnClickListener {
             val intent = Intent(activity, CustomerRegister::class.java)
             startActivity(intent)
 

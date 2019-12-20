@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/bottom_navigation_item_dashboard"
+        android:id="@+id/bottomNavigationItemDashboard"
         android:icon="@drawable/nav_home"
         android:title="@string/bottom_nav_dashboard" />
 
     <item
-        android:id="@+id/bottom_navigation_item_customer"
+        android:id="@+id/bottomNavigationItemCustomer"
         android:icon="@drawable/email"
         android:title="@string/bottom_nav_customer" />
 
     <item
-        android:id="@+id/bottom_navigation_item_search"
+        android:id="@+id/bottomNavigationItemSearch"
         android:icon="@drawable/nav_search"
         android:title="@string/bottom_nav_search" />
 
     <item
-        android:id="@+id/bottom_navigation_item_profile"
+        android:id="@+id/bottomNavigationItemProfile"
         android:icon="@drawable/account"
         android:title="@string/bottom_nav_profile" />
 

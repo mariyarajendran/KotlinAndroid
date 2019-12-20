@@ -23,11 +23,11 @@ class CustomerRegister : BaseActivity() {
 
 
     private fun init() {
-        cardview_more_details_badge?.setOnClickListener {
+        cardviewMoreDetailsBadge?.setOnClickListener {
             moreDetailsVisibility(1)
         }
 
-        cardview_box_details_badge.setOnClickListener {
+        cardviewBoxDetailsBadge.setOnClickListener {
             moreDetailsVisibility(2)
         }
     }
@@ -38,10 +38,10 @@ class CustomerRegister : BaseActivity() {
             1 -> {
                 //event one (1) Hide and show more details
                 if (moreDetailsBool) {
-                    cardview_more_details.visibility = View.VISIBLE
+                    cardviewMoreDetails.visibility = View.VISIBLE
                     updateMoreDetailBool(false, resources.getString(R.string.hide_more_details), event)
                 } else {
-                    cardview_more_details.visibility = View.GONE
+                    cardviewMoreDetails.visibility = View.GONE
                     updateMoreDetailBool(true, resources.getString(R.string.show_more_details), event)
                 }
             }
@@ -49,10 +49,10 @@ class CustomerRegister : BaseActivity() {
             2 -> {
                 //event one (1) Hide and show box details
                 if (boxDetailsBool) {
-                    cardview_box_details.visibility = View.VISIBLE
+                    cardviewBoxDetails.visibility = View.VISIBLE
                     updateMoreDetailBool(false, resources.getString(R.string.hide_Box_Details), event)
                 } else {
-                    cardview_box_details.visibility = View.GONE
+                    cardviewBoxDetails.visibility = View.GONE
                     updateMoreDetailBool(true, resources.getString(R.string.Show_Box_Details), event)
                 }
             }
@@ -65,12 +65,12 @@ class CustomerRegister : BaseActivity() {
             //event one (1) more details
             1 -> {
                 moreDetailsBool = boolean
-                textview_show_more_detail_badge.setText(textTitle)
+                textviewShowMoreDetailBadge.setText(textTitle)
             }
             //event one (1) box details
             2 -> {
                 boxDetailsBool = boolean
-                textview_show_box_detail_badge.setText(textTitle)
+                textviewShowBoxDetailBadge.setText(textTitle)
             }
         }
 

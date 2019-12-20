@@ -21,7 +21,7 @@
             android:theme="@style/AppTheme.AppBarOverlay">
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/dashboard_toolbar"
+                android:id="@+id/dashboardToolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorPrimary"
@@ -45,7 +45,7 @@
         android:layout_marginRight="@dimen/_50sdp">
 
         <RelativeLayout
-            android:id="@+id/rl_profile"
+            android:id="@+id/dashboardRlProfile"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_140sdp"
             android:layout_alignParentTop="true"
@@ -54,10 +54,10 @@
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/dashboard_rv_drawer"
+            android:id="@+id/dashboardRvDrawer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/rl_profile"
+            android:layout_below="@+id/dashboardRlProfile"
             android:background="@color/colorPrimary"
             android:choiceMode="singleChoice"
             android:divider="@android:color/transparent"

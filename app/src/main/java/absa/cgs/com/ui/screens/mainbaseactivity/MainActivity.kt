@@ -8,23 +8,19 @@ import absa.cgs.com.ui.screens.dashboard.DashboardFragment
 import absa.cgs.com.utils.CommonUtils
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.widget.Toolbar
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.ArrayList
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_kotlin_play_ground.*
+import kotlinx.android.synthetic.main.content_dashboardscreen.*
 import javax.inject.Inject
 
 
 class MainActivity : BaseActivity(), MainView {
 
 
-    private var mToolbar: Toolbar? = null
-    private var mRecyclerView: RecyclerView? = null
-    private var drawerLayout: DrawerLayout? = null
     private var mNavigationItems: ArrayList<String>? = null
     private var dashboardDrawerListAdapter: DrawerListAdapter? = null
 
@@ -39,7 +35,6 @@ class MainActivity : BaseActivity(), MainView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_play_ground)
         init()
-        //presenterMain.validateFirstTrigger("samples", "")
     }
 
 
@@ -47,17 +42,13 @@ class MainActivity : BaseActivity(), MainView {
         activityComponent().inject(this)
         mainPresenter.attachView(this, this)
         mainPresenter.getDataFromServer()
-        mToolbar = findViewById(R.id.dashboard_toolbar)
-        mRecyclerView = findViewById(R.id.dashboard_rv_drawer)
-        setSupportActionBar(mToolbar)
+        setSupportActionBar(dashboardToolbar)
         supportActionBar?.title = this.resources.getString(R.string.bottom_nav_customer)
         addDrawerArrayData()
-        drawerLayout = findViewById(R.id.dashboard_drawer_layout)
         setDrawerLayout()
         loadFragment(CustomerFragment())
-        val navigation = findViewById<BottomNavigationView>(R.id.content_dashboard_bottomnavigation_view)
-        navigation.selectedItemId = (R.id.bottom_navigation_item_customer)
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        contentDashboardBottomnavigationView.selectedItemId = (R.id.bottomNavigationItemCustomer)
+        contentDashboardBottomnavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
     }
 
@@ -77,8 +68,8 @@ class MainActivity : BaseActivity(), MainView {
 
     private fun setDrawerLayout() {
         val toggle = ActionBarDrawerToggle(
-                this@MainActivity, drawerLayout, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        drawerLayout?.setDrawerListener(toggle)
+                this@MainActivity, dashboard_drawer_layout, dashboardToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        dashboard_drawer_layout?.setDrawerListener(toggle)
         toggle.syncState()
         toggle.drawerArrowDrawable.setColor(resources.getColor(R.color.colorWhite))
         dashboardDrawerListAdapter = DrawerListAdapter(this@MainActivity, mNavigationItems!!, object : OnListItemClickInterface {
@@ -87,35 +78,35 @@ class MainActivity : BaseActivity(), MainView {
         }
         )
         val mLayoutManager = LinearLayoutManager(applicationContext)
-        mRecyclerView?.setLayoutManager(mLayoutManager)
-        mRecyclerView?.setItemAnimator(DefaultItemAnimator())
-        mRecyclerView?.adapter = dashboardDrawerListAdapter
+        dashboardRvDrawer?.setLayoutManager(mLayoutManager)
+        dashboardRvDrawer?.setItemAnimator(DefaultItemAnimator())
+        dashboardRvDrawer?.adapter = dashboardDrawerListAdapter
 
     }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         val fragment: Fragment
         when (item.itemId) {
-            R.id.bottom_navigation_item_dashboard -> {
-                mToolbar?.title = this.resources.getString(R.string.bottom_nav_dashboard)
+            R.id.bottomNavigationItemDashboard -> {
+                dashboardToolbar?.title = this.resources.getString(R.string.bottom_nav_dashboard)
                 fragment = DashboardFragment()
                 loadFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.bottom_navigation_item_customer -> {
-                mToolbar?.title = this.resources.getString(R.string.bottom_nav_customer)
+            R.id.bottomNavigationItemCustomer -> {
+                dashboardToolbar?.title = this.resources.getString(R.string.bottom_nav_customer)
                 fragment = CustomerFragment()
                 loadFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.bottom_navigation_item_search -> {
-                mToolbar?.title = this.resources.getString(R.string.bottom_nav_search)
+            R.id.bottomNavigationItemSearch -> {
+                dashboardToolbar?.title = this.resources.getString(R.string.bottom_nav_search)
                 fragment = DashboardFragment()
                 loadFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.bottom_navigation_item_profile -> {
-                mToolbar?.title = this.resources.getString(R.string.bottom_nav_profile)
+            R.id.bottomNavigationItemProfile -> {
+                dashboardToolbar?.title = this.resources.getString(R.string.bottom_nav_profile)
                 fragment = ProfileFragment()
                 loadFragment(fragment)
                 return@OnNavigationItemSelectedListener true
@@ -126,7 +117,7 @@ class MainActivity : BaseActivity(), MainView {
 
     private fun loadFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.content_dashboard_framelayout, fragment)
+        transaction.replace(R.id.contentDashboardFramelayout, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
     }
