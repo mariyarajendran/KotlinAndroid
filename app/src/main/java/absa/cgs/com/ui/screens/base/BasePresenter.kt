@@ -2,7 +2,7 @@ package absa.cgs.com.ui.screens.base
 
 import android.content.Context
 
-class BasePresenter<V : BaseMvpView> : BaseMvpPresenter<V> {
+open class BasePresenter<V : BaseMvpView> : BaseMvpPresenter<V> {
 
     var baseMvpView: V? = null
     var context: Context? = null

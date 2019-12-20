@@ -6,8 +6,11 @@ import android.util.Log
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class MainInteractor {
+@Singleton
+class MainInteractor @Inject constructor() {
 
     interface onFirstEventTriggerListener {
         fun onSuccessInteractListener(message: String)

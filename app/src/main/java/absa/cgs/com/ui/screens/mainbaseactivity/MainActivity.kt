@@ -22,13 +22,15 @@ import javax.inject.Inject
 class MainActivity : BaseActivity(), MainView {
 
 
-    private val presenterMain = MainPresenter(this, MainInteractor())
-
     private var mToolbar: Toolbar? = null
     private var mRecyclerView: RecyclerView? = null
     private var drawerLayout: DrawerLayout? = null
     private var mNavigationItems: ArrayList<String>? = null
     private var dashboardDrawerListAdapter: DrawerListAdapter? = null
+
+
+    @Inject
+    lateinit var mainPresenter: MainPresenter<MainView>
 
     @Inject
     lateinit var commonUtils: CommonUtils
@@ -43,6 +45,8 @@ class MainActivity : BaseActivity(), MainView {
 
     private fun init() {
         activityComponent().inject(this)
+        mainPresenter.attachView(this, this)
+        mainPresenter.getDataFromServer()
         mToolbar = findViewById(R.id.dashboard_toolbar)
         mRecyclerView = findViewById(R.id.dashboard_rv_drawer)
         setSupportActionBar(mToolbar)
@@ -134,5 +138,9 @@ class MainActivity : BaseActivity(), MainView {
 
     override fun onFailureResponse(error: String) {
         commonUtils.showToastSmall(error)
+    }
+
+    override fun getStringCheck(): String {
+        return "Hi Check Hello"
     }
 }
