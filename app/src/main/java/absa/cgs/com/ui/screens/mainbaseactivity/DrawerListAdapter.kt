@@ -1,6 +1,7 @@
 package absa.cgs.com.ui.screens.mainbaseactivity
 
 import absa.cgs.com.kotlinplayground.R
+import absa.cgs.com.ui.screens.mainbaseactivity.Model.NavigationDataModel
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,7 @@ import java.util.ArrayList
 import androidx.recyclerview.widget.RecyclerView
 
 
-class DrawerListAdapter(internal var activity: Activity, private val mypojos: ArrayList<String>, val onListItemClickInterface: OnListItemClickInterface) : RecyclerView.Adapter<DrawerListAdapter.DemoAdapter>() {
+class DrawerListAdapter(internal var activity: Activity, private val mypojos: List<NavigationDataModel>, val onListItemClickInterface: OnListItemClickInterface) : RecyclerView.Adapter<DrawerListAdapter.DemoAdapter>() {
 
     var mainModel: MainModel? = null
     var rowIndex = 0
@@ -36,12 +37,12 @@ class DrawerListAdapter(internal var activity: Activity, private val mypojos: Ar
     }
 
     override fun onBindViewHolder(holder: DemoAdapter, position: Int) {
-        holder.title.setText(mypojos.get(position))
+        holder.title.setText(mypojos.get(position).navigationTitle)
         bindTextColorOnClick(position, holder)
 
         holder.linearLayout.setOnClickListener {
             assignRowIndex(position)
-            onListItemClickInterface.OnSelectedItemClickListener(mypojos.get(position), position)
+            onListItemClickInterface.OnSelectedItemClickListener(mypojos.get(position).navigationTitle!!, position)
             notifyDataSetChanged()
             //notifyItemChanged(position)
         }

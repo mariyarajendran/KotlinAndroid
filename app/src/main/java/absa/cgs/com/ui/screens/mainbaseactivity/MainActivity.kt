@@ -5,6 +5,7 @@ import absa.cgs.com.ui.screens.base.BaseActivity
 import absa.cgs.com.ui.screens.customer.CustomerFragment
 import absa.cgs.com.ui.screens.profile.ProfileFragment
 import absa.cgs.com.ui.screens.dashboard.DashboardFragment
+import absa.cgs.com.ui.screens.mainbaseactivity.Model.NavigationDataModel
 import absa.cgs.com.utils.CommonUtils
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -21,7 +22,6 @@ import javax.inject.Inject
 class MainActivity : BaseActivity(), MainView {
 
 
-    private var mNavigationItems: ArrayList<String>? = null
     private var dashboardDrawerListAdapter: DrawerListAdapter? = null
 
 
@@ -44,43 +44,10 @@ class MainActivity : BaseActivity(), MainView {
         mainPresenter.getDataFromServer()
         setSupportActionBar(dashboardToolbar)
         supportActionBar?.title = this.resources.getString(R.string.bottom_nav_customer)
-        addDrawerArrayData()
-        setDrawerLayout()
+        mainPresenter.addDrawerArrayData()
         loadFragment(CustomerFragment())
         contentDashboardBottomnavigationView.selectedItemId = (R.id.bottomNavigationItemCustomer)
         contentDashboardBottomnavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-
-    }
-
-
-    private fun addDrawerArrayData() {
-        mNavigationItems = ArrayList()
-        mNavigationItems?.add("Reports")
-        mNavigationItems?.add("Onile Transactions")
-        mNavigationItems?.add("Collection Agents")
-        mNavigationItems?.add("Customer Queries")
-        mNavigationItems?.add("Language")
-        mNavigationItems?.add("Forgot Password")
-        mNavigationItems?.add("Privacy Policy")
-        mNavigationItems?.add("Logout")
-
-    }
-
-    private fun setDrawerLayout() {
-        val toggle = ActionBarDrawerToggle(
-                this@MainActivity, dashboard_drawer_layout, dashboardToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        dashboard_drawer_layout?.setDrawerListener(toggle)
-        toggle.syncState()
-        toggle.drawerArrowDrawable.setColor(resources.getColor(R.color.colorWhite))
-        dashboardDrawerListAdapter = DrawerListAdapter(this@MainActivity, mNavigationItems!!, object : OnListItemClickInterface {
-            override fun OnSelectedItemClickListener(title: String, position: Int) {
-            }
-        }
-        )
-        val mLayoutManager = LinearLayoutManager(applicationContext)
-        dashboardRvDrawer?.setLayoutManager(mLayoutManager)
-        dashboardRvDrawer?.setItemAnimator(DefaultItemAnimator())
-        dashboardRvDrawer?.adapter = dashboardDrawerListAdapter
 
     }
 
@@ -122,6 +89,24 @@ class MainActivity : BaseActivity(), MainView {
         transaction.commit()
     }
 
+    override fun addNavigationDrawerArrayData(navigationDataArray: List<NavigationDataModel>) {
+        val toggle = ActionBarDrawerToggle(
+                this@MainActivity, dashboard_drawer_layout, dashboardToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        dashboard_drawer_layout?.setDrawerListener(toggle)
+        toggle.syncState()
+        toggle.drawerArrowDrawable.setColor(resources.getColor(R.color.colorWhite))
+        dashboardDrawerListAdapter = DrawerListAdapter(this@MainActivity, navigationDataArray!!, object : OnListItemClickInterface {
+            override fun OnSelectedItemClickListener(title: String, position: Int) {
+            }
+        }
+        )
+        val mLayoutManager = LinearLayoutManager(applicationContext)
+        dashboardRvDrawer?.setLayoutManager(mLayoutManager)
+        dashboardRvDrawer?.setItemAnimator(DefaultItemAnimator())
+        dashboardRvDrawer?.adapter = dashboardDrawerListAdapter
+
+    }
+
 
     override fun onSuccessResponse(message: String) {
         commonUtils.showToastSmall(message)
@@ -133,5 +118,10 @@ class MainActivity : BaseActivity(), MainView {
 
     override fun getStringCheck(): String {
         return "Hi Check Hello"
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mainPresenter.detachView()
     }
 }

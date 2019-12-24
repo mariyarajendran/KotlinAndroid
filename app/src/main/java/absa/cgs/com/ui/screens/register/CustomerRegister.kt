@@ -18,8 +18,6 @@ class CustomerRegister : BaseActivity() {
         setActionBarTitle()
         setContentView(R.layout.activity_customer_register)
         init()
-
-
     }
 
 
@@ -52,7 +50,7 @@ class CustomerRegister : BaseActivity() {
             }
 
             2 -> {
-                //event one (1) Hide and show box details
+                //event one (2) Hide and show box details
                 if (boxDetailsBool) {
                     cardviewBoxDetails.visibility = View.VISIBLE
                     updateMoreDetailBool(false, resources.getString(R.string.hide_Box_Details), event)
@@ -63,12 +61,12 @@ class CustomerRegister : BaseActivity() {
             }
 
             3 -> {
-                //event one (1) Hide and show box details
+                //event one (3) Hide and show box details
                 if (billingDetailsBool) {
-                    cardviewBillingDetails.visibility=View.VISIBLE
+                    cardviewBillingDetails.visibility = View.VISIBLE
                     updateMoreDetailBool(false, resources.getString(R.string.hide_billing_details), event)
                 } else {
-                    cardviewBillingDetails.visibility=View.GONE
+                    cardviewBillingDetails.visibility = View.GONE
                     updateMoreDetailBool(true, resources.getString(R.string.show_billing_detail), event)
                 }
             }
@@ -83,7 +81,7 @@ class CustomerRegister : BaseActivity() {
                 moreDetailsBool = boolean
                 textviewShowMoreDetailBadge.setText(textTitle)
             }
-            //event one (1) box details
+            //event one (2) box details
             2 -> {
                 boxDetailsBool = boolean
                 textviewShowBoxDetailBadge.setText(textTitle)
