@@ -77,33 +77,6 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinputLoginPhoneNumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="@dimen/_3sdp"
-                    android:layout_marginRight="10dp"
-                    android:padding="5dp"
-                    android:textColorHint="@color/colorGray55"
-                    app:helperText="@string/customer_mobile_number"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinputLoginName">
-
-                    <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/texteditLoginPhoneNumber"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number|textCapWords"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textColorHighlight="@color/colorPrimaryDark"
-                        android:textColorHint="@color/colorPrimaryDark"
-                        android:textColorLink="@color/colorPrimaryDark"
-                        android:textSize="16sp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textinputRegisterCsArea"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -114,7 +87,7 @@
                     app:helperText="@string/area"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinputLoginPhoneNumber">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputLoginName">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
                         android:id="@+id/texteditRegisterCsArea"
@@ -173,6 +146,60 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text|textCapWords"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputLoginHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/customer_home"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterCsCode">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/texteditLoginHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textCapWords"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputLoginPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/customer_mobile_number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinputLoginHome">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/texteditLoginPhoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number|textCapWords"
                         android:textColor="@color/colorPrimaryDark"
                         android:textColorHighlight="@color/colorPrimaryDark"
                         android:textColorHint="@color/colorPrimaryDark"
@@ -259,7 +286,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinputLoginPhoneNumberSecondary"
+                    android:id="@+id/textinputLoginBillingName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -267,16 +294,16 @@
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
-                    app:helperText="@string/mobile_number_2"
+                    app:helperText="@string/customer_billing_name"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textviewBasicContactDetailsHint">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/texteditLoginPhoneNumberSecondary"
+                        android:id="@+id/texteditLoginBillingName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number|textCapWords"
+                        android:inputType="text|textCapWords"
                         android:textColor="@color/colorPrimaryDark"
                         android:textColorHighlight="@color/colorPrimaryDark"
                         android:textColorHint="@color/colorPrimaryDark"
@@ -295,7 +322,7 @@
                     app:helperText="@string/customer_email"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinputLoginPhoneNumberSecondary">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputLoginBillingName">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
                         android:id="@+id/textedit_register_cs_emailid"
@@ -311,7 +338,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinputRegisterBillingArea"
+                    android:id="@+id/textinputRegisterEBNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -319,67 +346,16 @@
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
-                    app:helperText="@string/register_billing_area"
+                    app:helperText="@string/customer_eb_number"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textinputRegisterCsEmailid">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/texteditRegisterBillingArea"
+                        android:id="@+id/texteditRegisterEBNumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text|textCapWords"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textColorHighlight="@color/colorPrimaryDark"
-                        android:textColorHint="@color/colorPrimaryDark"
-                        android:textColorLink="@color/colorPrimaryDark"
-                        android:textSize="16sp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinputRegisterBillingStreet"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:padding="5dp"
-                    android:textColorHint="@color/colorGray55"
-                    app:helperText="@string/customer_street"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterBillingArea">
-
-                    <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/texteditRegisterBillingStreet"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text|textCapWords"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textColorHighlight="@color/colorPrimaryDark"
-                        android:textColorHint="@color/colorPrimaryDark"
-                        android:textColorLink="@color/colorPrimaryDark"
-                        android:textSize="16sp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinputRegisterCsAddress"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:padding="5dp"
-                    android:textColorHint="@color/colorGray55"
-                    app:helperText="@string/customer_address"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterBillingStreet">
-
-                    <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/texteditRegisterCsAddress"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text|textCapWords"
+                        android:inputType="text"
                         android:textColor="@color/colorPrimaryDark"
                         android:textColorHighlight="@color/colorPrimaryDark"
                         android:textColorHint="@color/colorPrimaryDark"
@@ -400,7 +376,7 @@
                     app:helperText="@string/pan_number"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterCsAddress">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterEBNumber">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
                         android:id="@+id/textedit_register_cs_pan"
@@ -518,6 +494,32 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputRegisterBoxName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/box_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textviewBoxDetailsHint">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/texteditRegisterBoxName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textCapWords"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textinput_box_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -528,7 +530,7 @@
                     app:helperText="@string/box_no"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textviewBoxDetailsHint">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterBoxName">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
                         android:id="@+id/texteditBoxNo"
@@ -578,39 +580,13 @@
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
-                    app:helperText="@string/box_amount"
+                    app:helperText="@string/security_deposite"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textinputLoginBoxType">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
                         android:id="@+id/texteditRegisterBoxAmount"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text|textCapWords"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textColorHighlight="@color/colorPrimaryDark"
-                        android:textColorHint="@color/colorPrimaryDark"
-                        android:textColorLink="@color/colorPrimaryDark"
-                        android:textSize="16sp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textinputRegisterMsoName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:padding="5dp"
-                    android:textColorHint="@color/colorGray55"
-                    app:helperText="@string/mso_name"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterBoxAmount">
-
-                    <absa.cgs.com.utils.fonts.CustomTextEditText
-                        android:id="@+id/texteditRegisterMsoName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text|textCapWords"
@@ -633,7 +609,7 @@
                     app:helperText="@string/registered_date"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterMsoName">
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterBoxAmount">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
                         android:id="@+id/texteditRegisterRegisteredDate"
@@ -647,6 +623,158 @@
                         android:textSize="16sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardviewBillingDetailsBadge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:background="@color/colorGray"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:cardMaxElevation="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardviewBoxDetails">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:background="@color/colorSecondartDark">
+
+                <absa.cgs.com.utils.fonts.CustomTextView
+                    android:id="@+id/textviewShowBillingDetailBadge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:text="@string/show_billing_detail"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></absa.cgs.com.utils.fonts.CustomTextView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardviewBillingDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:background="@color/colorWhite"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:cardMaxElevation="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardviewBillingDetailsBadge">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_20sdp">
+
+                <absa.cgs.com.utils.fonts.CustomTextView
+                    android:id="@+id/textviewBillDetailsHint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:text="@string/billing_details"
+                    android:textColor="@color/colorRed"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></absa.cgs.com.utils.fonts.CustomTextView>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputRegisterBillType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/billing_type"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textviewBillDetailsHint">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/texteditRegisterBillType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="textNoSuggestions|textCapWords"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputRegisterBillTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/billing_time"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterBillType">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/texteditRegisterBillTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textCapWords"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputRegisterAdditionalCharge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorGray55"
+                    app:helperText="@string/additional_charge"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterBillTime">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/texteditRegisterAdditionalCharge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textCapWords"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHighlight="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 

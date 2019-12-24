@@ -11,6 +11,7 @@ class CustomerRegister : BaseActivity() {
 
     var moreDetailsBool: Boolean = true
     var boxDetailsBool: Boolean = true
+    var billingDetailsBool: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +30,10 @@ class CustomerRegister : BaseActivity() {
 
         cardviewBoxDetailsBadge.setOnClickListener {
             moreDetailsVisibility(2)
+        }
+
+        cardviewBillingDetailsBadge.setOnClickListener {
+            moreDetailsVisibility(3)
         }
     }
 
@@ -56,6 +61,17 @@ class CustomerRegister : BaseActivity() {
                     updateMoreDetailBool(true, resources.getString(R.string.Show_Box_Details), event)
                 }
             }
+
+            3 -> {
+                //event one (1) Hide and show box details
+                if (billingDetailsBool) {
+                    cardviewBillingDetails.visibility=View.VISIBLE
+                    updateMoreDetailBool(false, resources.getString(R.string.hide_billing_details), event)
+                } else {
+                    cardviewBillingDetails.visibility=View.GONE
+                    updateMoreDetailBool(true, resources.getString(R.string.show_billing_detail), event)
+                }
+            }
         }
     }
 
@@ -71,6 +87,10 @@ class CustomerRegister : BaseActivity() {
             2 -> {
                 boxDetailsBool = boolean
                 textviewShowBoxDetailBadge.setText(textTitle)
+            }
+            3 -> {
+                billingDetailsBool = boolean
+                textviewShowBillingDetailBadge.setText(textTitle)
             }
         }
 

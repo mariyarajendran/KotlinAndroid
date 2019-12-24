@@ -8,9 +8,10 @@
     <string name="bottom_nav_profile">Profile</string>
     <string name="add_customer">Add Customer</string>
     <string name="customer_name">Name *</string>
-    <string name="customer_mobile_number">Mobile Number *</string>
+    <string name="customer_mobile_number">Primary Number / WhatsApp Number *</string>
     <string name="register_billing_area">Billing Area</string>
-    <string name="customer_billing_name">Customer Billing Name</string>
+    <string name="customer_billing_name">Billing Name</string>
+    <string name="customer_eb_number">EB Number</string>
     <string name="customer_email">Email</string>
     <string name="customer_address">Address</string>
     <string name="customer_code">Customer code *</string>
@@ -28,13 +29,24 @@
     <string name="more_details">More Detials</string>
     <string name="mobile_number_2">Mobile Number 2</string>
     <string name="Show_Box_Details">+ Show Box Details</string>
+    <string name="show_billing_detail">+ Show Billing Details</string>
+    <string name="hide_billing_details">- Hide Billing Details</string>
     <string name="hide_Box_Details">- Hide Box Details</string>
     <string name="box_details">Box Details</string>
     <string name="box_no">Box No</string>
     <string name="box_type">Box Type</string>
     <string name="box_amount">Box Amount</string>
+    <string name="security_deposite">Security Deposite</string>
     <string name="mso_name">Mso Name</string>
+    <string name="box_name">Box Name</string>
     <string name="registered_date">Registered Date</string>
+    <string name="customer_home">Home *</string>
+
+    <string name="billing_details">Billing Details</string>
+    <string name="billing_type">Bill Type</string>
+    <string name="billing_time">Billing Time</string>
+    <string name="additional_charge">Additional Charge</string>
+
 
 
 </resources>
