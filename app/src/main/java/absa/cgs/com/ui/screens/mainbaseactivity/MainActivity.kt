@@ -120,6 +120,7 @@ class MainActivity : BaseActivity(), MainView {
         return "Hi Check Hello"
     }
 
+
     override fun onDestroy() {
         super.onDestroy()
         mainPresenter.detachView()

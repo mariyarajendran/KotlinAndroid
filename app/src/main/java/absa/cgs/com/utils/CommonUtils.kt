@@ -16,10 +16,10 @@ class CommonUtils @Inject constructor(private val activity: Activity) {
         Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
     }
 
-    fun navigationRoutes(context: Context, routingClass: Class<*>) {
-        val intent = Intent(context, routingClass)
+    fun navigationRoutes(routingClass: Class<*>) {
+        val intent = Intent(activity, routingClass)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        context.startActivity(intent)
+        activity.startActivity(intent)
     }
 
     fun showToastLong(msg: String) {

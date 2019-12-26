@@ -2,22 +2,45 @@ package absa.cgs.com.ui.screens.register
 
 import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.base.BaseActivity
+import absa.cgs.com.utils.CommonUtils
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_customer_register.*
+import javax.inject.Inject
+import android.app.Dialog
+import android.view.Gravity
+import android.view.Window
+import android.view.WindowManager
 
-class CustomerRegister : BaseActivity() {
+
+class CustomerRegister : BaseActivity(), RegistrationView {
+
 
     var moreDetailsBool: Boolean = true
     var boxDetailsBool: Boolean = true
     var billingDetailsBool: Boolean = true
 
+    @Inject
+    lateinit var commonUtils: CommonUtils
+
+    @Inject
+    lateinit var registrationPresenter: RegistrationPresenter<RegistrationView>
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setActionBarTitle()
         setContentView(R.layout.activity_customer_register)
+        injection()
         init()
+        registrationPresenter.showGenderDialog()
+    }
+
+
+    private fun injection() {
+        activityComponent().inject(this)
+        registrationPresenter.attachView(this, this)
     }
 
 
@@ -97,6 +120,26 @@ class CustomerRegister : BaseActivity() {
 
     private fun setActionBarTitle() {
         setTitle(R.string.add_customer)
+    }
+
+
+    override fun onSuccessResponse(message: String) {
+    }
+
+    override fun onFailureResponse(error: String) {
+    }
+
+
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        registrationPresenter.detachView()
+    }
+
+
+    override fun showDialogMaleOrFemale() {
+
     }
 
 }
