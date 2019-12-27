@@ -1,6 +1,7 @@
 package absa.cgs.com.ui.screens.register
 
 import absa.cgs.com.ui.screens.base.BaseMvpView
+import absa.cgs.com.ui.screens.register.model.RadioButtonDataModel
 
 interface RegistrationView : BaseMvpView {
 
@@ -8,4 +9,6 @@ interface RegistrationView : BaseMvpView {
     fun onFailureResponse(error: String)
 
     fun showDialogMaleOrFemale()
+
+    fun onRadioButtonClickedListener(radioButtonListDataModel: List<RadioButtonDataModel>,title: String)
 }

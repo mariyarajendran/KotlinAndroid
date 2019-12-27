@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <absa.cgs.com.utils.fonts.CustomTextView
-        android:id="@+id/custom_radio_group_tile_hint"
+        android:id="@+id/customRadioGroupTileHint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_10sdp"
@@ -22,31 +22,31 @@
         app:layout_constraintVertical_bias="0.2"></absa.cgs.com.utils.fonts.CustomTextView>
 
     <RadioGroup
-        android:id="@+id/custom_radio_group"
+        android:id="@+id/customRadioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginRight="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/custom_radio_group_tile_hint"
+        app:layout_constraintTop_toBottomOf="@+id/customRadioGroupTileHint"
         app:layout_constraintVertical_bias="0.03">
 
         <absa.cgs.com.utils.fonts.CustomRadioButton
-            android:id="@+id/custom_radio_button_one"
+            android:id="@+id/customRadioButtonOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:checked="true"
+            android:checked="false"
             android:text="Male"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_13sdp"></absa.cgs.com.utils.fonts.CustomRadioButton>
 
 
         <absa.cgs.com.utils.fonts.CustomRadioButton
-            android:id="@+id/custom_radio_button_two"
+            android:id="@+id/customRadioButtonTwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_15sdp"

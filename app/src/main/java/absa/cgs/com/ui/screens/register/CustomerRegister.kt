@@ -2,16 +2,15 @@ package absa.cgs.com.ui.screens.register
 
 import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.base.BaseActivity
+import absa.cgs.com.ui.screens.register.model.RadioButtonDataModel
 import absa.cgs.com.utils.CommonUtils
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_customer_register.*
 import javax.inject.Inject
-import android.app.Dialog
-import android.view.Gravity
-import android.view.Window
-import android.view.WindowManager
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.View.OnFocusChangeListener
 
 
 class CustomerRegister : BaseActivity(), RegistrationView {
@@ -34,7 +33,7 @@ class CustomerRegister : BaseActivity(), RegistrationView {
         setContentView(R.layout.activity_customer_register)
         injection()
         init()
-        registrationPresenter.showGenderDialog()
+
     }
 
 
@@ -56,6 +55,21 @@ class CustomerRegister : BaseActivity(), RegistrationView {
         cardviewBillingDetailsBadge.setOnClickListener {
             moreDetailsVisibility(3)
         }
+
+        texteditLoginHome?.setOnClickListener {
+            registrationPresenter.showHomeDialog()
+        }
+
+
+        texteditRegisterBillType?.setOnClickListener {
+            registrationPresenter.showBillTypeDialog()
+        }
+
+
+        texteditLoginBoxType?.setOnClickListener {
+            registrationPresenter.showBoxTypeDialog()
+        }
+
     }
 
 
@@ -130,8 +144,6 @@ class CustomerRegister : BaseActivity(), RegistrationView {
     }
 
 
-
-
     override fun onDestroy() {
         super.onDestroy()
         registrationPresenter.detachView()
@@ -141,5 +153,22 @@ class CustomerRegister : BaseActivity(), RegistrationView {
     override fun showDialogMaleOrFemale() {
 
     }
+
+    override fun onRadioButtonClickedListener(radioButtonListDataModel: List<RadioButtonDataModel>, title: String) {
+        when (radioButtonListDataModel.get(0).title) {
+            "Home" -> {
+                texteditLoginHome.setText(title)
+            }
+
+            "Bill" -> {
+                texteditRegisterBillType.setText(title)
+            }
+
+            "Box" -> {
+                texteditLoginBoxType.setText(title)
+            }
+        }
+    }
+
 
 }
