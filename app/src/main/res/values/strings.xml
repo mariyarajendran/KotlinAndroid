@@ -46,6 +46,9 @@
     <string name="billing_type">Bill Type</string>
     <string name="billing_time">Billing Time</string>
     <string name="additional_charge">Additional Charge</string>
+    <string name="upload_profile_pic">Upload Profile Pic *</string>
+    <string name="upload_aadhar">Upload Aadhar *</string>
+    <string name="add">+ Add</string>
 
 
 </resources>

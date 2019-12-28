@@ -5,12 +5,11 @@ import absa.cgs.com.ui.screens.base.BaseActivity
 import absa.cgs.com.ui.screens.register.model.RadioButtonDataModel
 import absa.cgs.com.utils.CommonUtils
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
 import kotlinx.android.synthetic.main.activity_customer_register.*
 import javax.inject.Inject
-import android.text.Editable
-import android.text.TextWatcher
-import android.view.View.OnFocusChangeListener
+import android.view.View.OnTouchListener
 
 
 class CustomerRegister : BaseActivity(), RegistrationView {
@@ -56,19 +55,27 @@ class CustomerRegister : BaseActivity(), RegistrationView {
             moreDetailsVisibility(3)
         }
 
-        texteditLoginHome?.setOnClickListener {
-            registrationPresenter.showHomeDialog()
-        }
+        texteditLoginHome.setOnTouchListener(OnTouchListener { v, event ->
+            if (MotionEvent.ACTION_UP == event.action) {
+                registrationPresenter.showHomeDialog()
+            }
+            true
+        })
 
 
-        texteditRegisterBillType?.setOnClickListener {
-            registrationPresenter.showBillTypeDialog()
-        }
+        texteditRegisterBillType.setOnTouchListener(OnTouchListener { v, event ->
+            if (MotionEvent.ACTION_UP == event.action) {
+                registrationPresenter.showBillTypeDialog()
+            }
+            true
+        })
 
-
-        texteditLoginBoxType?.setOnClickListener {
-            registrationPresenter.showBoxTypeDialog()
-        }
+        texteditLoginBoxType.setOnTouchListener(OnTouchListener { v, event ->
+            if (MotionEvent.ACTION_UP == event.action) {
+                registrationPresenter.showBoxTypeDialog()
+            }
+            true
+        })
 
     }
 
