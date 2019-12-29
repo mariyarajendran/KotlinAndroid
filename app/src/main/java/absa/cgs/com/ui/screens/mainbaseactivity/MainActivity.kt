@@ -6,12 +6,12 @@ import absa.cgs.com.ui.screens.customer.CustomerFragment
 import absa.cgs.com.ui.screens.profile.ProfileFragment
 import absa.cgs.com.ui.screens.dashboard.DashboardFragment
 import absa.cgs.com.ui.screens.mainbaseactivity.Model.NavigationDataModel
+import absa.cgs.com.ui.screens.mainbaseactivity.adapter.DrawerListAdapter
 import absa.cgs.com.utils.CommonUtils
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import java.util.ArrayList
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_kotlin_play_ground.*

@@ -1,15 +1,22 @@
 package absa.cgs.com.ui.screens.base
 
+import android.app.Activity
 import android.content.Context
 
 open class BasePresenter<V : BaseMvpView> : BaseMvpPresenter<V> {
 
     var baseMvpView: V? = null
     var context: Context? = null
+    var activity: Activity? = null
 
     override fun attachView(context: Context, baseMvpView: V) {
         this.baseMvpView = baseMvpView
         this.context = context
+    }
+
+    override fun attachView(activity: Activity, baseMvpView: V) {
+        this.baseMvpView = baseMvpView
+        this.activity = activity
     }
 
     override fun detachView() {
@@ -23,6 +30,10 @@ open class BasePresenter<V : BaseMvpView> : BaseMvpPresenter<V> {
 
     fun getContextt(): Context {
         return context!!
+    }
+
+    fun getActivityy(): Activity {
+        return activity!!
     }
 
     fun isViewAttached(): Boolean {

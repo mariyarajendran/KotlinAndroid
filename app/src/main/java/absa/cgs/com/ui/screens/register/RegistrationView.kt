@@ -10,5 +10,14 @@ interface RegistrationView : BaseMvpView {
 
     fun showDialogMaleOrFemale()
 
-    fun onRadioButtonClickedListener(radioButtonListDataModel: List<RadioButtonDataModel>,title: String)
+    fun onRadioButtonClickedListener(radioButtonListDataModel: List<RadioButtonDataModel>, title: String)
+
+
+    //boxDetails
+    fun getBoxName(): String
+    fun getBoxNumber(): String
+    fun getBoxType(): String
+    fun getSecurityDeposite(): String
+
+
 }

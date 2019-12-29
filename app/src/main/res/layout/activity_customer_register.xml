@@ -798,20 +798,20 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-<!--                <absa.cgs.com.utils.fonts.CustomButton-->
-<!--                    android:id="@+id/buttonRegisterBoxAdd"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="@dimen/_25sdp"-->
-<!--                    android:layout_marginTop="@dimen/_10sdp"-->
-<!--                    android:layout_marginRight="15dp"-->
-<!--                    android:background="@color/colorSecondartDark"-->
-<!--                    android:padding="@dimen/_3sdp"-->
-<!--                    android:text="@string/add"-->
-<!--                    android:textAllCaps="false"-->
-<!--                    android:textColor="@color/colorSecondary"-->
-<!--                    android:textSize="@dimen/_11sdp"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterBoxAmount" />-->
+                <!--                <absa.cgs.com.utils.fonts.CustomButton-->
+                <!--                    android:id="@+id/buttonRegisterBoxAdd"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="@dimen/_25sdp"-->
+                <!--                    android:layout_marginTop="@dimen/_10sdp"-->
+                <!--                    android:layout_marginRight="15dp"-->
+                <!--                    android:background="@color/colorSecondartDark"-->
+                <!--                    android:padding="@dimen/_3sdp"-->
+                <!--                    android:text="@string/add"-->
+                <!--                    android:textAllCaps="false"-->
+                <!--                    android:textColor="@color/colorSecondary"-->
+                <!--                    android:textSize="@dimen/_11sdp"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterBoxAmount" />-->
 
 
                 <androidx.cardview.widget.CardView
@@ -849,6 +849,14 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/boxDetailRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardviewBoxDetailAddBadge"></androidx.recyclerview.widget.RecyclerView>
 
 
                 <!--                <com.google.android.material.textfield.TextInputLayout-->

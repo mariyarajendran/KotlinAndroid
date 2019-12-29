@@ -2,6 +2,7 @@ package absa.cgs.com.ui.screens.register
 
 import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.base.BaseActivity
+import absa.cgs.com.ui.screens.mainbaseactivity.MainActivity
 import absa.cgs.com.ui.screens.register.model.RadioButtonDataModel
 import absa.cgs.com.utils.CommonUtils
 import android.os.Bundle
@@ -38,11 +39,12 @@ class CustomerRegister : BaseActivity(), RegistrationView {
 
     private fun injection() {
         activityComponent().inject(this)
-        registrationPresenter.attachView(this, this)
+        registrationPresenter.attachView(this@CustomerRegister, this)
     }
 
 
     private fun init() {
+        registrationPresenter.setBoxDetailRecyclerAdapter(boxDetailRecyclerView)
         cardviewMoreDetailsBadge?.setOnClickListener {
             moreDetailsVisibility(1)
         }
@@ -76,6 +78,11 @@ class CustomerRegister : BaseActivity(), RegistrationView {
             }
             true
         })
+
+
+        cardviewBoxDetailAddBadge.setOnClickListener {
+            registrationPresenter.addBoxDetails(boxDetailRecyclerView)
+        }
 
     }
 
@@ -175,6 +182,24 @@ class CustomerRegister : BaseActivity(), RegistrationView {
                 texteditLoginBoxType.setText(title)
             }
         }
+    }
+
+
+    //boxDetails
+    override fun getBoxName(): String {
+        return texteditRegisterBoxName.text.toString()
+    }
+
+    override fun getBoxNumber(): String {
+        return texteditBoxNo.text.toString()
+    }
+
+    override fun getBoxType(): String {
+        return texteditLoginBoxType.text.toString()
+    }
+
+    override fun getSecurityDeposite(): String {
+        return texteditRegisterBoxAmount.text.toString()
     }
 
 

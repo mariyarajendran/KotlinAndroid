@@ -1,14 +1,15 @@
-package absa.cgs.com.ui.screens.mainbaseactivity
+package absa.cgs.com.ui.screens.mainbaseactivity.adapter
 
 import absa.cgs.com.kotlinplayground.R
+import absa.cgs.com.ui.screens.mainbaseactivity.MainModel
 import absa.cgs.com.ui.screens.mainbaseactivity.Model.NavigationDataModel
+import absa.cgs.com.ui.screens.mainbaseactivity.OnListItemClickInterface
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import java.util.ArrayList
 import androidx.recyclerview.widget.RecyclerView
 
 
