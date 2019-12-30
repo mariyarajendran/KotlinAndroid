@@ -198,9 +198,8 @@ class CustomerRegister : BaseActivity(), RegistrationView {
         return texteditLoginBoxType.text.toString()
     }
 
-    override fun getSecurityDeposite(): String {
-        return texteditRegisterBoxAmount.text.toString()
+    override fun getSmartCardNo(): String {
+        return  texteditLoginBoxSmartCardNo.text.toString()
     }
-
 
 }

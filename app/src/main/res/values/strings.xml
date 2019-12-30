@@ -28,27 +28,32 @@
     <string name="street">Street *</string>
     <string name="more_details">More Detials</string>
     <string name="mobile_number_2">Mobile Number 2</string>
-    <string name="Show_Box_Details">+ Show Box Details</string>
+    <string name="Show_Box_Details">+ Show Set top Box Details</string>
     <string name="show_billing_detail">+ Show Billing Details</string>
     <string name="hide_billing_details">- Hide Billing Details</string>
-    <string name="hide_Box_Details">- Hide Box Details</string>
-    <string name="box_details">Box Details</string>
-    <string name="box_no">Box No</string>
-    <string name="box_type">Box Type</string>
-    <string name="box_amount">Box Amount</string>
+    <string name="hide_Box_Details">- Hide Set top Box Details</string>
+    <string name="box_details">Set top Box Details</string>
+    <string name="box_no">Set top Box No</string>
+    <string name="box_type">Set top Box Type</string>
+    <string name="box_amount">Set top Box Amount</string>
     <string name="security_deposite">Security Deposite</string>
     <string name="mso_name">Mso Name</string>
-    <string name="box_name">Box Name</string>
-    <string name="registered_date">Registered Date</string>
-    <string name="customer_home">Home *</string>
+    <string name="box_name">Set top Box Name</string>
+    <string name="customer_home">Home Type*</string>
 
     <string name="billing_details">Billing Details</string>
     <string name="billing_type">Bill Type</string>
     <string name="billing_time">Billing Time</string>
-    <string name="additional_charge">Additional Charge</string>
-    <string name="upload_profile_pic">Upload Profile Pic *</string>
-    <string name="upload_aadhar">Upload Aadhar *</string>
+    <string name="additional_charge">Additional Charge / Discount</string>
+    <string name="upload_profile_pic">Upload Profile Pic</string>
+    <string name="upload_aadhar">Upload Aadhar</string>
     <string name="add">+ Add</string>
+    <string name="Please_Enter_Any_one_Details">Please Enter Any one Details</string>
+    <string name="smart_card_no">Smart Card No</string>
+    <string name="registration_details">Entry Date Details</string>
+    <string name="connection_date">Connection Date</string>
+    <string name="release_date">Release Date</string>
+    <string name="registered_date">Registered Date</string>
 
 
 </resources>

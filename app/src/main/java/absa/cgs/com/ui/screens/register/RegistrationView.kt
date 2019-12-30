@@ -17,7 +17,7 @@ interface RegistrationView : BaseMvpView {
     fun getBoxName(): String
     fun getBoxNumber(): String
     fun getBoxType(): String
-    fun getSecurityDeposite(): String
+    fun getSmartCardNo(): String
 
 
 }

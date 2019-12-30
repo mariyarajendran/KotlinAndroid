@@ -1,5 +1,6 @@
 package absa.cgs.com.ui.screens.register
 
+import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.base.BasePresenter
 import absa.cgs.com.ui.screens.mainbaseactivity.Model.NavigationDataModel
 import absa.cgs.com.ui.screens.mainbaseactivity.OnListItemClickInterface
@@ -59,8 +60,12 @@ class RegistrationPresenter<View : RegistrationView> @Inject constructor(var com
     }
 
     fun addBoxDetails(recyclerViewBoxDetails: RecyclerView) {
-        boxDetailsDataModel.add(BoxDetailsDataModel(getBaseMvpVieww().getBoxName(), getBaseMvpVieww().getBoxNumber(), getBaseMvpVieww().getBoxType(), getBaseMvpVieww().getSecurityDeposite()))
-        boxDetailAdapter?.notifyNewData(boxDetailsDataModel)
+        if (getBaseMvpVieww().getBoxName().equals("") && getBaseMvpVieww().getBoxNumber().equals("") && getBaseMvpVieww().getBoxType().equals("") && getBaseMvpVieww().getSmartCardNo().equals("")) {
+            commonUtils.showToastLong(getActivityy().getString(R.string.Please_Enter_Any_one_Details))
+        } else {
+            boxDetailsDataModel.add(BoxDetailsDataModel(getBaseMvpVieww().getBoxName(), getBaseMvpVieww().getBoxNumber(), getBaseMvpVieww().getBoxType(), getBaseMvpVieww().getSmartCardNo()))
+            boxDetailAdapter?.notifyNewData(boxDetailsDataModel)
+        }
     }
 
     fun setBoxDetailRecyclerAdapter(recyclerViewBoxDetails: RecyclerView) {

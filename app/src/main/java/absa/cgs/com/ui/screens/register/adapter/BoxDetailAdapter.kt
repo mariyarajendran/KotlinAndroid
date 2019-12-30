@@ -20,14 +20,14 @@ class BoxDetailAdapter(internal var activity: Activity, private var boxDetailsDa
         var boxName: TextView
         var boxNumber: TextView
         var boxType: TextView
-        var securityDeposite: TextView
+        var smartCardNo: TextView
         var deleteItem: ImageView
 
         init {
             boxName = view.findViewById(R.id.customBoxDetailBoxName) as TextView
             boxNumber = view.findViewById(R.id.customBoxDetailBoxNumber) as TextView
             boxType = view.findViewById(R.id.customBoxDetailBoxType) as TextView
-            securityDeposite = view.findViewById(R.id.customBoxDetailSecurityDeposite) as TextView
+            smartCardNo = view.findViewById(R.id.customBoxDetailSmartCardNO) as TextView
             deleteItem = view.findViewById(R.id.customBoxDetailImageViewDelete) as ImageView
         }
     }
@@ -43,7 +43,7 @@ class BoxDetailAdapter(internal var activity: Activity, private var boxDetailsDa
         holder.boxName.setText(boxDetailsDataModel.get(position).boxName)
         holder.boxNumber.setText(boxDetailsDataModel.get(position).boxNo)
         holder.boxType.setText(boxDetailsDataModel.get(position).boxType)
-        holder.securityDeposite.setText(boxDetailsDataModel.get(position).securityDeposite)
+        holder.smartCardNo.setText(boxDetailsDataModel.get(position).securityDeposite)
         holder.deleteItem.setOnClickListener {
             onItemDeleteCallBack.onItemDeleteListener(position)
         }

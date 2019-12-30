@@ -6,87 +6,79 @@
     android:layout_marginTop="@dimen/_5sdp"
     android:orientation="vertical">
 
-    <absa.cgs.com.utils.fonts.CustomTextView
-        android:id="@+id/customBoxDetailBoxName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_15sdp"
-        android:text="@string/billing_time"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/_10sdp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/customBoxDetailBoxNumber"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintRight_toLeftOf="@+id/customBoxDetailBoxNumber"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_max="wrap"
-        app:layout_constraintWidth_percent="0.2"></absa.cgs.com.utils.fonts.CustomTextView>
+
 
     <absa.cgs.com.utils.fonts.CustomTextView
         android:id="@+id/customBoxDetailBoxNumber"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
         android:text="@string/billing_time"
         android:textColor="@color/colorBlack"
         android:textSize="@dimen/_10sdp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/customBoxDetailBoxName"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintLeft_toRightOf="@+id/customBoxDetailBoxName"
+        android:layout_marginLeft="@dimen/_8sdp"
+        app:layout_constraintRight_toLeftOf="@+id/customBoxDetailBoxType"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_max="wrap"
-        app:layout_constraintWidth_percent="0.2"></absa.cgs.com.utils.fonts.CustomTextView>
+        app:layout_constraintWidth_percent="0.4" />
+
+    <absa.cgs.com.utils.fonts.CustomTextView
+        android:id="@+id/customBoxDetailBoxName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/customBoxDetailBoxType"
+        android:text="@string/billing_time"
+        android:textColor="@color/colorBlack"
+        android:layout_marginLeft="@dimen/_2sdp"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintRight_toLeftOf="@+id/customBoxDetailBoxNumber"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.1" />
 
     <absa.cgs.com.utils.fonts.CustomTextView
         android:id="@+id/customBoxDetailBoxType"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
         android:text="@string/billing_time"
         android:textColor="@color/colorBlack"
         android:textSize="@dimen/_10sdp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/customBoxDetailBoxNumber"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintLeft_toRightOf="@+id/customBoxDetailBoxNumber"
+        app:layout_constraintLeft_toRightOf="@+id/customBoxDetailBoxName"
+        app:layout_constraintRight_toLeftOf="@+id/customBoxDetailSmartCardNO"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_max="wrap"
-        app:layout_constraintWidth_percent="0.2"></absa.cgs.com.utils.fonts.CustomTextView>
+        app:layout_constraintWidth_percent="0.1" />
 
     <absa.cgs.com.utils.fonts.CustomTextView
-        android:id="@+id/customBoxDetailSecurityDeposite"
+        android:id="@+id/customBoxDetailSmartCardNO"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
         android:text="@string/billing_time"
         android:textColor="@color/colorBlack"
         android:textSize="@dimen/_10sdp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/customBoxDetailBoxType"
-        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toRightOf="@+id/customBoxDetailBoxType"
+        app:layout_constraintRight_toLeftOf="@+id/customBoxDetailImageViewDelete"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_max="wrap"
-        app:layout_constraintWidth_percent="0.2"></absa.cgs.com.utils.fonts.CustomTextView>
+        app:layout_constraintWidth_percent="0.2" />
 
     <ImageView
         android:id="@+id/customBoxDetailImageViewDelete"
-        android:layout_width="@dimen/_18sdp"
+        android:layout_width="0dp"
         android:layout_height="@dimen/_18sdp"
-        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_6sdp"
         android:src="@drawable/delete"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintLeft_toRightOf="@+id/customBoxDetailSecurityDeposite"
+        app:layout_constraintLeft_toRightOf="@+id/customBoxDetailSmartCardNO"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_max="wrap"
-        app:layout_constraintWidth_percent="0.2"></ImageView>
+        app:layout_constraintWidth_percent="0.05" />
 
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_6sdp"
         android:background="@color/colorBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customBoxDetailBoxName" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
