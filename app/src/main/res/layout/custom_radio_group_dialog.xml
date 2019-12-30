@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2"></absa.cgs.com.utils.fonts.CustomTextView>
+        app:layout_constraintVertical_bias="0.2" />
 
     <RadioGroup
         android:id="@+id/customRadioGroup"
@@ -42,7 +42,7 @@
             android:checked="false"
             android:text="Male"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/_13sdp"></absa.cgs.com.utils.fonts.CustomRadioButton>
+            android:textSize="@dimen/_13sdp" />
 
 
         <absa.cgs.com.utils.fonts.CustomRadioButton
@@ -52,7 +52,7 @@
             android:layout_marginTop="@dimen/_15sdp"
             android:text="Female"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/_13sdp"></absa.cgs.com.utils.fonts.CustomRadioButton>
+            android:textSize="@dimen/_13sdp" />
 
 
     </RadioGroup>

@@ -55,6 +55,7 @@
     <string name="release_date">Release Date</string>
     <string name="registered_date">Registered Date</string>
     <string name="attach_file">Attach file</string>
+    <string name="_0_will_be_added_to_every_bill">0 will be added to every bill.</string>
 
 
 </resources>

@@ -52,7 +52,6 @@ class DialogUtils @Inject constructor(private val activity: Activity) {
         dialog.show()
         dialog.customRadioGroup?.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
             override fun onCheckedChanged(p0: RadioGroup?, p1: Int) {
-
                 var radioButtonId = dialog.customRadioGroup.checkedRadioButtonId
                 if (radioButtonId > 0) {
                     when (radioButtonId) {
