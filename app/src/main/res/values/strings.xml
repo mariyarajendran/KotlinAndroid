@@ -54,6 +54,7 @@
     <string name="connection_date">Connection Date</string>
     <string name="release_date">Release Date</string>
     <string name="registered_date">Registered Date</string>
+    <string name="attach_file">Attach file</string>
 
 
 </resources>

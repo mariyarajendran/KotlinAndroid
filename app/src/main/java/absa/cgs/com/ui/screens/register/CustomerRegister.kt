@@ -199,7 +199,7 @@ class CustomerRegister : BaseActivity(), RegistrationView {
     }
 
     override fun getSmartCardNo(): String {
-        return  texteditLoginBoxSmartCardNo.text.toString()
+        return texteditLoginBoxSmartCardNo.text.toString()
     }
 
 }

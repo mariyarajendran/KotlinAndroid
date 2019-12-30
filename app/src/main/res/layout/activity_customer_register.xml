@@ -309,42 +309,18 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
 
-                <ImageView
-                    android:id="@+id/imageviewAadharPhoto"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
-                    android:layout_marginTop="@dimen/_25sdp"
-                    android:src="@drawable/placeholder"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textviewBasicContactDetailsHint" />
-
-                <absa.cgs.com.utils.fonts.CustomTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:text="@string/upload_aadhar"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorGray55"
-                    android:textSize="@dimen/_10sdp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageviewAadharPhoto" />
-
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textinputLoginBillingName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="@dimen/_3sdp"
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
                     app:helperText="@string/customer_billing_name"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageviewAadharPhoto">
+                    app:layout_constraintTop_toBottomOf="@+id/textviewBasicContactDetailsHint">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
                         android:id="@+id/texteditLoginBillingName"
@@ -410,19 +386,35 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
 
+                <absa.cgs.com.utils.fonts.CustomButton
+                    android:id="@+id/textviewRegisterButtonUploadFile"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:background="@drawable/custom_upload_file_button"
+                    android:text="@string/upload_aadhar"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorGray55"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterCsAadhar" />
+
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textinputRegisterEBNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="@dimen/_3sdp"
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:textColorHint="@color/colorGray55"
                     app:helperText="@string/customer_eb_number"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textinputRegisterCsAadhar">
+                    app:layout_constraintTop_toBottomOf="@+id/textviewRegisterButtonUploadFile">
 
                     <absa.cgs.com.utils.fonts.CustomTextEditText
                         android:id="@+id/texteditRegisterEBNumber"
