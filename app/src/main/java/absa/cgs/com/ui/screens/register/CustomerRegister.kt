@@ -2,7 +2,6 @@ package absa.cgs.com.ui.screens.register
 
 import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.base.BaseActivity
-import absa.cgs.com.ui.screens.mainbaseactivity.MainActivity
 import absa.cgs.com.ui.screens.register.model.RadioButtonDataModel
 import absa.cgs.com.utils.CommonUtils
 import android.os.Bundle
