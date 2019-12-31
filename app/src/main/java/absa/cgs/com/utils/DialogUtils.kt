@@ -13,6 +13,7 @@ import android.view.Gravity
 import android.view.Window
 import android.view.WindowManager
 import android.widget.RadioGroup
+import kotlinx.android.synthetic.main.custom_radio_group_additional_charge.*
 import kotlinx.android.synthetic.main.custom_radio_group_dialog.*
 import javax.inject.Inject
 
@@ -38,6 +39,38 @@ class DialogUtils @Inject constructor(private val activity: Activity) {
         progressDialog.setCanceledOnTouchOutside(false)
         return progressDialog
     }
+
+    fun radioButtonAdditionalChargeAlertDialog(radioButtonListDataModel: List<RadioButtonDataModel>, listener: onRadioButtonEventListener) {
+        val dialog = Dialog(activity)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.custom_radio_group_additional_charge)
+        dialog.window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setGravity(Gravity.CENTER)
+
+        // dialog.customRadioGroupTileHint?.setText(radioButtonListDataModel.get(1).title)
+        dialog.customRadioButtonOneAdditional?.setText(radioButtonListDataModel.get(1).title)
+        dialog.customRadioButtonTwoAdditional?.setText(radioButtonListDataModel.get(2).title)
+        dialog.show()
+        dialog.customRadioGroupAdditional?.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
+            override fun onCheckedChanged(p0: RadioGroup?, p1: Int) {
+                var radioButtonId = dialog.customRadioGroupAdditional.checkedRadioButtonId
+                if (radioButtonId > 0) {
+                    when (radioButtonId) {
+                        R.id.customRadioButtonOneAdditional -> {
+                            listener.onRadioTitleListener(radioButtonListDataModel, dialog.customRadioButtonOneAdditional.text.toString())
+                            //dialog.dismiss()
+                        }
+                        R.id.customRadioButtonTwoAdditional -> {
+                            listener.onRadioTitleListener(radioButtonListDataModel, dialog.customRadioButtonTwoAdditional.text.toString())
+                            //dialog.dismiss()
+                        }
+                    }
+                }
+            }
+        })
+
+    }
+
 
     fun radioButtonAlertDialog(radioButtonListDataModel: List<RadioButtonDataModel>, listener: onRadioButtonEventListener) {
         val dialog = Dialog(activity)

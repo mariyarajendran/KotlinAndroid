@@ -79,6 +79,13 @@ class CustomerRegister : BaseActivity(), RegistrationView {
         })
 
 
+        textinputRegisterAdditionalCharge.setOnClickListener {
+            registrationPresenter.showAdditionalChargeDialog()
+        }
+
+
+
+
         cardviewBoxDetailAddBadge.setOnClickListener {
             registrationPresenter.addBoxDetails(boxDetailRecyclerView)
         }
@@ -179,6 +186,9 @@ class CustomerRegister : BaseActivity(), RegistrationView {
 
             "Box" -> {
                 texteditLoginBoxType.setText(title)
+            }
+
+            "Additional" -> {
             }
         }
     }

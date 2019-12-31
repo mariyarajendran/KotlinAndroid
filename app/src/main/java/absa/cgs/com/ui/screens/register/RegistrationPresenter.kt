@@ -23,6 +23,7 @@ class RegistrationPresenter<View : RegistrationView> @Inject constructor(var com
 
 
     private var radioButtonDataModelList: List<RadioButtonDataModel>? = null
+    private var additionalChargeRadioButtonDataModelList: MutableList<RadioButtonDataModel> = ArrayList()
     private var boxDetailAdapter: BoxDetailAdapter? = null
     val boxDetailsDataModel: MutableList<BoxDetailsDataModel> = ArrayList()
     fun showHomeDialog() {
@@ -53,6 +54,14 @@ class RegistrationPresenter<View : RegistrationView> @Inject constructor(var com
                 RadioButtonDataModel("SD")
         )
         dialogUtils.radioButtonAlertDialog(radioButtonDataModelList!!, this)
+    }
+
+
+    fun showAdditionalChargeDialog() {
+        additionalChargeRadioButtonDataModelList.add(RadioButtonDataModel("Additional"))
+        additionalChargeRadioButtonDataModelList.add(RadioButtonDataModel("Additional Charge"))
+        additionalChargeRadioButtonDataModelList.add(RadioButtonDataModel("Discount"))
+        dialogUtils.radioButtonAdditionalChargeAlertDialog(additionalChargeRadioButtonDataModelList, this)
     }
 
     override fun onRadioTitleListener(radioButtonListDataModel: List<RadioButtonDataModel>, title: String) {
