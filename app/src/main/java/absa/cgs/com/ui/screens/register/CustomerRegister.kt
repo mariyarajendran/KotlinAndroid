@@ -2,6 +2,7 @@ package absa.cgs.com.ui.screens.register
 
 import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.base.BaseActivity
+import absa.cgs.com.ui.screens.register.model.RadioButtonChargeModel
 import absa.cgs.com.ui.screens.register.model.RadioButtonDataModel
 import absa.cgs.com.utils.CommonUtils
 import android.os.Bundle
@@ -194,6 +195,11 @@ class CustomerRegister : BaseActivity(), RegistrationView {
     }
 
 
+    override fun onRadioButtonChargeListener(radioButtonListDataModel: List<RadioButtonDataModel>,radioButtonChargeModel: RadioButtonChargeModel) {
+        texteditRegisterAdditionalCharge.setText(radioButtonChargeModel.chargeAmount+" "+radioButtonChargeModel.chargerHintTextToDisplay)
+    }
+
+
     //boxDetails
     override fun getBoxName(): String {
         return texteditRegisterBoxName.text.toString()
@@ -210,5 +216,6 @@ class CustomerRegister : BaseActivity(), RegistrationView {
     override fun getSmartCardNo(): String {
         return texteditLoginBoxSmartCardNo.text.toString()
     }
+
 
 }

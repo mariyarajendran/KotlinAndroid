@@ -45,6 +45,8 @@ interface ApplicationComponent {
     fun mainInteractor(): MainInteractor
 
 
+
+
     // DataManager dataManager();
 
 }

@@ -56,6 +56,8 @@
     <string name="registered_date">Registered Date</string>
     <string name="attach_file">Attach file</string>
     <string name="_0_will_be_added_to_every_bill">0 will be added to every bill.</string>
+    <string name="will_be_addes_to_every_bill">will be added to every bill.</string>
+    <string name="will_be_subract_to_every_bill">will be subracted to every bill.</string>
     <string name="additional_charge_discount">Additional Charge / Discount</string>
     <string name="save">Save</string>
 

@@ -2,6 +2,8 @@ package absa.cgs.com.utils
 
 import absa.cgs.com.di.annotation.PerActivity
 import absa.cgs.com.kotlinplayground.R
+import absa.cgs.com.ui.screens.register.model.ChargePojo
+import absa.cgs.com.ui.screens.register.model.RadioButtonChargeModel
 import absa.cgs.com.ui.screens.register.model.RadioButtonDataModel
 import android.app.Activity
 import android.app.Dialog
@@ -18,11 +20,12 @@ import kotlinx.android.synthetic.main.custom_radio_group_dialog.*
 import javax.inject.Inject
 
 @PerActivity
-class DialogUtils @Inject constructor(private val activity: Activity) {
+class DialogUtils @Inject constructor(private val activity: Activity, private val chargePojo: ChargePojo) {
 
 
     interface onRadioButtonEventListener {
         fun onRadioTitleListener(radioButtonListDataModel: List<RadioButtonDataModel>, title: String)
+        fun anRadioTitleChargerListener(radioButtonListDataModel: List<RadioButtonDataModel>, radioButtonChargeModel: RadioButtonChargeModel)
 
     }
 
@@ -51,23 +54,34 @@ class DialogUtils @Inject constructor(private val activity: Activity) {
         dialog.customRadioButtonOneAdditional?.setText(radioButtonListDataModel.get(1).title)
         dialog.customRadioButtonTwoAdditional?.setText(radioButtonListDataModel.get(2).title)
         dialog.show()
+
         dialog.customRadioGroupAdditional?.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
             override fun onCheckedChanged(p0: RadioGroup?, p1: Int) {
                 var radioButtonId = dialog.customRadioGroupAdditional.checkedRadioButtonId
                 if (radioButtonId > 0) {
                     when (radioButtonId) {
                         R.id.customRadioButtonOneAdditional -> {
-                            listener.onRadioTitleListener(radioButtonListDataModel, dialog.customRadioButtonOneAdditional.text.toString())
+                            chargePojo.radioButtonTitleText = dialog.customRadioButtonOneAdditional.text.toString()
+                            chargePojo.chargerHintTextToDisplay = activity.resources.getString(R.string.will_be_addes_to_every_bill)
+
                             //dialog.dismiss()
                         }
                         R.id.customRadioButtonTwoAdditional -> {
-                            listener.onRadioTitleListener(radioButtonListDataModel, dialog.customRadioButtonTwoAdditional.text.toString())
+                            chargePojo.radioButtonTitleText = dialog.customRadioButtonTwoAdditional.text.toString()
+                            chargePojo.chargerHintTextToDisplay = activity.resources.getString(R.string.will_be_subract_to_every_bill)
                             //dialog.dismiss()
                         }
                     }
                 }
             }
         })
+
+        dialog.customRadioButtonAdditionalSave.setOnClickListener {
+            chargePojo.chargeAmount = dialog.customRadioButtonTexteditAdditionalCharge.text.toString()
+            listener.anRadioTitleChargerListener(radioButtonListDataModel, RadioButtonChargeModel(chargePojo.radioButtonTitleText, chargePojo.chargeAmount, chargePojo.chargerHintTextToDisplay))
+            dialog.dismiss()
+        }
+
 
     }
 

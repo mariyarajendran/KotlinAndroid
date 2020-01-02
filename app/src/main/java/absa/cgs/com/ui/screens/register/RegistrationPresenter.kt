@@ -8,6 +8,7 @@ import absa.cgs.com.ui.screens.mainbaseactivity.adapter.DrawerListAdapter
 import absa.cgs.com.ui.screens.register.adapter.BoxDetailAdapter
 import absa.cgs.com.ui.screens.register.callbacks.OnItemDeleteCallBack
 import absa.cgs.com.ui.screens.register.model.BoxDetailsDataModel
+import absa.cgs.com.ui.screens.register.model.RadioButtonChargeModel
 import absa.cgs.com.ui.screens.register.model.RadioButtonDataModel
 import absa.cgs.com.utils.CommonUtils
 import absa.cgs.com.utils.DialogUtils
@@ -95,5 +96,9 @@ class RegistrationPresenter<View : RegistrationView> @Inject constructor(var com
         boxDetailAdapter?.notifyNewData(boxDetailsDataModel)
     }
 
+
+    override fun anRadioTitleChargerListener(radioButtonListDataModel: List<RadioButtonDataModel>, radioButtonChargeModel: RadioButtonChargeModel) {
+        getBaseMvpVieww().onRadioButtonChargeListener(radioButtonListDataModel, radioButtonChargeModel)
+    }
 
 }
