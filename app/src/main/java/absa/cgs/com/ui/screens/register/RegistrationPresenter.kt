@@ -22,9 +22,9 @@ import javax.inject.Inject
 class RegistrationPresenter<View : RegistrationView> @Inject constructor(var commonUtils: CommonUtils,
                                                                          var dialogUtils: DialogUtils) : BasePresenter<View>(), RegistrationPresenterListener<View>, DialogUtils.onRadioButtonEventListener, OnItemDeleteCallBack {
 
-
     private var radioButtonDataModelList: List<RadioButtonDataModel>? = null
     private var additionalChargeRadioButtonDataModelList: MutableList<RadioButtonDataModel> = ArrayList()
+    private var billingTimeRadioButtonDataModelList: MutableList<RadioButtonDataModel> = ArrayList()
     private var boxDetailAdapter: BoxDetailAdapter? = null
     val boxDetailsDataModel: MutableList<BoxDetailsDataModel> = ArrayList()
     fun showHomeDialog() {
@@ -65,6 +65,12 @@ class RegistrationPresenter<View : RegistrationView> @Inject constructor(var com
         dialogUtils.radioButtonAdditionalChargeAlertDialog(additionalChargeRadioButtonDataModelList, this)
     }
 
+    fun showBillTimeDialog() {
+        billingTimeRadioButtonDataModelList.add(RadioButtonDataModel("End of every month"))
+        billingTimeRadioButtonDataModelList.add(RadioButtonDataModel("Daywise (Enter day below)"))
+        dialogUtils.radioButtonBillTimeAlertDialog(billingTimeRadioButtonDataModelList, this)
+    }
+
     override fun onRadioTitleListener(radioButtonListDataModel: List<RadioButtonDataModel>, title: String) {
         getBaseMvpVieww().onRadioButtonClickedListener(radioButtonListDataModel, title)
     }
@@ -100,5 +106,11 @@ class RegistrationPresenter<View : RegistrationView> @Inject constructor(var com
     override fun anRadioTitleChargerListener(radioButtonListDataModel: List<RadioButtonDataModel>, radioButtonChargeModel: RadioButtonChargeModel) {
         getBaseMvpVieww().onRadioButtonChargeListener(radioButtonListDataModel, radioButtonChargeModel)
     }
+
+    override fun anRadioTitleBillingTimeListener(radioButtonListDataModel: List<RadioButtonDataModel>, radioButtonChargeModel: RadioButtonChargeModel) {
+        getBaseMvpVieww().onRadioButtonBillTimeListener(radioButtonListDataModel, radioButtonChargeModel)
+    }
+
+
 
 }

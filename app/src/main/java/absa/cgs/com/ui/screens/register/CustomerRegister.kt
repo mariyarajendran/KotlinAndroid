@@ -84,6 +84,10 @@ class CustomerRegister : BaseActivity(), RegistrationView {
             registrationPresenter.showAdditionalChargeDialog()
         }
 
+        textinputRegisterBillTime.setOnClickListener {
+            registrationPresenter.showBillTimeDialog()
+        }
+
 
 
 
@@ -195,10 +199,14 @@ class CustomerRegister : BaseActivity(), RegistrationView {
     }
 
 
-    override fun onRadioButtonChargeListener(radioButtonListDataModel: List<RadioButtonDataModel>,radioButtonChargeModel: RadioButtonChargeModel) {
-        texteditRegisterAdditionalCharge.setText(radioButtonChargeModel.chargeAmount+" "+radioButtonChargeModel.chargerHintTextToDisplay)
+    override fun onRadioButtonChargeListener(radioButtonListDataModel: List<RadioButtonDataModel>, radioButtonChargeModel: RadioButtonChargeModel) {
+        texteditRegisterAdditionalCharge.setText(radioButtonChargeModel.chargeAmount + " " + radioButtonChargeModel.chargerHintTextToDisplay)
     }
 
+
+    override fun onRadioButtonBillTimeListener(radioButtonListDataModel: List<RadioButtonDataModel>, radioButtonChargeModel: RadioButtonChargeModel) {
+        texteditRegisterBillTime.setText(radioButtonChargeModel.chargerHintTextToDisplay + " " + radioButtonChargeModel.chargeAmount + " days.")
+    }
 
     //boxDetails
     override fun getBoxName(): String {

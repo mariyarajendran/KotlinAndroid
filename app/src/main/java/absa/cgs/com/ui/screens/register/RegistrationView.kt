@@ -15,6 +15,8 @@ interface RegistrationView : BaseMvpView {
 
     fun onRadioButtonChargeListener(radioButtonListDataModel: List<RadioButtonDataModel>, radioButtonChargeModel: RadioButtonChargeModel)
 
+    fun onRadioButtonBillTimeListener(radioButtonListDataModel: List<RadioButtonDataModel>, radioButtonChargeModel: RadioButtonChargeModel)
+
 
     //boxDetails
     fun getBoxName(): String

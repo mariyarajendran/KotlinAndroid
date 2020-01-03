@@ -41,7 +41,7 @@ class MainActivity : BaseActivity(), MainView {
     private fun init() {
         activityComponent().inject(this)
         mainPresenter.attachView(this, this)
-        mainPresenter.getDataFromServer()
+        //mainPresenter.getDataFromServer()
         setSupportActionBar(dashboardToolbar)
         supportActionBar?.title = this.resources.getString(R.string.bottom_nav_customer)
         mainPresenter.addDrawerArrayData()

@@ -43,8 +43,8 @@
 
     <string name="billing_details">Billing Details</string>
     <string name="billing_type">Bill Type</string>
-    <string name="billing_time">Billing Time</string>
-    <string name="additional_charge">Additional Charge / Discount</string>
+    <string name="billing_time">Billing Time (Tap here to change)</string>
+    <string name="additional_charge">Additional Charge / Discount (Tap here to change)</string>
     <string name="upload_profile_pic">Upload Profile Pic</string>
     <string name="upload_aadhar">Upload Aadhar</string>
     <string name="add">+ Add</string>
@@ -60,6 +60,11 @@
     <string name="will_be_subract_to_every_bill">will be subracted to every bill.</string>
     <string name="additional_charge_discount">Additional Charge / Discount</string>
     <string name="save">Save</string>
+    <string name="please_enter_amount">Please enter amount</string>
+    <string name="bill_time">Billing Time</string>
+    <string name="if_daywise_enter_day">If daywise, enter day</string>
+    <string name="bill_will_be_generated_automatically_after_every_30_days">Bill will be generated automatically after every 30</string>
+    <string name="bill_will_be_generated_automatically_after_every">Bill will be generated automatically after every</string>
 
 
 </resources>
