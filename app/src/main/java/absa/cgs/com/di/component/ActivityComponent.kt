@@ -36,12 +36,8 @@ interface ActivityComponent {
     fun inject(mainActivity: MainActivity)
     fun inject(customerRegister: CustomerRegister)
 
-
     fun commonUtils(): CommonUtils
-
     fun dialogUtils(): DialogUtils
 
-
-    //fun commonUtils(): CommonUtils
 
 }

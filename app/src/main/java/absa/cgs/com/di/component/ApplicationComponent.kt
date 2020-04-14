@@ -25,6 +25,7 @@ import javax.inject.Singleton
 import absa.cgs.com.MyApplication
 import absa.cgs.com.di.annotation.ApplicationContext
 import absa.cgs.com.di.module.ApplicationModule
+import absa.cgs.com.ui.screens.apis.loginapicall.LoginInteractor
 import absa.cgs.com.ui.screens.mainbaseactivity.MainInteractor
 import absa.cgs.com.utils.CommonUtils
 import dagger.Component
@@ -43,6 +44,7 @@ interface ApplicationComponent {
 
     fun application(): Application
     fun mainInteractor(): MainInteractor
+    fun loginInteractor(): LoginInteractor
 
 
     // DataManager dataManager();
