@@ -62,7 +62,9 @@ class MainActivity : BaseActivity(), MainView, LoginView {
     private fun init() {
         activityComponent().inject(this)
         mainPresenter.attachView(this, this)
+
         loginPresenter.attachView(this, this)
+
 
 
         setSupportActionBar(dashboardToolbar)

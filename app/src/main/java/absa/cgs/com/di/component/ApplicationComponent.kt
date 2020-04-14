@@ -47,6 +47,8 @@ interface ApplicationComponent {
     fun loginInteractor(): LoginInteractor
 
 
+
+
     // DataManager dataManager();
 
 }
