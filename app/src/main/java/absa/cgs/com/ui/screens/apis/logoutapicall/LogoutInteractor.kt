@@ -1,13 +1,12 @@
-package absa.cgs.com.ui.screens.apis.loginapicall
+package absa.cgs.com.ui.screens.apis.logoutapicall
 
-import absa.cgs.com.data.DefaultResponse
 import absa.cgs.com.data.RetrofitClient
+import absa.cgs.com.ui.screens.apis.loginapicall.LoginInteractor
 import absa.cgs.com.ui.screens.apis.loginapicall.model.LoginRequestModel
 import absa.cgs.com.ui.screens.apis.loginapicall.model.LoginResponseModel
-import absa.cgs.com.ui.screens.mainbaseactivity.MainInteractor
-import absa.cgs.com.ui.screens.mainbaseactivity.MainRequest
+import absa.cgs.com.ui.screens.apis.logoutapicall.model.LogoutRequestModel
+import absa.cgs.com.ui.screens.apis.logoutapicall.model.LogoutResponseModel
 import absa.cgs.com.utils.fonts.HttpEnum
-import android.util.Log
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -15,28 +14,27 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class LoginInteractor @Inject constructor() {
+class LogoutInteractor @Inject constructor() {
 
-    private var loginResponseModel: LoginResponseModel? = null
+    private var logoutResponseModel: LogoutResponseModel? = null
 
 
     interface OnCallHitListener {
-        fun onSuccessLoginInteractListener(loginResponseModel: LoginResponseModel)
+        fun onSuccessLoginInteractListener(logoutResponseModel: LogoutResponseModel)
         fun onRetrofitFailureLoginInteractListener(error: String)
         fun onSessionExpireLoginInteractListener()
-        fun onErrorLoginInteractListener(loginResponseModel: LoginResponseModel)
+        fun onErrorLoginInteractListener(logoutResponseModel: LogoutResponseModel)
         fun onServerExceptionLoginInteractListener()
     }
 
-
-    fun postLoginDataToServer(loginRequestModel: LoginRequestModel, listener: OnCallHitListener) {
-        RetrofitClient.instance.userLogin(loginRequestModel)
-                .enqueue(object : Callback<LoginResponseModel> {
-                    override fun onFailure(call: Call<LoginResponseModel>, t: Throwable) {
+    fun postLogoutDataToServer(logoutRequestModel: LogoutRequestModel, listener: OnCallHitListener) {
+        RetrofitClient.instance.userLogout(logoutRequestModel)
+                .enqueue(object : Callback<LogoutResponseModel> {
+                    override fun onFailure(call: Call<LogoutResponseModel>, t: Throwable) {
                         listener.onRetrofitFailureLoginInteractListener(t.message.toString())
                     }
 
-                    override fun onResponse(call: Call<LoginResponseModel>, response: Response<LoginResponseModel>) {
+                    override fun onResponse(call: Call<LogoutResponseModel>, response: Response<LogoutResponseModel>) {
                         when (response.isSuccessful) {
                             true -> {
                                 when (response.code()) {
@@ -45,13 +43,13 @@ class LoginInteractor @Inject constructor() {
                                     }
 
                                     HttpEnum.STATUS_ERROR.code -> {
-                                        loginResponseModel = response.body()
-                                        listener.onErrorLoginInteractListener(loginResponseModel!!)
+                                        logoutResponseModel = response.body()
+                                        listener.onErrorLoginInteractListener(logoutResponseModel!!)
                                     }
 
                                     HttpEnum.STATUS_OK.code -> {
-                                        loginResponseModel = response.body()
-                                        listener.onSuccessLoginInteractListener(loginResponseModel!!)
+                                        logoutResponseModel = response.body()
+                                        listener.onSuccessLoginInteractListener(logoutResponseModel!!)
                                     }
                                 }
                             }
@@ -64,5 +62,4 @@ class LoginInteractor @Inject constructor() {
 
                 })
     }
-
 }

@@ -1,8 +1,15 @@
 package absa.cgs.com.ui.screens.mainbaseactivity
 
 import absa.cgs.com.kotlinplayground.R
+import absa.cgs.com.ui.screens.apis.addexpenseapicall.AddExpenseView
+import absa.cgs.com.ui.screens.apis.addexpenseapicall.AddExpensepresenter
 import absa.cgs.com.ui.screens.apis.loginapicall.LoginPresenter
 import absa.cgs.com.ui.screens.apis.loginapicall.LoginView
+import absa.cgs.com.ui.screens.apis.logoutapicall.LogoutPresenter
+import absa.cgs.com.ui.screens.apis.logoutapicall.LogoutView
+import absa.cgs.com.ui.screens.apis.updateexpenseapicall.UpdateExpenseInteractor
+import absa.cgs.com.ui.screens.apis.updateexpenseapicall.UpdateExpenseView
+import absa.cgs.com.ui.screens.apis.updateexpenseapicall.UpdateExpensepresenter
 import absa.cgs.com.ui.screens.base.BaseActivity
 import absa.cgs.com.ui.screens.customer.CustomerFragment
 import absa.cgs.com.ui.screens.profile.ProfileFragment
@@ -21,22 +28,34 @@ import kotlinx.android.synthetic.main.content_dashboardscreen.*
 import javax.inject.Inject
 
 
-class MainActivity : BaseActivity(), MainView, LoginView {
-    override fun onSuccessLoginResponse(message: String) {
-
+class MainActivity : BaseActivity(), MainView, UpdateExpenseView {
+    override fun getExpenseID(): String {
+        return "5"
     }
 
-    override fun onFailureLoginResponse(error: String) {
 
+    override fun onSuccessAddExpenseResponse(message: String) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun getMobileNumber(): String {
-        return "9699999798"
-
+    override fun onFailureAddExpenseResponse(error: String) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun getPassword(): String {
-        return "admin"
+    override fun getExpenseAmount(): String {
+        return "1000"
+    }
+
+    override fun getExpenseComment(): String {
+        return "Hi comments"
+    }
+
+    override fun getExpenseType(): String {
+        return "expense type"
+    }
+
+    override fun getExpenseUserDate(): String {
+        return "2020-04-14"
     }
 
 
@@ -47,7 +66,7 @@ class MainActivity : BaseActivity(), MainView, LoginView {
     lateinit var mainPresenter: MainPresenter<MainView>
 
     @Inject
-    lateinit var loginPresenter: LoginPresenter<LoginView>
+    lateinit var updateExpensepresenter: UpdateExpensepresenter<UpdateExpenseView>
 
     @Inject
     lateinit var commonUtils: CommonUtils
@@ -62,15 +81,15 @@ class MainActivity : BaseActivity(), MainView, LoginView {
     private fun init() {
         activityComponent().inject(this)
         mainPresenter.attachView(this, this)
+        updateExpensepresenter.attachView(this, this)
+        updateExpensepresenter.postUpdateExpenseApiCall()
 
-        loginPresenter.attachView(this, this)
 
 
 
         setSupportActionBar(dashboardToolbar)
         supportActionBar?.title = this.resources.getString(R.string.bottom_nav_customer)
         mainPresenter.addDrawerArrayData()
-        loginPresenter.postLoginData()
         loadFragment(CustomerFragment())
         contentDashboardBottomnavigationView.selectedItemId = (R.id.bottomNavigationItemCustomer)
         contentDashboardBottomnavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
