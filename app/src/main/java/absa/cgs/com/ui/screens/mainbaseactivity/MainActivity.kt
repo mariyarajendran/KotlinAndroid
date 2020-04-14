@@ -1,6 +1,8 @@
 package absa.cgs.com.ui.screens.mainbaseactivity
 
 import absa.cgs.com.kotlinplayground.R
+import absa.cgs.com.ui.screens.apis.loginapicall.LoginPresenter
+import absa.cgs.com.ui.screens.apis.loginapicall.LoginView
 import absa.cgs.com.ui.screens.base.BaseActivity
 import absa.cgs.com.ui.screens.customer.CustomerFragment
 import absa.cgs.com.ui.screens.profile.ProfileFragment
@@ -19,7 +21,23 @@ import kotlinx.android.synthetic.main.content_dashboardscreen.*
 import javax.inject.Inject
 
 
-class MainActivity : BaseActivity(), MainView {
+class MainActivity : BaseActivity(), MainView, LoginView {
+    override fun onSuccessLoginResponse(message: String) {
+
+    }
+
+    override fun onFailureLoginResponse(error: String) {
+
+    }
+
+    override fun getMobileNumber(): String {
+        return "9699999798"
+
+    }
+
+    override fun getPassword(): String {
+        return "admin"
+    }
 
 
     private var dashboardDrawerListAdapter: DrawerListAdapter? = null
@@ -27,6 +45,9 @@ class MainActivity : BaseActivity(), MainView {
 
     @Inject
     lateinit var mainPresenter: MainPresenter<MainView>
+
+    @Inject
+    lateinit var loginPresenter: LoginPresenter<LoginView>
 
     @Inject
     lateinit var commonUtils: CommonUtils
@@ -41,10 +62,15 @@ class MainActivity : BaseActivity(), MainView {
     private fun init() {
         activityComponent().inject(this)
         mainPresenter.attachView(this, this)
-        //mainPresenter.getDataFromServer()
+
+        loginPresenter.attachView(this, this)
+
+
+
         setSupportActionBar(dashboardToolbar)
         supportActionBar?.title = this.resources.getString(R.string.bottom_nav_customer)
         mainPresenter.addDrawerArrayData()
+        loginPresenter.postLoginData()
         loadFragment(CustomerFragment())
         contentDashboardBottomnavigationView.selectedItemId = (R.id.bottomNavigationItemCustomer)
         contentDashboardBottomnavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)

@@ -16,4 +16,9 @@ interface ActivityComponent {
     fun inject(customerRegister: CustomerRegister)
 
 
+    fun commonUtils(): CommonUtils
+    fun dialogUtils(): DialogUtils
+
+
+
 }
