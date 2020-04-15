@@ -29,6 +29,7 @@ import absa.cgs.com.ui.screens.apis.addexpenseapicall.AddExpenseInteractor
 import absa.cgs.com.ui.screens.apis.deleteexpenseapicall.DeleteExpenseInteractor
 import absa.cgs.com.ui.screens.apis.loginapicall.LoginInteractor
 import absa.cgs.com.ui.screens.apis.logoutapicall.LogoutInteractor
+import absa.cgs.com.ui.screens.apis.readexpenseapicall.ReadExpenseInteractor
 import absa.cgs.com.ui.screens.apis.readprofileapicall.ReadProfileInteractor
 import absa.cgs.com.ui.screens.apis.updateexpenseapicall.UpdateExpenseInteractor
 import absa.cgs.com.ui.screens.apis.updateprofileapicall.UpdateProfileInteractor
@@ -56,6 +57,7 @@ interface ApplicationComponent {
     fun deleteExpenseInteractor(): DeleteExpenseInteractor
     fun updateProfileInteractor(): UpdateProfileInteractor
     fun readProfileInteractor(): ReadProfileInteractor
+    fun readExpenseInteractor(): ReadExpenseInteractor
 
 
     // DataManager dataManager();

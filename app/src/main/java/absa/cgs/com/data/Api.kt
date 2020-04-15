@@ -8,6 +8,8 @@ import absa.cgs.com.ui.screens.apis.loginapicall.model.LoginRequestModel
 import absa.cgs.com.ui.screens.apis.loginapicall.model.LoginResponseModel
 import absa.cgs.com.ui.screens.apis.logoutapicall.model.LogoutRequestModel
 import absa.cgs.com.ui.screens.apis.logoutapicall.model.LogoutResponseModel
+import absa.cgs.com.ui.screens.apis.readexpenseapicall.model.ReadExpenseRequestModel
+import absa.cgs.com.ui.screens.apis.readexpenseapicall.model.ReadExpenseResponseModel
 import absa.cgs.com.ui.screens.apis.readprofileapicall.model.ReadProfileRequestModel
 import absa.cgs.com.ui.screens.apis.readprofileapicall.model.ReadProfileResponseModel
 import absa.cgs.com.ui.screens.apis.updateexpenseapicall.model.UpdateExpenseRequestModel
@@ -44,5 +46,8 @@ interface Api {
 
     @POST("/cablesoft/api/json/getAllUserDetails")
     fun readProfileData(@Body body: ReadProfileRequestModel): Call<ReadProfileResponseModel>
+
+    @POST("/cablesoft/api/json/getExpenseDetails")
+    fun readExpenseData(@Body body: ReadExpenseRequestModel): Call<ReadExpenseResponseModel>
 
 }
