@@ -25,7 +25,7 @@ class UpdateExpenseInteractor @Inject constructor() {
         fun onRetrofitFailureUpdateExpenseInteractListener(error: String)
         fun onSessionExpireUpdateExpenseInteractListener()
         fun onErrorUpdateExpenseInteractListener(updateExpenseResponseModel: UpdateExpenseResponseModel)
-        fun onServerExceptionUpdateExpenseInteractListener()
+        fun onServerExceptionUpdateExpenseInteractListener(status: Int)
     }
 
     fun postUpdateExpenseDataToServer(udateExpenseRequestModel: UpdateExpenseRequestModel, listener: OnCallHitListener) {
@@ -55,7 +55,7 @@ class UpdateExpenseInteractor @Inject constructor() {
                                 }
                             }
                             else -> {
-                                listener.onServerExceptionUpdateExpenseInteractListener()
+                                listener.onServerExceptionUpdateExpenseInteractListener(response.code())
                             }
 
                         }

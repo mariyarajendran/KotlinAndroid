@@ -2,12 +2,18 @@ package absa.cgs.com.data
 
 import absa.cgs.com.ui.screens.apis.addexpenseapicall.model.AddExpenseRequestModel
 import absa.cgs.com.ui.screens.apis.addexpenseapicall.model.AddExpenseResponseModel
+import absa.cgs.com.ui.screens.apis.deleteexpenseapicall.model.DeleteExpenseRequestModel
+import absa.cgs.com.ui.screens.apis.deleteexpenseapicall.model.DeleteExpenseResponseModel
 import absa.cgs.com.ui.screens.apis.loginapicall.model.LoginRequestModel
 import absa.cgs.com.ui.screens.apis.loginapicall.model.LoginResponseModel
 import absa.cgs.com.ui.screens.apis.logoutapicall.model.LogoutRequestModel
 import absa.cgs.com.ui.screens.apis.logoutapicall.model.LogoutResponseModel
+import absa.cgs.com.ui.screens.apis.readprofileapicall.model.ReadProfileRequestModel
+import absa.cgs.com.ui.screens.apis.readprofileapicall.model.ReadProfileResponseModel
 import absa.cgs.com.ui.screens.apis.updateexpenseapicall.model.UpdateExpenseRequestModel
 import absa.cgs.com.ui.screens.apis.updateexpenseapicall.model.UpdateExpenseResponseModel
+import absa.cgs.com.ui.screens.apis.updateprofileapicall.model.UpdateProfileRequestModel
+import absa.cgs.com.ui.screens.apis.updateprofileapicall.model.UpdateProfileResponseModel
 import absa.cgs.com.ui.screens.mainbaseactivity.MainRequest
 import retrofit2.Call
 import retrofit2.http.*
@@ -29,4 +35,14 @@ interface Api {
 
     @POST("/cablesoft/api/json/updateExpense")
     fun updateExpenseData(@Body body: UpdateExpenseRequestModel): Call<UpdateExpenseResponseModel>
+
+    @POST("/cablesoft/api/json/deleteExpense")
+    fun deleteExpenseData(@Body body: DeleteExpenseRequestModel): Call<DeleteExpenseResponseModel>
+
+    @POST("/cablesoft/api/json/updateUserDetails")
+    fun updateProfileData(@Body body: UpdateProfileRequestModel): Call<UpdateProfileResponseModel>
+
+    @POST("/cablesoft/api/json/getAllUserDetails")
+    fun readProfileData(@Body body: ReadProfileRequestModel): Call<ReadProfileResponseModel>
+
 }

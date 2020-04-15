@@ -1,14 +1,14 @@
 package absa.cgs.com.ui.screens.apis.updateexpenseapicall
 
-import absa.cgs.com.ui.screens.apis.addexpenseapicall.model.AddExpenseRequestModel
-import absa.cgs.com.ui.screens.apis.addexpenseapicall.model.AddExpenseResponseModel
 import absa.cgs.com.ui.screens.apis.updateexpenseapicall.model.UpdateExpenseRequestModel
 import absa.cgs.com.ui.screens.apis.updateexpenseapicall.model.UpdateExpenseResponseModel
 import absa.cgs.com.ui.screens.base.BasePresenter
 import absa.cgs.com.utils.CommonUtils
 import javax.inject.Inject
 
-class UpdateExpensepresenter<View : UpdateExpenseView> @Inject constructor(var updateExpenseInteractor: UpdateExpenseInteractor, var commonUtils: CommonUtils) : BasePresenter<View>(), IUpdateExpenseListener<View>, UpdateExpenseInteractor.OnCallHitListener {
+class UpdateExpensePresenter<View : UpdateExpenseView> @Inject constructor(var updateExpenseInteractor: UpdateExpenseInteractor, var commonUtils: CommonUtils) : BasePresenter<View>(), IUpdateExpenseListener<View>, UpdateExpenseInteractor.OnCallHitListener {
+
+
     override fun postUpdateExpenseApiCall() {
         var updateExpenseRequestModel = UpdateExpenseRequestModel(getBaseMvpVieww().getExpenseID(), getBaseMvpVieww().getExpenseAmount(), getBaseMvpVieww().getExpenseComment(), getBaseMvpVieww().getExpenseType(), getBaseMvpVieww().getExpenseUserDate())
         updateExpenseInteractor.postUpdateExpenseDataToServer(updateExpenseRequestModel, this)
@@ -19,19 +19,19 @@ class UpdateExpensepresenter<View : UpdateExpenseView> @Inject constructor(var u
     }
 
     override fun onRetrofitFailureUpdateExpenseInteractListener(error: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun onSessionExpireUpdateExpenseInteractListener() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun onErrorUpdateExpenseInteractListener(updateExpenseResponseModel: UpdateExpenseResponseModel) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
-    override fun onServerExceptionUpdateExpenseInteractListener() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onServerExceptionUpdateExpenseInteractListener(statusCode: Int) {
+        commonUtils.showToastLong("" + statusCode)
     }
 
 
