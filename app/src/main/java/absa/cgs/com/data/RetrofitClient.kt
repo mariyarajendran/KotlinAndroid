@@ -24,7 +24,7 @@ object RetrofitClient {
                         .method(original.method(), original.body())
                         .addHeader("Content-Type", "application/json")
                         .addHeader("Accept", "application/json")
-                        .addHeader("Authorization", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl9nZW5lcmF0aW9uIjoiVG9rZW4gR2VuZXJhdGVkIiwiQVBJX1RJTUUiOjE1ODY4NTk0NjF9.tJ8bqBmU_qx8QF6egHjA8jd2yNsRwkPZnsFX91Wxzjw")
+                        .addHeader("Authorization", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl9nZW5lcmF0aW9uIjoiVG9rZW4gR2VuZXJhdGVkIiwiQVBJX1RJTUUiOjE1ODY5NTk1NzN9.UvtxJ448TlCfaL2XKLWN3QfO5MJpL70GL-XStw1oDZY")
                 val request = requestBuilder.build()
                 chain.proceed(request)
 
