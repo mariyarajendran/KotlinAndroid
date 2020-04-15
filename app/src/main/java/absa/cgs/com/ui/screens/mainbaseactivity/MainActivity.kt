@@ -3,6 +3,8 @@ package absa.cgs.com.ui.screens.mainbaseactivity
 import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.apis.deleteexpenseapicall.DeleteExpenseView
 import absa.cgs.com.ui.screens.apis.deleteexpenseapicall.DeleteExpensepresenter
+import absa.cgs.com.ui.screens.apis.readexpenseapicall.ReadExpensePresenter
+import absa.cgs.com.ui.screens.apis.readexpenseapicall.ReadExpenseView
 import absa.cgs.com.ui.screens.apis.readprofileapicall.ReadProfilePresenter
 import absa.cgs.com.ui.screens.apis.readprofileapicall.ReadProfileView
 import absa.cgs.com.ui.screens.apis.updateprofileapicall.UpdateProfilePresenter
@@ -25,14 +27,32 @@ import kotlinx.android.synthetic.main.content_dashboardscreen.*
 import javax.inject.Inject
 
 
-class MainActivity : BaseActivity(), MainView, ReadProfileView {
-    override fun onSuccessReadProfileResponse(message: String) {
+class MainActivity : BaseActivity(), MainView, ReadExpenseView {
+    override fun onSuccessReadExpenseResponse(message: String) {
 
     }
 
-    override fun onFailureReadProfileResponse(error: String) {
+    override fun onFailureReadExpenseResponse(error: String) {
 
     }
+
+    override fun getSearchKeyword(): String {
+        return ""
+    }
+
+    override fun getPageCount(): String {
+
+        return "0"
+    }
+
+    override fun getFromDate(): String {
+        return ""
+    }
+
+    override fun getToDate(): String {
+        return ""
+    }
+
 
     override fun getUserID(): String {
         return "1"
@@ -46,7 +66,7 @@ class MainActivity : BaseActivity(), MainView, ReadProfileView {
     lateinit var mainPresenter: MainPresenter<MainView>
 
     @Inject
-    lateinit var readProfilePresenter: ReadProfilePresenter<ReadProfileView>
+    lateinit var readExpensePresenter: ReadExpensePresenter<ReadExpenseView>
 
     @Inject
     lateinit var commonUtils: CommonUtils
@@ -61,8 +81,8 @@ class MainActivity : BaseActivity(), MainView, ReadProfileView {
     private fun init() {
         activityComponent().inject(this)
         mainPresenter.attachView(this, this)
-        readProfilePresenter.attachView(this, this)
-        readProfilePresenter.readUserProfileData()
+        readExpensePresenter.attachView(this, this)
+        readExpensePresenter.readExpenseData()
 
 
 
