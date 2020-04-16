@@ -11,4 +11,5 @@ interface ReadExpenseView : BaseMvpView {
     fun getPageCount(): String
     fun getFromDate(): String
     fun getToDate(): String
+    fun showExpenseToast(message: String)
 }

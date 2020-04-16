@@ -1,14 +1,8 @@
 package absa.cgs.com.ui.screens.mainbaseactivity
 
 import absa.cgs.com.kotlinplayground.R
-import absa.cgs.com.ui.screens.apis.deleteexpenseapicall.DeleteExpenseView
-import absa.cgs.com.ui.screens.apis.deleteexpenseapicall.DeleteExpensepresenter
 import absa.cgs.com.ui.screens.apis.readexpenseapicall.ReadExpensePresenter
 import absa.cgs.com.ui.screens.apis.readexpenseapicall.ReadExpenseView
-import absa.cgs.com.ui.screens.apis.readprofileapicall.ReadProfilePresenter
-import absa.cgs.com.ui.screens.apis.readprofileapicall.ReadProfileView
-import absa.cgs.com.ui.screens.apis.updateprofileapicall.UpdateProfilePresenter
-import absa.cgs.com.ui.screens.apis.updateprofileapicall.UpdateProfileView
 import absa.cgs.com.ui.screens.base.BaseActivity
 import absa.cgs.com.ui.screens.customer.CustomerFragment
 import absa.cgs.com.ui.screens.profile.ProfileFragment
@@ -28,6 +22,11 @@ import javax.inject.Inject
 
 
 class MainActivity : BaseActivity(), MainView, ReadExpenseView {
+
+    override fun showExpenseToast(message: String) {
+
+    }
+
     override fun onSuccessReadExpenseResponse(message: String) {
 
     }
@@ -65,6 +64,7 @@ class MainActivity : BaseActivity(), MainView, ReadExpenseView {
     @Inject
     lateinit var mainPresenter: MainPresenter<MainView>
 
+
     @Inject
     lateinit var readExpensePresenter: ReadExpensePresenter<ReadExpenseView>
 
@@ -82,8 +82,7 @@ class MainActivity : BaseActivity(), MainView, ReadExpenseView {
         activityComponent().inject(this)
         mainPresenter.attachView(this, this)
         readExpensePresenter.attachView(this, this)
-        readExpensePresenter.readExpenseData()
-
+        // readExpensePresenter.readExpenseData()
 
 
 
