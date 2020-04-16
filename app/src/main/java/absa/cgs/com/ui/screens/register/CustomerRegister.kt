@@ -2,7 +2,7 @@ package absa.cgs.com.ui.screens.register
 
 import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.base.BaseActivity
-import absa.cgs.com.ui.screens.mainbaseactivity.MainActivity
+import absa.cgs.com.ui.screens.register.model.RadioButtonChargeModel
 import absa.cgs.com.ui.screens.register.model.RadioButtonDataModel
 import absa.cgs.com.utils.CommonUtils
 import android.os.Bundle
@@ -78,6 +78,17 @@ class CustomerRegister : BaseActivity(), RegistrationView {
             }
             true
         })
+
+
+        textinputRegisterAdditionalCharge.setOnClickListener {
+            registrationPresenter.showAdditionalChargeDialog()
+        }
+
+        textinputRegisterBillTime.setOnClickListener {
+            registrationPresenter.showBillTimeDialog()
+        }
+
+
 
 
         cardviewBoxDetailAddBadge.setOnClickListener {
@@ -181,9 +192,21 @@ class CustomerRegister : BaseActivity(), RegistrationView {
             "Box" -> {
                 texteditLoginBoxType.setText(title)
             }
+
+            "Additional" -> {
+            }
         }
     }
 
+
+    override fun onRadioButtonChargeListener(radioButtonListDataModel: List<RadioButtonDataModel>, radioButtonChargeModel: RadioButtonChargeModel) {
+        texteditRegisterAdditionalCharge.setText(radioButtonChargeModel.chargeAmount + " " + radioButtonChargeModel.chargerHintTextToDisplay)
+    }
+
+
+    override fun onRadioButtonBillTimeListener(radioButtonListDataModel: List<RadioButtonDataModel>, radioButtonChargeModel: RadioButtonChargeModel) {
+        texteditRegisterBillTime.setText(radioButtonChargeModel.chargerHintTextToDisplay + " " + radioButtonChargeModel.chargeAmount + " days.")
+    }
 
     //boxDetails
     override fun getBoxName(): String {
@@ -201,5 +224,6 @@ class CustomerRegister : BaseActivity(), RegistrationView {
     override fun getSmartCardNo(): String {
         return texteditLoginBoxSmartCardNo.text.toString()
     }
+
 
 }

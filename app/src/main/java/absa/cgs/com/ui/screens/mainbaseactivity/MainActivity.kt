@@ -85,6 +85,7 @@ class MainActivity : BaseActivity(), MainView, ReadExpenseView {
         // readExpensePresenter.readExpenseData()
 
 
+
         setSupportActionBar(dashboardToolbar)
         supportActionBar?.title = this.resources.getString(R.string.bottom_nav_customer)
         mainPresenter.addDrawerArrayData()
