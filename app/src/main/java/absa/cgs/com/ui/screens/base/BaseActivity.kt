@@ -5,11 +5,14 @@ import absa.cgs.com.di.component.ActivityComponent
 import absa.cgs.com.di.component.DaggerActivityComponent
 import absa.cgs.com.di.module.ActivityModule
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 
 open class BaseActivity : AppCompatActivity(), BaseMvpView {
+
 
     private var mActivityComponent: ActivityComponent? = null
 
@@ -48,6 +51,12 @@ open class BaseActivity : AppCompatActivity(), BaseMvpView {
 
     }
 
+    override fun navigationRoutes(routingClass: Class<*>) {
+        val intent = Intent(this, routingClass)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        this.startActivity(intent)
+    }
+
     fun activityComponent(): ActivityComponent {
         if (mActivityComponent == null) {
             mActivityComponent = DaggerActivityComponent.builder()
@@ -56,6 +65,16 @@ open class BaseActivity : AppCompatActivity(), BaseMvpView {
                     .build()
         }
         return mActivityComponent!!
+    }
+
+
+    override fun showToastShort(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+
+    override fun showToastLong(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
 }
