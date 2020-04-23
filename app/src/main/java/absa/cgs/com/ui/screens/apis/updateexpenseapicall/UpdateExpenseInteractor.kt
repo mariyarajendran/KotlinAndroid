@@ -1,14 +1,9 @@
 package absa.cgs.com.ui.screens.apis.updateexpenseapicall
 
 import absa.cgs.com.data.RetrofitClient
-import absa.cgs.com.ui.screens.apis.addexpenseapicall.model.AddExpenseRequestModel
-import absa.cgs.com.ui.screens.apis.addexpenseapicall.model.AddExpenseResponseModel
-import absa.cgs.com.ui.screens.apis.logoutapicall.LogoutInteractor
-import absa.cgs.com.ui.screens.apis.logoutapicall.model.LogoutRequestModel
-import absa.cgs.com.ui.screens.apis.logoutapicall.model.LogoutResponseModel
 import absa.cgs.com.ui.screens.apis.updateexpenseapicall.model.UpdateExpenseRequestModel
 import absa.cgs.com.ui.screens.apis.updateexpenseapicall.model.UpdateExpenseResponseModel
-import absa.cgs.com.utils.fonts.HttpEnum
+import absa.cgs.com.utils.enums.HttpEnum
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -9,7 +9,6 @@ import absa.cgs.com.ui.screens.register.adapter.BoxDetailAdapter
 import absa.cgs.com.ui.screens.register.callbacks.OnItemDeleteCallBack
 import absa.cgs.com.ui.screens.register.model.BoxDetailsDataModel
 import absa.cgs.com.ui.screens.register.model.RadioButtonDataModel
-import absa.cgs.com.utils.CommonUtils
 import absa.cgs.com.utils.DialogUtils
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,8 +17,8 @@ import kotlinx.android.synthetic.main.activity_kotlin_play_ground.*
 import javax.inject.Inject
 
 
-class RegistrationPresenter<View : RegistrationView> @Inject constructor(var commonUtils: CommonUtils,
-                                                                         var dialogUtils: DialogUtils) : BasePresenter<View>(), RegistrationPresenterListener<View>, DialogUtils.onRadioButtonEventListener, OnItemDeleteCallBack {
+class RegistrationPresenter<View : RegistrationView> @Inject constructor(
+        var dialogUtils: DialogUtils) : BasePresenter<View>(), RegistrationPresenterListener<View>, DialogUtils.onRadioButtonEventListener, OnItemDeleteCallBack {
 
 
     private var radioButtonDataModelList: List<RadioButtonDataModel>? = null
@@ -61,7 +60,7 @@ class RegistrationPresenter<View : RegistrationView> @Inject constructor(var com
 
     fun addBoxDetails(recyclerViewBoxDetails: RecyclerView) {
         if (getBaseMvpVieww().getBoxName().equals("") && getBaseMvpVieww().getBoxNumber().equals("") && getBaseMvpVieww().getBoxType().equals("") && getBaseMvpVieww().getSmartCardNo().equals("")) {
-            commonUtils.showToastLong(getActivityy().getString(R.string.Please_Enter_Any_one_Details))
+
         } else {
             boxDetailsDataModel.add(BoxDetailsDataModel(getBaseMvpVieww().getBoxName(), getBaseMvpVieww().getBoxNumber(), getBaseMvpVieww().getBoxType(), getBaseMvpVieww().getSmartCardNo()))
             boxDetailAdapter?.notifyNewData(boxDetailsDataModel)

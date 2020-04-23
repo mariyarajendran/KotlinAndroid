@@ -1,6 +1,7 @@
 package absa.cgs.com.data
 
 import absa.cgs.com.kotlinplayground.BuildConfig
+import absa.cgs.com.utils.SingletonUtils
 import okhttp3.Authenticator
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -16,6 +17,8 @@ object RetrofitClient {
 
     private const val BASE_URL = "https://cabelsoft.000webhostapp.com/"
 
+    //private const val BASE_URL = "http://192.168.43.147/"
+
 
     private val okHttpClient = OkHttpClient.Builder()
             .addInterceptor { chain ->
@@ -24,7 +27,7 @@ object RetrofitClient {
                         .method(original.method(), original.body())
                         .addHeader("Content-Type", "application/json")
                         .addHeader("Accept", "application/json")
-                        .addHeader("Authorization", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl9nZW5lcmF0aW9uIjoiVG9rZW4gR2VuZXJhdGVkIiwiQVBJX1RJTUUiOjE1ODcwNTE1NzN9.pgpH_GYrcYp36MMRk65khWsjrIMPpw0yPgW_lx1cfZI")
+                        .addHeader("Authorization", SingletonUtils.instance.authToken)
                 val request = requestBuilder.build()
                 chain.proceed(request)
 

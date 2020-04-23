@@ -1,17 +1,23 @@
 package absa.cgs.com.ui.screens.mainbaseactivity
 
 import absa.cgs.com.kotlinplayground.R
-import absa.cgs.com.ui.screens.apis.readexpenseapicall.ReadExpensePresenter
-import absa.cgs.com.ui.screens.apis.readexpenseapicall.ReadExpenseView
+import absa.cgs.com.ui.screens.apis.logoutapicall.LogoutPresenter
+import absa.cgs.com.ui.screens.apis.logoutapicall.LogoutView
+import absa.cgs.com.ui.screens.authentication.AuthenticationBaseActivity
 import absa.cgs.com.ui.screens.base.BaseActivity
 import absa.cgs.com.ui.screens.customer.CustomerFragment
 import absa.cgs.com.ui.screens.profile.ProfileFragment
 import absa.cgs.com.ui.screens.dashboard.DashboardFragment
+import absa.cgs.com.ui.screens.expense.ExpenseBaseActivity
 import absa.cgs.com.ui.screens.mainbaseactivity.Model.NavigationDataModel
 import absa.cgs.com.ui.screens.mainbaseactivity.adapter.DrawerListAdapter
-import absa.cgs.com.utils.CommonUtils
+import absa.cgs.com.utils.DialogUtils
+import absa.cgs.com.utils.SingletonUtils
+import absa.cgs.com.utils.enums.DialogEnum
+import android.app.Dialog
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -19,42 +25,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_kotlin_play_ground.*
 import kotlinx.android.synthetic.main.content_dashboardscreen.*
 import javax.inject.Inject
+import javax.inject.Singleton
 
 
-class MainActivity : BaseActivity(), MainView, ReadExpenseView {
-
-    override fun showExpenseToast(message: String) {
-
-    }
-
-    override fun onSuccessReadExpenseResponse(message: String) {
-
-    }
-
-    override fun onFailureReadExpenseResponse(error: String) {
-
-    }
-
-    override fun getSearchKeyword(): String {
-        return ""
-    }
-
-    override fun getPageCount(): String {
-
-        return "0"
-    }
-
-    override fun getFromDate(): String {
-        return ""
-    }
-
-    override fun getToDate(): String {
-        return ""
-    }
+class MainActivity : BaseActivity(), MainView, DialogUtils.OnDialogPositiveListener, LogoutView {
 
 
-    override fun getUserID(): String {
-        return "1"
+    override fun onClickListeners() {
+
     }
 
 
@@ -64,12 +42,12 @@ class MainActivity : BaseActivity(), MainView, ReadExpenseView {
     @Inject
     lateinit var mainPresenter: MainPresenter<MainView>
 
+    @Inject
+    lateinit var logoutPresenter: LogoutPresenter<LogoutView>
 
     @Inject
-    lateinit var readExpensePresenter: ReadExpensePresenter<ReadExpenseView>
+    lateinit var dialogUtils: DialogUtils
 
-    @Inject
-    lateinit var commonUtils: CommonUtils
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,22 +55,24 @@ class MainActivity : BaseActivity(), MainView, ReadExpenseView {
         init()
     }
 
-
-    private fun init() {
+    override fun init() {
         activityComponent().inject(this)
         mainPresenter.attachView(this, this)
-        readExpensePresenter.attachView(this, this)
-        // readExpensePresenter.readExpenseData()
-
-
+        logoutPresenter.attachView(this, this)
+        initSessionVaraiables()
         setSupportActionBar(dashboardToolbar)
         supportActionBar?.title = this.resources.getString(R.string.bottom_nav_customer)
         mainPresenter.addDrawerArrayData()
         loadFragment(CustomerFragment())
         contentDashboardBottomnavigationView.selectedItemId = (R.id.bottomNavigationItemCustomer)
         contentDashboardBottomnavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-
     }
+
+    override fun initSessionVaraiables() {
+        getUserIdFronSession()
+        getAuthTokenFromSession()
+    }
+
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         val fragment: Fragment
@@ -140,6 +120,7 @@ class MainActivity : BaseActivity(), MainView, ReadExpenseView {
         toggle.drawerArrowDrawable.setColor(resources.getColor(R.color.colorWhite))
         dashboardDrawerListAdapter = DrawerListAdapter(this@MainActivity, navigationDataArray!!, object : OnListItemClickInterface {
             override fun OnSelectedItemClickListener(title: String, position: Int) {
+                navigationDrawerOnClick(position, title)
             }
         }
         )
@@ -152,11 +133,11 @@ class MainActivity : BaseActivity(), MainView, ReadExpenseView {
 
 
     override fun onSuccessResponse(message: String) {
-        commonUtils.showToastSmall(message)
+
     }
 
     override fun onFailureResponse(error: String) {
-        commonUtils.showToastSmall(error)
+
     }
 
     override fun getStringCheck(): String {
@@ -168,4 +149,52 @@ class MainActivity : BaseActivity(), MainView, ReadExpenseView {
         super.onDestroy()
         mainPresenter.detachView()
     }
+
+    fun navigationDrawerOnClick(position: Int, title: String) {
+        when (position) {
+
+            1 -> {
+                dashboard_drawer_layout.closeDrawers()
+                navigationRoutes(ExpenseBaseActivity::class.java)
+            }
+
+            8 -> {
+                dashboard_drawer_layout.closeDrawers()
+                dialogUtils.showAlertDialog(this, this.resources.getString(R.string.DialogLogoutString), "", "", DialogEnum.Logout.toString(), this)
+            }
+        }
+    }
+
+    override fun onDialogPositivePressed(dialog: Dialog, enumString: String) {
+
+        when (enumString) {
+            DialogEnum.Logout.toString() -> {
+                postLogout()
+            }
+        }
+
+    }
+
+    override fun onSuccessLogoutResponse(message: String) {
+
+    }
+
+    override fun onFailureLogoutResponse(error: String) {
+
+    }
+
+    override fun getUserID(): String {
+        return SingletonUtils.instance.userId
+    }
+
+    override fun postLogout() {
+        progressLoadingBar()
+        logoutPresenter.logoutApiCall()
+    }
+
+    override fun naviageToLoginScreen() {
+        finish()
+        navigationRoutes(AuthenticationBaseActivity::class.java)
+    }
+
 }

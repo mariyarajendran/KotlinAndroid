@@ -22,11 +22,6 @@ class MyApplication : Application() {
     lateinit var component: ApplicationComponent
 
 
-//    companion object {
-//        lateinit var component: ApplicationComponent
-//    }
-
-
     override fun onCreate() {
         super.onCreate()
         createApplicationComponent()

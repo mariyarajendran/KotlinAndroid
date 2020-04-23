@@ -2,7 +2,9 @@ package absa.cgs.com.utils
 
 import absa.cgs.com.di.annotation.PerActivity
 import absa.cgs.com.kotlinplayground.R
+import absa.cgs.com.ui.screens.authentication.AuthenticationBaseActivity
 import absa.cgs.com.ui.screens.register.model.RadioButtonDataModel
+import absa.cgs.com.utils.enums.DialogEnum
 import android.app.Activity
 import android.app.Dialog
 import android.app.ProgressDialog
@@ -13,11 +15,13 @@ import android.view.Gravity
 import android.view.Window
 import android.view.WindowManager
 import android.widget.RadioGroup
+import kotlinx.android.synthetic.main.custom_dialog_layout.*
 import kotlinx.android.synthetic.main.custom_radio_group_dialog.*
 import javax.inject.Inject
+import javax.inject.Singleton
 
-@PerActivity
-class DialogUtils @Inject constructor(private val activity: Activity) {
+@Singleton
+class DialogUtils @Inject constructor(private val context: Context) {
 
 
     interface onRadioButtonEventListener {
@@ -25,9 +29,13 @@ class DialogUtils @Inject constructor(private val activity: Activity) {
 
     }
 
+    interface OnDialogPositiveListener {
+        fun onDialogPositivePressed(dialog: Dialog, enumString: String)
+    }
+
 
     fun showLoadingDialog(): ProgressDialog {
-        val progressDialog = ProgressDialog(activity)
+        val progressDialog = ProgressDialog(context)
         progressDialog.show()
         if (progressDialog.window != null) {
             progressDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -40,7 +48,7 @@ class DialogUtils @Inject constructor(private val activity: Activity) {
     }
 
     fun radioButtonAlertDialog(radioButtonListDataModel: List<RadioButtonDataModel>, listener: onRadioButtonEventListener) {
-        val dialog = Dialog(activity)
+        val dialog = Dialog(context)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.custom_radio_group_dialog)
         dialog.window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)
@@ -68,6 +76,46 @@ class DialogUtils @Inject constructor(private val activity: Activity) {
             }
         })
 
+    }
+
+
+    fun showAlertDialog(activity: Activity, title: String, positive: String, negative: String, enumString: String, onDialogPositiveListener: OnDialogPositiveListener) {
+        val dialog = Dialog(activity)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.custom_dialog_layout)
+        dialog.window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setGravity(Gravity.CENTER)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.setCancelable(false)
+
+        if (!title.equals("")) {
+            dialog.customDialogTileHintTv?.setText(title)
+        }
+        if (!positive.equals("")) {
+            dialog.customDialogPositiveTv?.setText(positive)
+        }
+        if (!positive.equals("")) {
+            dialog.customDialogNegativeTv?.setText(negative)
+        }
+        dialog.customDialogPositiveTv.setOnClickListener {
+            when (enumString) {
+                DialogEnum.Logout.toString() -> {
+                    dialog.dismiss()
+                    onDialogPositiveListener.onDialogPositivePressed(dialog, enumString)
+                }
+                DialogEnum.DELETE.toString() -> {
+                    dialog.dismiss()
+                    onDialogPositiveListener.onDialogPositivePressed(dialog, enumString)
+                }
+            }
+        }
+
+        dialog.customDialogNegativeTv.setOnClickListener {
+            dialog.dismiss()
+        }
+
+
+        dialog.show()
     }
 
 }

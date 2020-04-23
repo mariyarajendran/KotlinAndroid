@@ -21,6 +21,7 @@ import android.content.Context
 
 
 import absa.cgs.com.di.annotation.ActivityContext
+import absa.cgs.com.di.annotation.PerActivity
 import dagger.Module
 import dagger.Provides
 
@@ -31,13 +32,8 @@ import dagger.Provides
 class ActivityModule(private val mActivity: Activity) {
 
     @Provides
-    internal fun provideActivity(): Activity {
-        return mActivity
-    }
-
-    @Provides
-    @ActivityContext
-    internal fun providesContext(): Context {
+    @PerActivity
+    fun activityContext(): Activity {
         return mActivity
     }
 

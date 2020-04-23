@@ -1,4 +1,4 @@
-package absa.cgs.com.utils.fonts
+package absa.cgs.com.utils.enums
 
 enum class HttpEnum(val code: Int) {
 

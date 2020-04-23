@@ -2,9 +2,7 @@ package absa.cgs.com.ui.screens.register
 
 import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.base.BaseActivity
-import absa.cgs.com.ui.screens.mainbaseactivity.MainActivity
 import absa.cgs.com.ui.screens.register.model.RadioButtonDataModel
-import absa.cgs.com.utils.CommonUtils
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
@@ -20,8 +18,6 @@ class CustomerRegister : BaseActivity(), RegistrationView {
     var boxDetailsBool: Boolean = true
     var billingDetailsBool: Boolean = true
 
-    @Inject
-    lateinit var commonUtils: CommonUtils
 
     @Inject
     lateinit var registrationPresenter: RegistrationPresenter<RegistrationView>
@@ -43,7 +39,7 @@ class CustomerRegister : BaseActivity(), RegistrationView {
     }
 
 
-    private fun init() {
+    override fun init() {
         registrationPresenter.setBoxDetailRecyclerAdapter(boxDetailRecyclerView)
         cardviewMoreDetailsBadge?.setOnClickListener {
             moreDetailsVisibility(1)

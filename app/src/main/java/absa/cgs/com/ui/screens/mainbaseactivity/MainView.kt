@@ -9,4 +9,6 @@ interface MainView : BaseMvpView {
     fun onFailureResponse(error: String)
     fun getStringCheck(): String
     fun addNavigationDrawerArrayData(navigationDataArray: List<NavigationDataModel>)
+    fun initSessionVaraiables()
+
 }

@@ -59,6 +59,28 @@
     <string name="AuthLoginWelcomeString">Welcome</string>
     <string name="AuthLoginPasswordString">Password</string>
     <string name="AuthLoginSignInString">Sign in</string>
+    <string name="AuthLoginMobileNullString">Enter Mobile Name</string>
+    <string name="AuthLoginUPasswordNullString">Enter Password</string>
+    <string name="ServerBusyString">Server Busy Please Try Again </string>
+    <string name="SessionTokenExpire">Session Token Expire</string>
+
+    <string name="CabelSoft">Cabel Soft</string>
+    <string name="DialogOkString">Okay</string>
+    <string name="DialogCancelString">Cancel</string>
+    <string name="DialogLogoutString">Are you sure logout?</string>
+    <string name="DialogDeleteString">Are you sure delete?</string>
+    <string name="ExpenseDeatilsString">Expense Details</string>
+    <string name="AddExpenseString">Add Expense</string>
+    <string name="ExpenseDetailsString">Expense Details</string>
+    <string name="AddExpenseTypeString">Expense Type</string>
+    <string name="AddExpenseCommentString">Expense Comment</string>
+    <string name="AddExpenseAmountString">Expense Amount</string>
+    <string name="AddExpenseDateString">Expense Date</string>
+    <string name="AddExpenseAddString">Add Expense</string>
+    <string name="AddExpenseTypeNullString">Enter Expense Type</string>
+    <string name="AddExpenseCommentNullString">Enter Expense Comment</string>
+    <string name="AddExpenseAmountNullString">Enter Expense Amount</string>
+    <string name="AddExpenseDateNullString">Enter Expense Date</string>
 
 
 </resources>
