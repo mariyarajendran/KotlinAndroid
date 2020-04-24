@@ -58,8 +58,13 @@ class MainActivity : BaseActivity(), MainView, DialogUtils.OnDialogPositiveListe
     override fun init() {
         activityComponent().inject(this)
         mainPresenter.attachView(this, this)
+
         logoutPresenter.attachView(this, this)
         initSessionVaraiables()
+
+        readExpensePresenter.attachView(this, this)
+        // readExpensePresenter.readExpenseData()
+
         setSupportActionBar(dashboardToolbar)
         supportActionBar?.title = this.resources.getString(R.string.bottom_nav_customer)
         mainPresenter.addDrawerArrayData()

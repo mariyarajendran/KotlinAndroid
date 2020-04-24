@@ -66,9 +66,11 @@ interface ApplicationComponent {
     fun readExpenseInteractor(): ReadExpenseInteractor
 
 
+
     fun commonUtils(): CommonUtils
     fun dialogUtils(): DialogUtils
     fun sessionUtils(): SessionUtils
+
 
 
     // DataManager dataManager();

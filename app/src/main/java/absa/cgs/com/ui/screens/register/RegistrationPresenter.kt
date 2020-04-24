@@ -8,6 +8,7 @@ import absa.cgs.com.ui.screens.mainbaseactivity.adapter.DrawerListAdapter
 import absa.cgs.com.ui.screens.register.adapter.BoxDetailAdapter
 import absa.cgs.com.ui.screens.register.callbacks.OnItemDeleteCallBack
 import absa.cgs.com.ui.screens.register.model.BoxDetailsDataModel
+import absa.cgs.com.ui.screens.register.model.RadioButtonChargeModel
 import absa.cgs.com.ui.screens.register.model.RadioButtonDataModel
 import absa.cgs.com.utils.DialogUtils
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -20,8 +21,9 @@ import javax.inject.Inject
 class RegistrationPresenter<View : RegistrationView> @Inject constructor(
         var dialogUtils: DialogUtils) : BasePresenter<View>(), RegistrationPresenterListener<View>, DialogUtils.onRadioButtonEventListener, OnItemDeleteCallBack {
 
-
     private var radioButtonDataModelList: List<RadioButtonDataModel>? = null
+    private var additionalChargeRadioButtonDataModelList: MutableList<RadioButtonDataModel> = ArrayList()
+    private var billingTimeRadioButtonDataModelList: MutableList<RadioButtonDataModel> = ArrayList()
     private var boxDetailAdapter: BoxDetailAdapter? = null
     val boxDetailsDataModel: MutableList<BoxDetailsDataModel> = ArrayList()
     fun showHomeDialog() {
@@ -54,6 +56,20 @@ class RegistrationPresenter<View : RegistrationView> @Inject constructor(
         dialogUtils.radioButtonAlertDialog(radioButtonDataModelList!!, this)
     }
 
+
+    fun showAdditionalChargeDialog() {
+        additionalChargeRadioButtonDataModelList.add(RadioButtonDataModel("Additional"))
+        additionalChargeRadioButtonDataModelList.add(RadioButtonDataModel("Additional Charge"))
+        additionalChargeRadioButtonDataModelList.add(RadioButtonDataModel("Discount"))
+        dialogUtils.radioButtonAdditionalChargeAlertDialog(additionalChargeRadioButtonDataModelList, this)
+    }
+
+    fun showBillTimeDialog() {
+        billingTimeRadioButtonDataModelList.add(RadioButtonDataModel("End of every month"))
+        billingTimeRadioButtonDataModelList.add(RadioButtonDataModel("Daywise (Enter day below)"))
+        dialogUtils.radioButtonBillTimeAlertDialog(billingTimeRadioButtonDataModelList, this)
+    }
+
     override fun onRadioTitleListener(radioButtonListDataModel: List<RadioButtonDataModel>, title: String) {
         getBaseMvpVieww().onRadioButtonClickedListener(radioButtonListDataModel, title)
     }
@@ -84,6 +100,16 @@ class RegistrationPresenter<View : RegistrationView> @Inject constructor(
         boxDetailsDataModel.removeAt(position)
         boxDetailAdapter?.notifyNewData(boxDetailsDataModel)
     }
+
+
+    override fun anRadioTitleChargerListener(radioButtonListDataModel: List<RadioButtonDataModel>, radioButtonChargeModel: RadioButtonChargeModel) {
+        getBaseMvpVieww().onRadioButtonChargeListener(radioButtonListDataModel, radioButtonChargeModel)
+    }
+
+    override fun anRadioTitleBillingTimeListener(radioButtonListDataModel: List<RadioButtonDataModel>, radioButtonChargeModel: RadioButtonChargeModel) {
+        getBaseMvpVieww().onRadioButtonBillTimeListener(radioButtonListDataModel, radioButtonChargeModel)
+    }
+
 
 
 }

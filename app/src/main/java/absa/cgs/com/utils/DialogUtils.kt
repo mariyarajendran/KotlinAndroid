@@ -2,6 +2,7 @@ package absa.cgs.com.utils
 
 import absa.cgs.com.di.annotation.PerActivity
 import absa.cgs.com.kotlinplayground.R
+
 import absa.cgs.com.ui.screens.authentication.AuthenticationBaseActivity
 import absa.cgs.com.ui.screens.register.model.RadioButtonDataModel
 import absa.cgs.com.utils.enums.DialogEnum
@@ -15,7 +16,9 @@ import android.view.Gravity
 import android.view.Window
 import android.view.WindowManager
 import android.widget.RadioGroup
+
 import kotlinx.android.synthetic.main.custom_dialog_layout.*
+
 import kotlinx.android.synthetic.main.custom_radio_group_dialog.*
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -24,8 +27,11 @@ import javax.inject.Singleton
 class DialogUtils @Inject constructor(private val context: Context) {
 
 
+
     interface onRadioButtonEventListener {
         fun onRadioTitleListener(radioButtonListDataModel: List<RadioButtonDataModel>, title: String)
+        fun anRadioTitleChargerListener(radioButtonListDataModel: List<RadioButtonDataModel>, radioButtonChargeModel: RadioButtonChargeModel)
+        fun anRadioTitleBillingTimeListener(radioButtonListDataModel: List<RadioButtonDataModel>, radioButtonChargeModel: RadioButtonChargeModel)
 
     }
 
@@ -79,6 +85,7 @@ class DialogUtils @Inject constructor(private val context: Context) {
     }
 
 
+
     fun showAlertDialog(activity: Activity, title: String, positive: String, negative: String, enumString: String, onDialogPositiveListener: OnDialogPositiveListener) {
         val dialog = Dialog(activity)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -117,5 +124,6 @@ class DialogUtils @Inject constructor(private val context: Context) {
 
         dialog.show()
     }
+
 
 }

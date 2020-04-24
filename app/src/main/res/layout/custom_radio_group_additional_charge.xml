@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:layout_marginBottom="@dimen/_20sdp"
+    android:orientation="vertical">
+
+    <absa.cgs.com.utils.fonts.CustomTextView
+        android:id="@+id/customRadioGroupAdditionalTileHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:text="@string/additional_charge_discount"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <RadioGroup
+        android:id="@+id/customRadioGroupAdditional"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customRadioGroupAdditionalTileHint"
+        app:layout_constraintVertical_bias="0.03">
+
+        <absa.cgs.com.utils.fonts.CustomRadioButton
+            android:id="@+id/customRadioButtonOneAdditional"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Male"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_13sdp" />
+
+
+        <absa.cgs.com.utils.fonts.CustomRadioButton
+            android:id="@+id/customRadioButtonTwoAdditional"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Female"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_13sdp" />
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/customRadioButtonTextinputAdditionalCharge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="5dp"
+        android:textColorHint="@color/colorGray55"
+        app:helperText="@string/additional_charge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customRadioGroupAdditional">
+
+        <absa.cgs.com.utils.fonts.CustomTextEditText
+            android:id="@+id/customRadioButtonTexteditAdditionalCharge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:inputType="number"
+            android:text=""
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHighlight="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <absa.cgs.com.utils.fonts.CustomButton
+        android:id="@+id/customRadioButtonAdditionalSave"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:background="@drawable/custom_button"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        android:textColor="@color/colorSecondary"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customRadioButtonTextinputAdditionalCharge" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
