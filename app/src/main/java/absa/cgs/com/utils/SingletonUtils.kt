@@ -16,4 +16,8 @@ class SingletonUtils {
     var authToken = ""
     var userId = ""
     var expenseId = ""
+    var expenseAmount = ""
+    var expenseComment = ""
+    var expensetype = ""
+    var expenseDate = ""
 }

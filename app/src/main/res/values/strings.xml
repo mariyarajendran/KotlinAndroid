@@ -72,12 +72,17 @@
     <string name="DialogDeleteString">Are you sure delete?</string>
     <string name="ExpenseDeatilsString">Expense Details</string>
     <string name="AddExpenseString">Add Expense</string>
+    <string name="ViewExpenseString">Expense Details</string>
     <string name="ExpenseDetailsString">Expense Details</string>
+    <string name="EditExpenseDetailsString">Edit Expense</string>
+    <string name="ExpenseEditString">Edit</string>
+    <string name="ExpenseCancelString">Cancel</string>
     <string name="AddExpenseTypeString">Expense Type</string>
     <string name="AddExpenseCommentString">Expense Comment</string>
     <string name="AddExpenseAmountString">Expense Amount</string>
     <string name="AddExpenseDateString">Expense Date</string>
     <string name="AddExpenseAddString">Add Expense</string>
+    <string name="EditExpenseAddString">Edit Expense</string>
     <string name="AddExpenseTypeNullString">Enter Expense Type</string>
     <string name="AddExpenseCommentNullString">Enter Expense Comment</string>
     <string name="AddExpenseAmountNullString">Enter Expense Amount</string>
