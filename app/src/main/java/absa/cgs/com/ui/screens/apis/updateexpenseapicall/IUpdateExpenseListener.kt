@@ -4,4 +4,5 @@ import absa.cgs.com.ui.screens.base.BaseMvpPresenter
 
 interface IUpdateExpenseListener<View : UpdateExpenseView> : BaseMvpPresenter<View> {
     fun postUpdateExpenseApiCall()
+    fun validateEditExpense()
 }

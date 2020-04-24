@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.expensedetailsfragment.*
 import javax.inject.Inject
 
+
 class ExpenseDetailsFragment : BaseFragment(), ExpenseBaseActivity.OnBackPressedListner, ReadExpenseView, DialogUtils.OnDialogPositiveListener, DeleteExpenseView {
 
 
@@ -51,6 +52,7 @@ class ExpenseDetailsFragment : BaseFragment(), ExpenseBaseActivity.OnBackPressed
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
+
         return inflater.inflate(R.layout.expensedetailsfragment, container, false)
     }
 
@@ -64,7 +66,6 @@ class ExpenseDetailsFragment : BaseFragment(), ExpenseBaseActivity.OnBackPressed
     override fun init() {
         onClickListener()
         recyclerViewInit()
-
     }
 
 
@@ -76,7 +77,8 @@ class ExpenseDetailsFragment : BaseFragment(), ExpenseBaseActivity.OnBackPressed
 
     private fun onClickListener() {
         addExpenseActionButtonFb.setOnClickListener {
-            expenseBaseActivity.changeFragment(1)
+            val args = Bundle()
+            expenseBaseActivity.changeFragment(1, args)
         }
     }
 
@@ -105,7 +107,13 @@ class ExpenseDetailsFragment : BaseFragment(), ExpenseBaseActivity.OnBackPressed
 
         when (eventString) {
             CommonEnumUtils.VIEW.toString() -> {
-                showToastLong(readExpenseResponseModel.product_details[position].expense_comment)
+                var args = Bundle()
+                args.putString("expenseId", commonUtils.cutNull(readExpenseResponseModel.product_details[position].expense_id))
+                args.putString("expenseAmount", commonUtils.cutNull(readExpenseResponseModel.product_details[position].expense_amount))
+                args.putString("expenseComment", commonUtils.cutNull(readExpenseResponseModel.product_details[position].expense_comment))
+                args.putString("expensetype", commonUtils.cutNull(readExpenseResponseModel.product_details[position].expense_type))
+                args.putString("expenseDate", commonUtils.cutNull(readExpenseResponseModel.product_details[position].expense_user_date))
+                expenseBaseActivity.changeFragment(2, args)
             }
 
             CommonEnumUtils.DELETE.toString() -> {

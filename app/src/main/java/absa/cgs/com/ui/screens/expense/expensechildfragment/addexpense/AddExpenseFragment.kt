@@ -90,11 +90,13 @@ class AddExpenseFragment : BaseFragment(), AddExpenseView, ExpenseBaseActivity.O
     }
 
     override fun navigateToGetExpenseDetails() {
-        expenseBaseActivity.changeFragment(0)
+        val args = Bundle()
+        expenseBaseActivity.changeFragment(0, args)
     }
 
     override fun onBackPressed(): Boolean {
-        expenseBaseActivity.changeFragment(0)
+        val args = Bundle()
+        expenseBaseActivity.changeFragment(0, args)
         return false
     }
 

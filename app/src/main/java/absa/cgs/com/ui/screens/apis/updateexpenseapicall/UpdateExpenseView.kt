@@ -12,4 +12,12 @@ interface UpdateExpenseView : BaseMvpView {
     fun getExpenseType(): String
     fun getExpenseUserDate(): String
     fun getExpenseID(): String
+    fun setAllExpenseData()
+    fun setExpeneEnable()
+    fun setExpenseDisable()
+    fun expenseSetOnClickListener()
+    fun navigateToGetExpenseDetails()
+
+    fun postEditExpenseData()
+
 }

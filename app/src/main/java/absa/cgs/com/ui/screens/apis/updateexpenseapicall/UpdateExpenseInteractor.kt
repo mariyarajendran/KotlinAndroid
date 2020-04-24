@@ -20,7 +20,7 @@ class UpdateExpenseInteractor @Inject constructor() {
         fun onRetrofitFailureUpdateExpenseInteractListener(error: String)
         fun onSessionExpireUpdateExpenseInteractListener()
         fun onErrorUpdateExpenseInteractListener(updateExpenseResponseModel: UpdateExpenseResponseModel)
-        fun onServerExceptionUpdateExpenseInteractListener(status: Int)
+        fun onServerExceptionUpdateExpenseInteractListener()
     }
 
     fun postUpdateExpenseDataToServer(udateExpenseRequestModel: UpdateExpenseRequestModel, listener: OnCallHitListener) {
@@ -31,29 +31,29 @@ class UpdateExpenseInteractor @Inject constructor() {
                     }
 
                     override fun onResponse(call: Call<UpdateExpenseResponseModel>, response: Response<UpdateExpenseResponseModel>) {
-                        when (response.isSuccessful) {
-                            true -> {
-                                when (response.code()) {
-                                    HttpEnum.STATUS_UNAUTHORIZED.code -> {
-                                        listener.onSessionExpireUpdateExpenseInteractListener()
-                                    }
 
-                                    HttpEnum.STATUS_ERROR.code -> {
-                                        updateExpenseResponseModel = response.body()
-                                        listener.onErrorUpdateExpenseInteractListener(updateExpenseResponseModel!!)
-                                    }
 
-                                    HttpEnum.STATUS_OK.code -> {
-                                        updateExpenseResponseModel = response.body()
-                                        listener.onSuccessUpdateExpenseInteractListener(updateExpenseResponseModel!!)
-                                    }
-                                }
+                        when (response.code()) {
+                            HttpEnum.STATUS_UNAUTHORIZED.code -> {
+                                listener.onSessionExpireUpdateExpenseInteractListener()
                             }
+
+                            HttpEnum.STATUS_ERROR.code -> {
+                                updateExpenseResponseModel = response.body()
+                                listener.onErrorUpdateExpenseInteractListener(updateExpenseResponseModel!!)
+                            }
+
+                            HttpEnum.STATUS_OK.code -> {
+                                updateExpenseResponseModel = response.body()
+                                listener.onSuccessUpdateExpenseInteractListener(updateExpenseResponseModel!!)
+                            }
+
                             else -> {
-                                listener.onServerExceptionUpdateExpenseInteractListener(response.code())
+                                listener.onServerExceptionUpdateExpenseInteractListener()
                             }
-
                         }
+
+
                     }
 
                 })

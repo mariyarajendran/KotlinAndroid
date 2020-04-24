@@ -3,6 +3,7 @@ package absa.cgs.com.ui.screens.expense
 import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.base.BaseActivity
 import absa.cgs.com.ui.screens.expense.expensechildfragment.addexpense.AddExpenseFragment
+import absa.cgs.com.ui.screens.expense.expensechildfragment.editviewexpense.EditExpenseFragment
 import absa.cgs.com.ui.screens.expense.expensechildfragment.expensedetails.ExpenseDetailsFragment
 import android.os.Bundle
 
@@ -13,6 +14,7 @@ class ExpenseBaseActivity : BaseActivity(), ExpenseView {
     private val fragmentManager = supportFragmentManager
     private val expenseDetailsFragment = ExpenseDetailsFragment()
     private val addExpenseFragment = AddExpenseFragment()
+    private val editExpenseFragment = EditExpenseFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +24,8 @@ class ExpenseBaseActivity : BaseActivity(), ExpenseView {
     }
 
     override fun init() {
-        changeFragment(0)
+        val args = Bundle()
+        changeFragment(0, args)
 
     }
 
@@ -37,12 +40,14 @@ class ExpenseBaseActivity : BaseActivity(), ExpenseView {
         setTitle(string)
     }
 
-    override fun changeFragment(position: Int) {
+    override fun changeFragment(position: Int, bundle: Bundle) {
         when (position) {
             0 -> {
                 setActionBarTitle(R.string.ExpenseDeatilsString)
                 ///
                 val fragmentTransaction = fragmentManager.beginTransaction()
+
+                expenseDetailsFragment.arguments = bundle
                 fragmentTransaction.replace(R.id.expenseFragmentLayout, expenseDetailsFragment)
                 fragmentTransaction.commit()
             }
@@ -52,6 +57,14 @@ class ExpenseBaseActivity : BaseActivity(), ExpenseView {
                 //
                 val fragmentTransaction = fragmentManager.beginTransaction()
                 fragmentTransaction.replace(R.id.expenseFragmentLayout, addExpenseFragment)
+                fragmentTransaction.commit()
+            }
+            2 -> {
+                setActionBarTitle(R.string.ViewExpenseString)
+                //
+                val fragmentTransaction = fragmentManager.beginTransaction()
+                editExpenseFragment.arguments = bundle
+                fragmentTransaction.replace(R.id.expenseFragmentLayout, editExpenseFragment)
                 fragmentTransaction.commit()
             }
         }
