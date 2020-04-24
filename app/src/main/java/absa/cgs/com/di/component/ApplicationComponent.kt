@@ -33,7 +33,11 @@ import absa.cgs.com.ui.screens.apis.readexpenseapicall.ReadExpenseInteractor
 import absa.cgs.com.ui.screens.apis.readprofileapicall.ReadProfileInteractor
 import absa.cgs.com.ui.screens.apis.updateexpenseapicall.UpdateExpenseInteractor
 import absa.cgs.com.ui.screens.apis.updateprofileapicall.UpdateProfileInteractor
+import absa.cgs.com.ui.screens.expense.expensechildfragment.expensedetails.adapter.ExpenseDetailsAdapter
 import absa.cgs.com.ui.screens.mainbaseactivity.MainInteractor
+import absa.cgs.com.utils.CommonUtils
+import absa.cgs.com.utils.DialogUtils
+import absa.cgs.com.utils.SessionUtils
 import dagger.Component
 
 /**
@@ -45,9 +49,11 @@ interface ApplicationComponent {
 
     fun inject(myApplication: MyApplication)
 
-    @ApplicationContext
-    fun context(): Context
+    //    @ApplicationContext
+//    fun context(): Context
+    //fun commonUtils(): CommonUtils
 
+    fun provideContext(): Context
     fun application(): Application
     fun mainInteractor(): MainInteractor
     fun loginInteractor(): LoginInteractor
@@ -59,6 +65,11 @@ interface ApplicationComponent {
     fun readProfileInteractor(): ReadProfileInteractor
     fun readExpenseInteractor(): ReadExpenseInteractor
 
+
+
+    fun commonUtils(): CommonUtils
+    fun dialogUtils(): DialogUtils
+    fun sessionUtils(): SessionUtils
 
 
 

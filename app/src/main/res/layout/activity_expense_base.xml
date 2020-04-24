@@ -4,6 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="absa.cgs.com.ui.screens.expense.ExpenseBaseActivity">
+    android:background="@color/colorBackground"
+    tools:context="absa.cgs.com.ui.screens.authentication.AuthenticationBaseActivity">
+
+
+    <FrameLayout
+        android:id="@+id/expenseFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,4 +7,6 @@ interface ILoginListener<View : LoginView> : BaseMvpPresenter<View> {
 
     fun postLoginData()
 
+    fun validateLoginData()
+
 }

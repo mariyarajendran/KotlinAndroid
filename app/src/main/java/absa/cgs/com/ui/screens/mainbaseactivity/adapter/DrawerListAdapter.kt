@@ -45,7 +45,6 @@ class DrawerListAdapter(internal var activity: Activity, private val mypojos: Li
             assignRowIndex(position)
             onListItemClickInterface.OnSelectedItemClickListener(mypojos.get(position).navigationTitle!!, position)
             notifyDataSetChanged()
-            //notifyItemChanged(position)
         }
 
     }

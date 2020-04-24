@@ -59,15 +59,29 @@
     <string name="AuthLoginWelcomeString">Welcome</string>
     <string name="AuthLoginPasswordString">Password</string>
     <string name="AuthLoginSignInString">Sign in</string>
-    <string name="will_be_addes_to_every_bill">will be added to every bill.</string>
-    <string name="will_be_subract_to_every_bill">will be subracted to every bill.</string>
-    <string name="additional_charge_discount">Additional Charge / Discount</string>
-    <string name="save">Save</string>
-    <string name="please_enter_amount">Please enter amount</string>
-    <string name="bill_time">Billing Time</string>
-    <string name="if_daywise_enter_day">If daywise, enter day</string>
-    <string name="bill_will_be_generated_automatically_after_every_30_days">Bill will be generated automatically after every 30</string>
-    <string name="bill_will_be_generated_automatically_after_every">Bill will be generated automatically after every</string>
+
+    <string name="AuthLoginMobileNullString">Enter Mobile Name</string>
+    <string name="AuthLoginUPasswordNullString">Enter Password</string>
+    <string name="ServerBusyString">Server Busy Please Try Again </string>
+    <string name="SessionTokenExpire">Session Token Expire</string>
+
+    <string name="CabelSoft">Cabel Soft</string>
+    <string name="DialogOkString">Okay</string>
+    <string name="DialogCancelString">Cancel</string>
+    <string name="DialogLogoutString">Are you sure logout?</string>
+    <string name="DialogDeleteString">Are you sure delete?</string>
+    <string name="ExpenseDeatilsString">Expense Details</string>
+    <string name="AddExpenseString">Add Expense</string>
+    <string name="ExpenseDetailsString">Expense Details</string>
+    <string name="AddExpenseTypeString">Expense Type</string>
+    <string name="AddExpenseCommentString">Expense Comment</string>
+    <string name="AddExpenseAmountString">Expense Amount</string>
+    <string name="AddExpenseDateString">Expense Date</string>
+    <string name="AddExpenseAddString">Add Expense</string>
+    <string name="AddExpenseTypeNullString">Enter Expense Type</string>
+    <string name="AddExpenseCommentNullString">Enter Expense Comment</string>
+    <string name="AddExpenseAmountNullString">Enter Expense Amount</string>
+    <string name="AddExpenseDateNullString">Enter Expense Date</string>
 
 
 

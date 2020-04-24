@@ -1,8 +1,8 @@
 package absa.cgs.com.ui.screens.authentication.AuthChildfragments
 
 import absa.cgs.com.kotlinplayground.R
-import absa.cgs.com.ui.screens.apis.readexpenseapicall.ReadExpensePresenter
-import absa.cgs.com.ui.screens.apis.readexpenseapicall.ReadExpenseView
+import absa.cgs.com.ui.screens.apis.loginapicall.LoginPresenter
+import absa.cgs.com.ui.screens.apis.loginapicall.LoginView
 import absa.cgs.com.ui.screens.base.BaseFragment
 import absa.cgs.com.ui.screens.mainbaseactivity.MainActivity
 import android.os.Bundle
@@ -14,52 +14,17 @@ import kotlinx.android.synthetic.main.authloginfragment.*
 import javax.inject.Inject
 
 
-class AuthLoginFragment : BaseFragment(), ReadExpenseView {
+class AuthLoginFragment : BaseFragment(), LoginView {
 
-
-    override fun showExpenseToast(message: String) {
-        showToastLong(message)
-    }
-
-    override fun onSuccessReadExpenseResponse(message: String) {
-
-    }
-
-    override fun onFailureReadExpenseResponse(error: String) {
-
-    }
-
-    override fun getSearchKeyword(): String {
-        return ""
-    }
-
-    override fun getPageCount(): String {
-
-        return "0"
-    }
-
-    override fun getFromDate(): String {
-        return ""
-    }
-
-    override fun getToDate(): String {
-        return ""
-    }
-
-
-    override fun getUserID(): String {
-        return "1"
-    }
 
     @Inject
-    lateinit var readExpensePresenter: ReadExpensePresenter<ReadExpenseView>
+    lateinit var loginPresenter: LoginPresenter<LoginView>
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         fragmentComponent().inject(this)
-        readExpensePresenter.attachView(activity!!, this)
-        readExpensePresenter.readExpenseData()
+        loginPresenter.attachView(activity!!, this)
     }
 
 
@@ -77,15 +42,44 @@ class AuthLoginFragment : BaseFragment(), ReadExpenseView {
 
     }
 
-    private fun init() {
+    override fun init() {
         TextEditAuthLoginPasswordEdt.transformationMethod = PasswordTransformationMethod()
         loginOnPressedListener()
+
     }
 
     private fun loginOnPressedListener() {
         AuthLoginBtn.setOnClickListener {
-            navigationRoutes(MainActivity::class.java)
+            loginPresenter.validateLoginData()
         }
+    }
+
+    override fun navigateMainScreen() {
+        activity?.finish()
+        navigationRoutes(MainActivity::class.java)
+    }
+
+
+    override fun postLoginData() {
+        progressLoadingBar()
+        loginPresenter.postLoginData()
+    }
+
+    override fun getMobileNumber(): String {
+        return commonUtils.cutNull(TextEditAuthLoginPhoneNumberEdt.text.toString().trim())
+    }
+
+    override fun getPassword(): String {
+        return commonUtils.cutNull(TextEditAuthLoginPasswordEdt.text.toString().trim())
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        loginPresenter.detachView()
+    }
+
+    override fun onClickListeners() {
+
     }
 
 }

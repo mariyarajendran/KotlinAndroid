@@ -1,6 +1,7 @@
 package absa.cgs.com.ui.screens.apis.readexpenseapicall
 
 
+import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.apis.readexpenseapicall.model.ReadExpenseRequestModel
 import absa.cgs.com.ui.screens.apis.readexpenseapicall.model.ReadExpenseResponseModel
 import absa.cgs.com.ui.screens.base.BasePresenter
@@ -18,25 +19,28 @@ class ReadExpensePresenter<View : ReadExpenseView> @Inject constructor(var readE
     }
 
     override fun onSuccessReadExpenseInteractListener(readExpenseResponseModel: ReadExpenseResponseModel) {
-        getBaseMvpVieww().showExpenseToast(readExpenseResponseModel.product_details[0].expense_comment)
-
-
+        getBaseMvpVieww().hideProgressLoadingDialog()
+        getBaseMvpVieww().onSuccessReadExpenseResponse(readExpenseResponseModel)
     }
 
     override fun onRetrofitFailureReadExpenseInteractListener(error: String) {
-
+        getBaseMvpVieww().hideProgressLoadingDialog()
+        getBaseMvpVieww().showToastLong(error)
     }
 
     override fun onSessionExpireReadExpenseInteractListener() {
-
+        getBaseMvpVieww().hideProgressLoadingDialog()
+        getBaseMvpVieww().showToastLong(getActivityy().resources.getString(R.string.SessionTokenExpire))
     }
 
     override fun onErrorReadExpenseInteractListener(readExpenseResponseModel: ReadExpenseResponseModel) {
-
+        getBaseMvpVieww().hideProgressLoadingDialog()
+        getBaseMvpVieww().showToastLong(readExpenseResponseModel.message)
     }
 
     override fun onServerExceptionReadExpenseInteractListener() {
-
+        getBaseMvpVieww().hideProgressLoadingDialog()
+        getBaseMvpVieww().showToastLong(getActivityy().resources.getString(R.string.ServerBusyString))
     }
 
 

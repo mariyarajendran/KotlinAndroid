@@ -3,7 +3,7 @@ package absa.cgs.com.ui.screens.apis.updateprofileapicall
 import absa.cgs.com.data.RetrofitClient
 import absa.cgs.com.ui.screens.apis.updateprofileapicall.model.UpdateProfileRequestModel
 import absa.cgs.com.ui.screens.apis.updateprofileapicall.model.UpdateProfileResponseModel
-import absa.cgs.com.utils.fonts.HttpEnum
+import absa.cgs.com.utils.enums.HttpEnum
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

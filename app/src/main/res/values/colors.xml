@@ -12,4 +12,5 @@
     <color name="colorThird">#4A6572</color>
     <color name="colorSecondartDark">#232F34</color>
     <color name="colorBackground">#e0e0e0</color>
+    <color name="colorGreen">#008000</color>
 </resources>

@@ -21,8 +21,12 @@ import android.content.Context
 
 
 import absa.cgs.com.di.annotation.ApplicationContext
+import android.app.Activity
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
+import android.content.SharedPreferences
+
 
 /**
  * Created by amitshekhar on 13/01/17.
@@ -40,5 +44,19 @@ class ApplicationModule(protected val mApplication: Application) {
     internal fun provideContext(): Context {
         return mApplication
     }
+
+
+    @Singleton
+    @Provides
+    fun context(): Context {
+        return mApplication
+    }
+
+
+    @Provides
+    fun provideSharedPrefs(): SharedPreferences {
+        return mApplication.getSharedPreferences("cabelsoft-prefs", Context.MODE_PRIVATE)
+    }
+
 
 }

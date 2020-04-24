@@ -1,12 +1,9 @@
 package absa.cgs.com.ui.screens.apis.logoutapicall
 
 import absa.cgs.com.data.RetrofitClient
-import absa.cgs.com.ui.screens.apis.loginapicall.LoginInteractor
-import absa.cgs.com.ui.screens.apis.loginapicall.model.LoginRequestModel
-import absa.cgs.com.ui.screens.apis.loginapicall.model.LoginResponseModel
 import absa.cgs.com.ui.screens.apis.logoutapicall.model.LogoutRequestModel
 import absa.cgs.com.ui.screens.apis.logoutapicall.model.LogoutResponseModel
-import absa.cgs.com.utils.fonts.HttpEnum
+import absa.cgs.com.utils.enums.HttpEnum
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -35,28 +32,24 @@ class LogoutInteractor @Inject constructor() {
                     }
 
                     override fun onResponse(call: Call<LogoutResponseModel>, response: Response<LogoutResponseModel>) {
-                        when (response.isSuccessful) {
-                            true -> {
-                                when (response.code()) {
-                                    HttpEnum.STATUS_UNAUTHORIZED.code -> {
-                                        listener.onSessionExpireLoginInteractListener()
-                                    }
-
-                                    HttpEnum.STATUS_ERROR.code -> {
-                                        logoutResponseModel = response.body()
-                                        listener.onErrorLoginInteractListener(logoutResponseModel!!)
-                                    }
-
-                                    HttpEnum.STATUS_OK.code -> {
-                                        logoutResponseModel = response.body()
-                                        listener.onSuccessLoginInteractListener(logoutResponseModel!!)
-                                    }
-                                }
+                        when (response.code()) {
+                            HttpEnum.STATUS_UNAUTHORIZED.code -> {
+                                listener.onSessionExpireLoginInteractListener()
                             }
+
+                            HttpEnum.STATUS_ERROR.code -> {
+                                logoutResponseModel = response.body()
+                                listener.onErrorLoginInteractListener(logoutResponseModel!!)
+                            }
+
+                            HttpEnum.STATUS_OK.code -> {
+                                logoutResponseModel = response.body()
+                                listener.onSuccessLoginInteractListener(logoutResponseModel!!)
+                            }
+
                             else -> {
                                 listener.onServerExceptionLoginInteractListener()
                             }
-
                         }
                     }
 

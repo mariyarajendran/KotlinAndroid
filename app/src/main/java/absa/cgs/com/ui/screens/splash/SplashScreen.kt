@@ -4,11 +4,9 @@ import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.authentication.AuthenticationBaseActivity
 import absa.cgs.com.ui.screens.base.BaseActivity
 import absa.cgs.com.ui.screens.mainbaseactivity.MainActivity
-import absa.cgs.com.utils.CommonUtils
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import javax.inject.Inject
+
 
 class SplashScreen : BaseActivity() {
 
@@ -21,7 +19,7 @@ class SplashScreen : BaseActivity() {
     }
 
 
-    private fun init() {
+    override fun init() {
         forSomeDelay()
     }
 
@@ -32,7 +30,22 @@ class SplashScreen : BaseActivity() {
 
     private fun forSomeDelay() {
         Handler().postDelayed({
-            navigationRoutes(AuthenticationBaseActivity::class.java)
+            finish()
+            when (sessionUtils.loginSessionData) {
+
+                "" -> {
+                    navigationRoutes(AuthenticationBaseActivity::class.java)
+                }
+
+                null -> {
+                    navigationRoutes(AuthenticationBaseActivity::class.java)
+                }
+
+                else -> {
+                    navigationRoutes(MainActivity::class.java)
+                }
+            }
+
         }, 1000)
     }
 }

@@ -6,5 +6,9 @@ interface LogoutView : BaseMvpView {
     fun onSuccessLogoutResponse(message: String)
     fun onFailureLogoutResponse(error: String)
 
+    fun postLogout()
+
+    fun naviageToLoginScreen()
+
     fun getUserID(): String
 }
