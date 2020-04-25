@@ -73,12 +73,20 @@
     <string name="AddExpenseString">Add Expense</string>
     <string name="ViewExpenseString">Expense Details</string>
     <string name="ExpenseDetailsString">Expense Details</string>
+    <string name="ProfileDetailsString">Profile Details</string>
     <string name="EditExpenseDetailsString">Edit Expense</string>
     <string name="ExpenseEditString">Edit</string>
     <string name="ExpenseCancelString">Cancel</string>
     <string name="AddExpenseTypeString">Expense Type</string>
+    <string name="updateProfileMobileString">Mobile Number</string>
+    <string name="updateProfileContactMobileString">Office Contact Number</string>
     <string name="AddExpenseCommentString">Expense Comment</string>
     <string name="AddExpenseAmountString">Expense Amount</string>
+    <string name="updateProfileownerNameString">Owner Name</string>
+    <string name="updateProfileAgencyNameString">Agency Name</string>
+    <string name="updateProfileBtnString">Update</string>
+    <string name="updateProfileAddressString">Address</string>
+    <string name="updateProfileGstString">GST Number</string>
     <string name="AddExpenseDateString">Expense Date</string>
     <string name="AddExpenseAddString">Add Expense</string>
     <string name="EditExpenseAddString">Edit Expense</string>
@@ -86,6 +94,23 @@
     <string name="AddExpenseCommentNullString">Enter Expense Comment</string>
     <string name="AddExpenseAmountNullString">Enter Expense Amount</string>
     <string name="AddExpenseDateNullString">Enter Expense Date</string>
+
+    <string name="updateNomineeDetailsHintString">Nominee Details</string>
+    <string name="updateNomineeNameString">Name</string>
+    <string name="updateNomineePhoneNumberString">Phone Number</string>
+    <string name="updateNomineeAddressString">Address</string>
+    <string name="updateNomineeRelationshipString">Relation with Nominee</string>
+
+    <string name="updateBankDetailsHintString">Bank Details</string>
+    <string name="updateBankAccountNumberString">Account Number</string>
+    <string name="updateBankIfscCodeString">IFSC Code</string>
+    <string name="updateBankAccountHolderNameString">Account holder name</string>
+
+    <string name="updateBankPanCardString">PAN *</string>
+    <string name="updateBankPanCardPhotoString">PAN Card </string>
+
+    <string name="updateBankAddressproofString">Address Proof *</string>
+    <string name="updateBankAddressProofPhotoString">Address </string>
 
 
 </resources>

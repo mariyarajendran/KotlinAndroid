@@ -102,6 +102,14 @@ open class BaseActivity : AppCompatActivity(), BaseMvpView {
         this.startActivity(intent)
     }
 
+    override fun navigationRoutes(routingClass: Class<*>, values: String) {
+        val intent = Intent(this, routingClass)
+        intent.putExtra(values, values)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        this.startActivity(intent)
+    }
+
+
     fun activityComponent(): ActivityComponent {
         if (mActivityComponent == null) {
             mActivityComponent = DaggerActivityComponent.builder()

@@ -18,8 +18,11 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
         <activity
-            android:name="absa.cgs.com.ui.screens.expense.ExpenseBaseActivity"
+            android:name="absa.cgs.com.ui.screens.profile.ProfileBaseActivity"
             android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name="absa.cgs.com.ui.screens.expense.ExpenseBaseActivity"
+            android:theme="@style/AppTheme" />
         <activity android:name="absa.cgs.com.ui.screens.authentication.AuthenticationBaseActivity" />
         <activity android:name="absa.cgs.com.ui.screens.splash.SplashScreen">
             <intent-filter>

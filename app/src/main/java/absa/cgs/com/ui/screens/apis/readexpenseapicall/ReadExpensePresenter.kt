@@ -4,6 +4,7 @@ package absa.cgs.com.ui.screens.apis.readexpenseapicall
 import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.apis.readexpenseapicall.model.ReadExpenseRequestModel
 import absa.cgs.com.ui.screens.apis.readexpenseapicall.model.ReadExpenseResponseModel
+import absa.cgs.com.ui.screens.authentication.AuthenticationBaseActivity
 import absa.cgs.com.ui.screens.base.BasePresenter
 import javax.inject.Inject
 
@@ -30,6 +31,8 @@ class ReadExpensePresenter<View : ReadExpenseView> @Inject constructor(var readE
 
     override fun onSessionExpireReadExpenseInteractListener() {
         getBaseMvpVieww().hideProgressLoadingDialog()
+        activity!!.finishAffinity()
+        getBaseMvpVieww().navigationRoutes(AuthenticationBaseActivity::class.java)
         getBaseMvpVieww().showToastLong(getActivityy().resources.getString(R.string.SessionTokenExpire))
     }
 

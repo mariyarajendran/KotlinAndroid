@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardviewBasicDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:background="@color/colorWhite"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:cardMaxElevation="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.03">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_20sdp">
+
+                <absa.cgs.com.utils.fonts.CustomTextView
+                    android:id="@+id/updateProfileDetailHint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:text="@string/updateBankDetailsHintString"
+                    android:textColor="@color/colorRed"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></absa.cgs.com.utils.fonts.CustomTextView>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/updateBankAccountNoTi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/updateBankAccountNumberString"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/updateProfileDetailHint">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/updateBankAccountNoEd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="textNoSuggestions|textCapWords"
+                        android:maxLength="10"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorSecondartDark"
+                        android:textColorHighlight="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/updateBankIfscCodeTi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/updateBankIfscCodeString"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/updateBankAccountNoTi">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/updateBankIfscCodeEd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="textNoSuggestions|text"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorSecondartDark"
+                        android:textColorHighlight="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/updateBankAccountHolderNameTi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/updateBankAccountHolderNameString"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/updateBankIfscCodeTi">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/updateBankAccountHolderNameEd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="textNoSuggestions|text|textCapWords"
+                        android:textColor="@color/colorSecondartDark"
+                        android:textColorHighlight="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <absa.cgs.com.utils.fonts.CustomTextView
+                    android:id="@+id/updateBankPanCardHintTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:text="@string/updateBankPanCardString"
+                    android:textColor="@color/colorSecondartDark"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/updateBankAccountHolderNameTi"
+                    app:layout_constraintWidth_percent="0.2" />
+
+                <absa.cgs.com.utils.fonts.CustomTextView
+                    android:id="@+id/updateBankPanCardPhotoHintTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:text="@string/updateBankPanCardPhotoString"
+                    android:textColor="@color/colorSecondartDark"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/updateBankPanCardHintTv"
+                    app:layout_constraintStart_toEndOf="@+id/updateBankPanCardHintTv"
+                    app:layout_constraintTop_toBottomOf="@+id/updateBankAccountHolderNameTi"
+                    app:layout_constraintWidth_percent="0.2" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/updateBankPanCardPhotoViewImg"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_28sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:src="@drawable/eye"
+                    android:tint="@color/colorSecondartDark"
+                    app:layout_constraintStart_toEndOf="@+id/updateBankPanCardPhotoHintTv"
+                    app:layout_constraintTop_toBottomOf="@+id/updateBankAccountHolderNameTi"
+                    app:layout_constraintWidth_percent="0.2"
+                    app:tint="@color/colorSecondartDark" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/updatePanCardUploadImg"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_28sdp"
+                    android:src="@drawable/upload"
+                    android:tint="@color/colorSecondartDark"
+                    app:layout_constraintStart_toEndOf="@+id/updateBankPanCardPhotoViewImg"
+                    app:layout_constraintTop_toBottomOf="@+id/updateBankAccountHolderNameTi"
+                    app:layout_constraintWidth_percent="0.2"
+                    app:tint="@color/colorSecondartDark" />
+
+
+                <absa.cgs.com.utils.fonts.CustomTextView
+                    android:id="@+id/updateBankAddressProofHintTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/updateBankAddressproofString"
+                    android:textColor="@color/colorSecondartDark"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/updateBankPanCardHintTv"
+                    app:layout_constraintWidth_percent="0.2" />
+
+                <absa.cgs.com.utils.fonts.CustomTextView
+                    android:id="@+id/updateBankAddressProofHintFullTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:text="@string/updateBankAddressProofPhotoString"
+                    android:textColor="@color/colorSecondartDark"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/updateBankAddressProofHintTv"
+                    app:layout_constraintStart_toEndOf="@+id/updateBankAddressProofHintTv"
+                    app:layout_constraintTop_toBottomOf="@+id/updateBankPanCardHintTv"
+                    app:layout_constraintWidth_percent="0.2" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/updateBankAddressProofPhotoViewImg"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:src="@drawable/eye"
+                    android:tint="@color/colorSecondartDark"
+                    app:layout_constraintStart_toEndOf="@+id/updateBankAddressProofHintFullTv"
+                    app:layout_constraintTop_toBottomOf="@+id/updateBankPanCardHintTv"
+                    app:layout_constraintWidth_percent="0.2"
+                    app:tint="@color/colorSecondartDark" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/updateBankAddressProofPhotoUploadImg"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:src="@drawable/upload"
+                    android:tint="@color/colorSecondartDark"
+                    app:layout_constraintStart_toEndOf="@+id/updateBankAddressProofPhotoViewImg"
+                    app:layout_constraintTop_toBottomOf="@+id/updateBankPanCardHintTv"
+                    app:layout_constraintWidth_percent="0.2"
+                    app:tint="@color/colorSecondartDark" />
+
+                <absa.cgs.com.utils.fonts.CustomButton
+                    android:id="@+id/updateProfileSaveBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_35sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:background="@drawable/custom_login_button_style"
+                    android:text="@string/updateProfileBtnString"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorSecondartDark"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/updateBankAddressProofHintTv"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

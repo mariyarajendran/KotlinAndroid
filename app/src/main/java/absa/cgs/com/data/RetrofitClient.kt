@@ -15,9 +15,9 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
 
-    private const val BASE_URL = "https://cabelsoft.000webhostapp.com/"
+    //private const val BASE_URL = "https://cabelsoft.000webhostapp.com/"
 
-    //private const val BASE_URL = "http://192.168.43.147/"
+    private const val BASE_URL = "http://192.168.43.147/"
 
 
     private val okHttpClient = OkHttpClient.Builder()

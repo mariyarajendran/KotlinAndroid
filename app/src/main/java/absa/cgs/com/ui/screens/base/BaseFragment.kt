@@ -81,6 +81,13 @@ open class BaseFragment : Fragment(), BaseMvpView {
         startActivity(intent)
     }
 
+    override fun navigationRoutes(routingClass: Class<*>, values: String) {
+        val intent = Intent(activity, routingClass)
+        intent.putExtra(values, values)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+    }
+
 
     override fun onDestroy() {
         super.onDestroy()
