@@ -11,6 +11,8 @@ import absa.cgs.com.ui.screens.dashboard.DashboardFragment
 import absa.cgs.com.ui.screens.expense.ExpenseBaseActivity
 import absa.cgs.com.ui.screens.mainbaseactivity.Model.NavigationDataModel
 import absa.cgs.com.ui.screens.mainbaseactivity.adapter.DrawerListAdapter
+import absa.cgs.com.ui.screens.profile.ProfileBaseActivity
+import absa.cgs.com.utils.CommonEnumUtils
 import absa.cgs.com.utils.DialogUtils
 import absa.cgs.com.utils.SingletonUtils
 import absa.cgs.com.utils.enums.DialogEnum
@@ -153,12 +155,27 @@ class MainActivity : BaseActivity(), MainView, DialogUtils.OnDialogPositiveListe
     fun navigationDrawerOnClick(position: Int, title: String) {
         when (position) {
 
+            0 -> {
+                dashboard_drawer_layout.closeDrawers()
+                navigationRoutes(ProfileBaseActivity::class.java, CommonEnumUtils.PROFILE.toString())
+            }
+
             1 -> {
+                dashboard_drawer_layout.closeDrawers()
+                navigationRoutes(ProfileBaseActivity::class.java, CommonEnumUtils.NOMINEE.toString())
+            }
+
+            2 -> {
                 dashboard_drawer_layout.closeDrawers()
                 navigationRoutes(ExpenseBaseActivity::class.java)
             }
 
-            8 -> {
+            3 -> {
+                dashboard_drawer_layout.closeDrawers()
+                navigationRoutes(ProfileBaseActivity::class.java, CommonEnumUtils.BANK.toString())
+            }
+
+            10 -> {
                 dashboard_drawer_layout.closeDrawers()
                 dialogUtils.showAlertDialog(this, this.resources.getString(R.string.DialogLogoutString), "", "", DialogEnum.Logout.toString(), this)
             }

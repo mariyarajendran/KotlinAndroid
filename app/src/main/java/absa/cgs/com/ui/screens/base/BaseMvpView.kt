@@ -8,6 +8,7 @@ import android.graphics.drawable.ColorDrawable
 interface BaseMvpView {
     fun hideProgressLoadingDialog()
     fun navigationRoutes(routingClass: Class<*>)
+    fun navigationRoutes(routingClass: Class<*>, values: String)
     fun showToastShort(message: String)
     fun showToastLong(message: String)
     fun progressLoadingBar(): ProgressDialog

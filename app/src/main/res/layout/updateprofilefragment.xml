@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardviewBasicDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:background="@color/colorWhite"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:cardMaxElevation="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.03">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_20sdp">
+
+                <absa.cgs.com.utils.fonts.CustomTextView
+                    android:id="@+id/updateProfileDetailHint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:text="@string/ProfileDetailsString"
+                    android:textColor="@color/colorRed"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></absa.cgs.com.utils.fonts.CustomTextView>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/updateProfileMobileTi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/updateProfileMobileString"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/updateProfileDetailHint">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/updateProfileMobileEd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="textNoSuggestions|number"
+                        android:maxLength="10"
+                        android:textColor="@color/colorSecondartDark"
+                        android:textColorHighlight="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/updateProfileOfficeMobileTi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/updateProfileContactMobileString"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/updateProfileMobileTi">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/updateProfileOfficeMobileEd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:textColor="@color/colorSecondartDark"
+                        android:textColorHighlight="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/updateProfileOwnerNameTi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/updateProfileownerNameString"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/updateProfileOfficeMobileTi">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/updateProfileOwnerNameEd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionGo"
+                        android:inputType="textNoSuggestions|text|textCapWords"
+                        android:textColor="@color/colorSecondartDark"
+                        android:textColorHighlight="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/updateProfileAgencyNameTi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/updateProfileAgencyNameString"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/updateProfileOwnerNameTi">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/updateProfileAgencyNameEd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="textNoSuggestions|text|textCapWords"
+                        android:textColor="@color/colorSecondartDark"
+                        android:textColorHighlight="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/updateProfileAddressTi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/updateProfileAddressString"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/updateProfileAgencyNameTi">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/updateProfileAddressEd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="textNoSuggestions|text|textCapWords"
+                        android:textColor="@color/colorSecondartDark"
+                        android:textColorHighlight="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/updateProfileGstTi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/updateProfileGstString"
+                    android:padding="5dp"
+                    android:textColorHint="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/updateProfileAddressTi">
+
+                    <absa.cgs.com.utils.fonts.CustomTextEditText
+                        android:id="@+id/updateProfileGstEd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:inputType="textNoSuggestions|text|textCapWords"
+                        android:textColor="@color/colorSecondartDark"
+                        android:textColorHighlight="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <absa.cgs.com.utils.fonts.CustomButton
+                    android:id="@+id/updateProfileSaveBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:background="@drawable/custom_login_button_style"
+                    android:text="@string/updateProfileBtnString"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorSecondartDark"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/updateProfileGstTi"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

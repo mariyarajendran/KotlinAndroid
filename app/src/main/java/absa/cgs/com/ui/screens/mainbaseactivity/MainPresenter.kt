@@ -27,8 +27,10 @@ class MainPresenter<View : MainView> @Inject constructor(var mainInteractor: Mai
 
     fun addDrawerArrayData() {
         navigationDataModelList = listOf(
-                NavigationDataModel("Reports"),
-                NavigationDataModel("Expense"),
+                NavigationDataModel("Profile"),
+                NavigationDataModel("Nominee Details"),
+                NavigationDataModel("Expense Details"),
+                NavigationDataModel("Bank Details"),
                 NavigationDataModel("Online Transactions"),
                 NavigationDataModel("Collection Agents"),
                 NavigationDataModel("Customer Queries"),
