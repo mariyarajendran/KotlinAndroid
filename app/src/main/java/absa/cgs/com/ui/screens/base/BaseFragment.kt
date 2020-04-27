@@ -69,9 +69,9 @@ open class BaseFragment : Fragment(), BaseMvpView {
             mProgressDialog == null
         }
 
-        if (mProgressDialog!!.isShowing) {
-            mProgressDialog!!.dismiss()
-        }
+//        if (mProgressDialog!!.isShowing) {
+//            mProgressDialog!!.dismiss()
+//        }
 
     }
 

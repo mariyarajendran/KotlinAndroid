@@ -4,7 +4,10 @@ enum class CommonEnumUtils {
 
     DELETE,
     VIEW,
-    PROFILE,
     NOMINEE,
-    BANK
+    BANK,
+    BANNER,
+    PAN,
+    ADDRESS,
+    PROFILE,
 }

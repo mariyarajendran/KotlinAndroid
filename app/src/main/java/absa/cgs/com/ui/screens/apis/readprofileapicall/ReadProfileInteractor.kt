@@ -25,7 +25,7 @@ class ReadProfileInteractor @Inject constructor() {
     }
 
 
-    fun postLoginDataToServer(readProfileRequestModel: ReadProfileRequestModel, listener: OnCallHitListener) {
+    fun getReadprofileDataToServer(readProfileRequestModel: ReadProfileRequestModel, listener: OnCallHitListener) {
         RetrofitClient.instance.readProfileData(readProfileRequestModel)
                 .enqueue(object : Callback<ReadProfileResponseModel> {
                     override fun onFailure(call: Call<ReadProfileResponseModel>, t: Throwable) {
@@ -33,29 +33,26 @@ class ReadProfileInteractor @Inject constructor() {
                     }
 
                     override fun onResponse(call: Call<ReadProfileResponseModel>, response: Response<ReadProfileResponseModel>) {
-                        when (response.isSuccessful) {
-                            true -> {
-                                when (response.code()) {
-                                    HttpEnum.STATUS_UNAUTHORIZED.code -> {
-                                        listener.onSessionExpireReadProfileInteractListener()
-                                    }
-
-                                    HttpEnum.STATUS_ERROR.code -> {
-                                        readProfileResponseModel = response.body()
-                                        listener.onErrorReadProfileInteractListener(readProfileResponseModel!!)
-                                    }
-
-                                    HttpEnum.STATUS_OK.code -> {
-                                        readProfileResponseModel = response.body()
-                                        listener.onSuccessReadProfileInteractListener(readProfileResponseModel!!)
-                                    }
-                                }
+                        when (response.code()) {
+                            HttpEnum.STATUS_UNAUTHORIZED.code -> {
+                                listener.onSessionExpireReadProfileInteractListener()
                             }
+
+                            HttpEnum.STATUS_ERROR.code -> {
+                                readProfileResponseModel = response.body()
+                                listener.onErrorReadProfileInteractListener(readProfileResponseModel!!)
+                            }
+
+                            HttpEnum.STATUS_OK.code -> {
+                                readProfileResponseModel = response.body()
+                                listener.onSuccessReadProfileInteractListener(readProfileResponseModel!!)
+                            }
+
                             else -> {
                                 listener.onServerExceptionReadProfileInteractListener()
                             }
-
                         }
+
                     }
 
                 })

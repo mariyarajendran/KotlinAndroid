@@ -71,6 +71,8 @@
                         android:imeOptions="actionNext"
                         android:inputType="textNoSuggestions|number"
                         android:maxLength="10"
+                        android:enabled="false"
+                        android:editable="false"
                         android:textColor="@color/colorSecondartDark"
                         android:textColorHighlight="@color/colorPrimary"
                         android:textColorHint="@color/colorPrimary"

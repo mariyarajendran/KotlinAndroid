@@ -3,6 +3,7 @@ package absa.cgs.com.ui.screens.profile
 import absa.cgs.com.kotlinplayground.R
 import absa.cgs.com.ui.screens.base.BaseActivity
 import absa.cgs.com.ui.screens.profile.profilechildfragment.updatebank.UpdateBankFragment
+import absa.cgs.com.ui.screens.profile.profilechildfragment.updatebank.ViewBankProofFragment
 import absa.cgs.com.ui.screens.profile.profilechildfragment.updatenominee.UpdateNomineeFragment
 import absa.cgs.com.ui.screens.profile.profilechildfragment.updateprofile.UpdateProfileFragment
 import absa.cgs.com.utils.CommonEnumUtils
@@ -14,6 +15,7 @@ class ProfileBaseActivity : BaseActivity(), ProfileView {
     private val updateProfileFragment = UpdateProfileFragment()
     private val updateNomineeFragment = UpdateNomineeFragment()
     private val updateBankFragment = UpdateBankFragment()
+    private val viewBankProofFragment = ViewBankProofFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,6 +81,16 @@ class ProfileBaseActivity : BaseActivity(), ProfileView {
                 fragmentTransaction.replace(R.id.profileFragmentLayout, updateBankFragment)
                 fragmentTransaction.commit()
             }
+
+            3 -> {
+                setActionBarTitle(R.string.updateProofDetailsHintString)
+                ///
+                val fragmentTransaction = fragmentManager.beginTransaction()
+                viewBankProofFragment.arguments = bundle
+                fragmentTransaction.replace(R.id.profileFragmentLayout, viewBankProofFragment)
+                fragmentTransaction.commit()
+            }
+
         }
     }
 
