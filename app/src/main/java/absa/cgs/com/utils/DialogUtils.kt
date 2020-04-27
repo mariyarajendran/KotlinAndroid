@@ -16,6 +16,7 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.RadioGroup
 import kotlinx.android.synthetic.main.custom_dialog_layout.*
+import kotlinx.android.synthetic.main.custom_image_upload.*
 import kotlinx.android.synthetic.main.custom_radio_group_dialog.*
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -33,6 +34,10 @@ class DialogUtils @Inject constructor(private val context: Context) {
         fun onDialogPositivePressed(dialog: Dialog, enumString: String)
     }
 
+    interface OnDialogListeners {
+        fun onCameraPressedListener(dialog: Dialog, enumString: String)
+        fun onGalleryPressedListener(dialog: Dialog, enumString: String)
+    }
 
     fun showLoadingDialog(): ProgressDialog {
         val progressDialog = ProgressDialog(context)
@@ -76,6 +81,30 @@ class DialogUtils @Inject constructor(private val context: Context) {
             }
         })
 
+    }
+
+
+    fun showImageUploadDialog(activity: Activity, enumString: String, onDialogListeners: OnDialogListeners) {
+        val dialog = Dialog(activity)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.custom_image_upload)
+        dialog.window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setGravity(Gravity.CENTER)
+        dialog.setCanceledOnTouchOutside(true)
+        dialog.setCancelable(true)
+
+
+        dialog.customImageDialogCaptureImageTv.setOnClickListener {
+            dialog.dismiss()
+            onDialogListeners.onCameraPressedListener(dialog, enumString)
+        }
+
+        dialog.customImageDialogUploadImageTv.setOnClickListener {
+            dialog.dismiss()
+            onDialogListeners.onGalleryPressedListener(dialog, enumString)
+        }
+
+        dialog.show()
     }
 
 

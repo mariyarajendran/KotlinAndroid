@@ -4,6 +4,7 @@ import absa.cgs.com.ui.screens.apis.addexpenseapicall.model.AddExpenseRequestMod
 import absa.cgs.com.ui.screens.apis.addexpenseapicall.model.AddExpenseResponseModel
 import absa.cgs.com.ui.screens.apis.deleteexpenseapicall.model.DeleteExpenseRequestModel
 import absa.cgs.com.ui.screens.apis.deleteexpenseapicall.model.DeleteExpenseResponseModel
+import absa.cgs.com.ui.screens.apis.getnomineerelation.model.NomineeRelationResponseModel
 import absa.cgs.com.ui.screens.apis.loginapicall.model.LoginRequestModel
 import absa.cgs.com.ui.screens.apis.loginapicall.model.LoginResponseModel
 import absa.cgs.com.ui.screens.apis.logoutapicall.model.LogoutRequestModel
@@ -12,8 +13,14 @@ import absa.cgs.com.ui.screens.apis.readexpenseapicall.model.ReadExpenseRequestM
 import absa.cgs.com.ui.screens.apis.readexpenseapicall.model.ReadExpenseResponseModel
 import absa.cgs.com.ui.screens.apis.readprofileapicall.model.ReadProfileRequestModel
 import absa.cgs.com.ui.screens.apis.readprofileapicall.model.ReadProfileResponseModel
+import absa.cgs.com.ui.screens.apis.updatebankapicall.model.UpdateBankRequestModel
+import absa.cgs.com.ui.screens.apis.updatebankapicall.model.UpdateBankResponseModel
 import absa.cgs.com.ui.screens.apis.updateexpenseapicall.model.UpdateExpenseRequestModel
 import absa.cgs.com.ui.screens.apis.updateexpenseapicall.model.UpdateExpenseResponseModel
+import absa.cgs.com.ui.screens.apis.updateimagesapicall.model.UpdateImageRequestModel
+import absa.cgs.com.ui.screens.apis.updateimagesapicall.model.UpdateImageResponseModel
+import absa.cgs.com.ui.screens.apis.updatenomineeapicall.model.UpdateNomineeRequestModel
+import absa.cgs.com.ui.screens.apis.updatenomineeapicall.model.UpdateNomineeResponseModel
 import absa.cgs.com.ui.screens.apis.updateprofileapicall.model.UpdateProfileRequestModel
 import absa.cgs.com.ui.screens.apis.updateprofileapicall.model.UpdateProfileResponseModel
 import absa.cgs.com.ui.screens.mainbaseactivity.MainRequest
@@ -49,5 +56,17 @@ interface Api {
 
     @POST("/cablesoft/api/json/getExpenseDetails")
     fun readExpenseData(@Body body: ReadExpenseRequestModel): Call<ReadExpenseResponseModel>
+
+    @POST("/cablesoft/api/json/updateNomineeDetails")
+    fun updateNomineeData(@Body body: UpdateNomineeRequestModel): Call<UpdateNomineeResponseModel>
+
+    @POST("/cablesoft/api/json/updateBankDetails")
+    fun updateBankData(@Body body: UpdateBankRequestModel): Call<UpdateBankResponseModel>
+
+    @POST("/cablesoft/api/json/uploadImageCall")
+    fun updateImageData(@Body body: UpdateImageRequestModel): Call<UpdateImageResponseModel>
+
+    @GET("/cablesoft/api/json/getNomineeRelations")
+    fun getNomineeRelations(): Call<NomineeRelationResponseModel>
 
 }

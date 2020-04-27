@@ -64,6 +64,9 @@
     <string name="ServerBusyString">Server Busy Please Try Again </string>
     <string name="SessionTokenExpire">Session Token Expire</string>
 
+    <string name="ImageUploadString">Image Upload</string>
+    <string name="CaptureImageUploadString">Capture Image</string>
+    <string name="ChooseImageUploadString">Choose Image</string>
     <string name="CabelSoft">Cabel Soft</string>
     <string name="DialogOkString">Okay</string>
     <string name="DialogCancelString">Cancel</string>
@@ -102,6 +105,7 @@
     <string name="updateNomineeRelationshipString">Relation with Nominee</string>
 
     <string name="updateBankDetailsHintString">Bank Details</string>
+    <string name="updateProofDetailsHintString">Proof Details</string>
     <string name="updateBankAccountNumberString">Account Number</string>
     <string name="updateBankIfscCodeString">IFSC Code</string>
     <string name="updateBankAccountHolderNameString">Account holder name</string>
@@ -111,6 +115,24 @@
 
     <string name="updateBankAddressproofString">Address Proof *</string>
     <string name="updateBankAddressProofPhotoString">Address </string>
+
+
+    <string name="updateProfileMobileNullString">Enter Mobile Number</string>
+    <string name="updateProfileofficeContactNullString">Enter Office Contact Number</string>
+    <string name="updateProfileOwnerNameNullString">Enter Owner Name</string>
+    <string name="updateProfileAgencyNameNullString">Enter Agency Name</string>
+    <string name="updateProfileAddressNullString">Enter Address Name</string>
+    <string name="updateProfileGstNumberNullString">Enter GST Number</string>
+
+
+    <string name="updateNomineeNameNullString">Enter Nominee Name</string>
+    <string name="updateNomineePhoneNullString">Enter Nominee Phone Number</string>
+    <string name="updateNomineeAddressNullString">Enter Nominee Address</string>
+    <string name="updateNomineeRelationNullString">Enter Nominee Relation</string>
+
+    <string name="updateBankAccountNoNullString">Enter Account Number</string>
+    <string name="updateBankIfscNullString">Enter IFSC Code</string>
+    <string name="updateBankAccountHolderNameNullString">Enter Account Holder Name</string>
 
 
 </resources>

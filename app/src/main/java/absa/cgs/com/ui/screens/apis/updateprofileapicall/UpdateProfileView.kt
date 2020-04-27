@@ -8,13 +8,19 @@ interface UpdateProfileView : BaseMvpView {
     fun onFailureUpdateProfileResponse(error: String)
 
     fun getUserId(): String
-    fun getUserName(): String
-    fun getUserMailID(): String
+    //    fun getUserName(): String
+//    fun getUserMailID(): String
     fun getUserMobileNumber(): String
+
     fun getUserAddress(): String
-    fun getUserProfileImg(): String
+    //fun getUserProfileImg(): String
     fun getUserOfficeNumber(): String
+
     fun getUserOwnerName(): String
     fun getUserAgencyName(): String
     fun getUserGstNumber(): String
+
+    fun postUpdateProfileData()
+
+    fun navigateToMainScreen()
 }

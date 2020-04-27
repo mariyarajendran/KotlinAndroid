@@ -23,17 +23,19 @@ import android.content.Context
 import javax.inject.Singleton
 
 import absa.cgs.com.MyApplication
-import absa.cgs.com.di.annotation.ApplicationContext
 import absa.cgs.com.di.module.ApplicationModule
 import absa.cgs.com.ui.screens.apis.addexpenseapicall.AddExpenseInteractor
 import absa.cgs.com.ui.screens.apis.deleteexpenseapicall.DeleteExpenseInteractor
+import absa.cgs.com.ui.screens.apis.getnomineerelation.GetNomineeRelationInteractor
 import absa.cgs.com.ui.screens.apis.loginapicall.LoginInteractor
 import absa.cgs.com.ui.screens.apis.logoutapicall.LogoutInteractor
 import absa.cgs.com.ui.screens.apis.readexpenseapicall.ReadExpenseInteractor
 import absa.cgs.com.ui.screens.apis.readprofileapicall.ReadProfileInteractor
+import absa.cgs.com.ui.screens.apis.updatebankapicall.UpdateBankInteractor
 import absa.cgs.com.ui.screens.apis.updateexpenseapicall.UpdateExpenseInteractor
+import absa.cgs.com.ui.screens.apis.updateimagesapicall.UpdateImageInteractor
+import absa.cgs.com.ui.screens.apis.updatenomineeapicall.UpdateNomineeInteractor
 import absa.cgs.com.ui.screens.apis.updateprofileapicall.UpdateProfileInteractor
-import absa.cgs.com.ui.screens.expense.expensechildfragment.expensedetails.adapter.ExpenseDetailsAdapter
 import absa.cgs.com.ui.screens.mainbaseactivity.MainInteractor
 import absa.cgs.com.utils.CommonUtils
 import absa.cgs.com.utils.DialogUtils
@@ -64,6 +66,10 @@ interface ApplicationComponent {
     fun updateProfileInteractor(): UpdateProfileInteractor
     fun readProfileInteractor(): ReadProfileInteractor
     fun readExpenseInteractor(): ReadExpenseInteractor
+    fun updateNomineeInteractor(): UpdateNomineeInteractor
+    fun updateBankInteractor(): UpdateBankInteractor
+    fun updateImageInteractor(): UpdateImageInteractor
+    fun getNomineeRelationInteractor(): GetNomineeRelationInteractor
 
 
     fun commonUtils(): CommonUtils

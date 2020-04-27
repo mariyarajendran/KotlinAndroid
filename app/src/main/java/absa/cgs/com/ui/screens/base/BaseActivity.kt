@@ -50,6 +50,8 @@ open class BaseActivity : AppCompatActivity(), BaseMvpView {
     @Inject
     lateinit var sessionUtils: SessionUtils
 
+
+
 //    @Inject
 
 //    lateinit var dialogUtils: DialogUtils
@@ -90,9 +92,9 @@ open class BaseActivity : AppCompatActivity(), BaseMvpView {
             mProgressDialog == null
         }
 
-        if (mProgressDialog!!.isShowing) {
-            mProgressDialog!!.dismiss()
-        }
+//        if (mProgressDialog!!.isShowing) {
+//            mProgressDialog!!.dismiss()
+//        }
     }
 
 

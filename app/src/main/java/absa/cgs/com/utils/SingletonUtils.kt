@@ -20,4 +20,5 @@ class SingletonUtils {
     var expenseComment = ""
     var expensetype = ""
     var expenseDate = ""
+    val IMAGE_URL = "http://192.168.43.147/cablesoft/api/"
 }

@@ -20,7 +20,7 @@ class UpdateProfileInteractor @Inject constructor() {
         fun onRetrofitFailureUpdateProfileInteractListener(error: String)
         fun onSessionExpireUpdateProfileInteractListener()
         fun onErrorUpdateProfileInteractListener(updateProfileResponseModel: UpdateProfileResponseModel)
-        fun onServerExceptionUpdateProfileInteractListener(status: Int)
+        fun onServerExceptionUpdateProfileInteractListener()
     }
 
     fun postUpdateExpenseDataToServer(updateProfileRequestModel: UpdateProfileRequestModel, listener: OnCallHitListener) {
@@ -31,28 +31,26 @@ class UpdateProfileInteractor @Inject constructor() {
                     }
 
                     override fun onResponse(call: Call<UpdateProfileResponseModel>, response: Response<UpdateProfileResponseModel>) {
-                        when (response.isSuccessful) {
-                            true -> {
-                                when (response.code()) {
-                                    HttpEnum.STATUS_UNAUTHORIZED.code -> {
-                                        listener.onSessionExpireUpdateProfileInteractListener()
-                                    }
 
-                                    HttpEnum.STATUS_ERROR.code -> {
-                                        updateProfileResponseModel = response.body()
-                                        listener.onErrorUpdateProfileInteractListener(updateProfileResponseModel!!)
-                                    }
 
-                                    HttpEnum.STATUS_OK.code -> {
-                                        updateProfileResponseModel = response.body()
-                                        listener.onSuccessUpdateProfileInteractListener(updateProfileResponseModel!!)
-                                    }
-                                }
+                        when (response.code()) {
+                            HttpEnum.STATUS_UNAUTHORIZED.code -> {
+                                listener.onSessionExpireUpdateProfileInteractListener()
                             }
+
+                            HttpEnum.STATUS_ERROR.code -> {
+                                updateProfileResponseModel = response.body()
+                                listener.onErrorUpdateProfileInteractListener(updateProfileResponseModel!!)
+                            }
+
+                            HttpEnum.STATUS_OK.code -> {
+                                updateProfileResponseModel = response.body()
+                                listener.onSuccessUpdateProfileInteractListener(updateProfileResponseModel!!)
+                            }
+
                             else -> {
-                                listener.onServerExceptionUpdateProfileInteractListener(response.code())
+                                listener.onServerExceptionUpdateProfileInteractListener()
                             }
-
                         }
                     }
 
